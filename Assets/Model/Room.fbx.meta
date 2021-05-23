@@ -3,7 +3,37 @@ guid: f1a2752a9ebfd64469f76db216d6d944
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blooth
+    second: {fileID: 2100000, guid: 4a5c2ff3af3ab5740bd5ab086c9e2c4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Border
+    second: {fileID: 2100000, guid: 7bde2fed46f9d4240812b9b786c1dbb4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 5fcad109981c1a84fad5ef45db4c5b12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassLamp
+    second: {fileID: 2100000, guid: 2b0ee2cfdafc92644ac62ba69cfd80ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: c4c2bdd5957f544448b7194b8f6ac636, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall
+    second: {fileID: 2100000, guid: b5bc11f8666f7544b9d1a699ddb64cb7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
