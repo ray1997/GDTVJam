@@ -28,12 +28,14 @@ public class TutorialAInteract : MonoBehaviour
             {
                 _tutorialA = PlayerPrefs.GetInt(nameof(WasSeenTutorialA), 0) == 1;
             }
+            Debug.Log($"Player seen tutorial? {_tutorialA}");
             return _tutorialA == true;
         }
         set
         {
             PlayerPrefs.SetInt(nameof(WasSeenTutorialA), value ? 1 : 0);
             _tutorialA = value;
+            Debug.Log($"Player seen tutorial? {_tutorialA}");
         }
 
     }
@@ -48,6 +50,7 @@ public class TutorialAInteract : MonoBehaviour
                 ShowText.gameObject.SetActive(true);
                 ShowText.SetTrigger("show");
                 Invoke(nameof(DestroyItself), 8);
+                WasSeenTutorialA = true;
             }
         }
     }
