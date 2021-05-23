@@ -28,9 +28,9 @@ public class LightControl : MonoBehaviour
         ControlledLight.SetActive(!ControlledLight.activeSelf);
         //Rotate visual switch
         if (ControlledLight.activeSelf)
-            VisualSwitch.Rotate(new Vector3(22, 0, 0), Space.Self);
+            VisualSwitch.Rotate(new Vector3(22, 0, 0), Space.World);
         else
-            VisualSwitch.Rotate(new Vector3(-22, 0, 0), Space.Self);
+            VisualSwitch.Rotate(new Vector3(-22, 0, 0), Space.World);
     }
 
     private void OnTriggerEnter(Collider collide)
