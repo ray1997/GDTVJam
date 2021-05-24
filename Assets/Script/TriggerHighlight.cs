@@ -6,8 +6,17 @@ public class TriggerHighlight : MonoBehaviour
 {
     public MeshRenderer[] TargetRenderers;
 
-    public Material NormalMaterial;
+    List<Material> NormalMaterials;
     public Material HighlightMaterial;
+
+    private void Awake()
+    {
+        NormalMaterials = new List<Material>();
+        foreach (var render in TargetRenderers)
+        {
+            NormalMaterials.Add(render.material);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,9 +33,9 @@ public class TriggerHighlight : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            foreach (var render in TargetRenderers)
+            for (int i = 0; i < TargetRenderers.Length; i++)
             {
-                render.material = NormalMaterial;
+                TargetRenderers[i].material = NormalMaterials[i];
             }
         }
     }
