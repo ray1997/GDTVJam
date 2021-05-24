@@ -16,6 +16,7 @@ public class LightControl : MonoBehaviour
                     PlayerInput.OnPlayerInteracted += AllowLightControl;
                 else
                     PlayerInput.OnPlayerInteracted -= AllowLightControl;
+                _canInteract = value;
             }
         }
     }
@@ -35,6 +36,7 @@ public class LightControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider collide)
     {
+        Debug.Log($"Player enter {gameObject.name} collider");
         if (collide.tag == "Player")
         {
             CanInteract = true;
@@ -43,6 +45,7 @@ public class LightControl : MonoBehaviour
 
     private void OnTriggerExit(Collider collide)
     {
+        Debug.Log($"Player leave {gameObject.name} collider");
         if (collide.tag == "Player")
         {
             CanInteract = false;
