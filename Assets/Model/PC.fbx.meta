@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8180a5c884244fb41a4306b8c06b79d8
+guid: 433f74f81c6dfb2428970812e1665155
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Wood
-    second: {fileID: 2100000, guid: 0948da1e1b774bd4991e31db91d69144, type: 2}
+      name: PC
+    second: {fileID: 2100000, guid: fc17f177d0f886a4e93ae05fa76d4772, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: wood02
-    second: {fileID: 2100000, guid: 48d14d69dbf33d54bbeed0fa7caf31fe, type: 2}
+      name: screen
+    second: {fileID: 2100000, guid: 256077aaaeb3f6846b2c9564942aa32a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
