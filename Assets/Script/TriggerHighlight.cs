@@ -33,10 +33,15 @@ public class TriggerHighlight : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            for (int i = 0; i < TargetRenderers.Length; i++)
-            {
-                TargetRenderers[i].material = NormalMaterials[i];
-            }
+            RestoreMaterials();
+        }
+    }
+
+    public void RestoreMaterials()
+    {
+        for (int i = 0; i < TargetRenderers.Length; i++)
+        {
+            TargetRenderers[i].material = NormalMaterials[i];
         }
     }
 }

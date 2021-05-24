@@ -18,14 +18,19 @@ public class PlayerControl : MonoBehaviour
     private CharacterController controller;
     private Animator animController;
 
+    public static bool GlobalControl = true;
+
     void Start()
     {
+        GlobalControl = true;
         controller = GetComponent<CharacterController>();
         animController = GetComponent<Animator>();
     }
 
     void Update()
     {
+        if (!GlobalControl)
+            return;
         // Set moveAngle to match input directions
         moveAngle = new Vector3(inputDirection.x, 0, inputDirection.y);
         moveAngle = Camera.main.transform.forward * moveAngle.z + Camera.main.transform.right * moveAngle.x;
@@ -61,12 +66,16 @@ public class PlayerControl : MonoBehaviour
 
     private void OnPlayerMovementPerformed(Vector2 direction)
     {
+        if (!GlobalControl)
+            return;
         inputDirection = direction;
         animController.SetFloat("axis", 1);
     }
 
     private void OnPlayerMovementCanceled()
     {
+        if (!GlobalControl)
+            return;
         inputDirection = Vector2.zero;
         animController.SetFloat("axis", 0);
     }
