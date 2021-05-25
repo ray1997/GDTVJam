@@ -37,6 +37,8 @@ public class DisableMainCam : MonoBehaviour
         MainPlayer.SetActive(!IsDebugging);
         MainCamera.SetActive(!IsDebugging);
         FPSControl.SetActive(IsDebugging);
+        Cursor.lockState = IsDebugging ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !IsDebugging;
     }
 
 }
