@@ -42,11 +42,15 @@ public class CameraTriggerToSwitch : MonoBehaviour
         {
             //Player is leaving trigger B?
             TriggerA.SetActive(true);
+            //Restore camera to that point
+            MoveObject(CameraTransform, CameraPointB);
         }
         else if (b > a)
         {
             //Player is leaving trigger A?
             TriggerB.SetActive(true);
+            //Restore to B
+            MoveObject(CameraTransform, CameraPointA);
         }
     }
 }
