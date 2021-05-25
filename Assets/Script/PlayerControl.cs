@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    public delegate void RequestDisableControl();
+    public static event RequestDisableControl OnRequestDisableControl;
+    public static void ForceTriggerDisabler() => OnRequestDisableControl?.Invoke();
+
+    public delegate void RequestRestoreControl();
+    public static event RequestRestoreControl OnRequestRestoreControl;
+    public static void ForceTriggerRestorer() => OnRequestRestoreControl?.Invoke();
+
     [SerializeField]
     private float playerSpeed = 4.0f;
 
@@ -25,6 +33,20 @@ public class PlayerControl : MonoBehaviour
         GlobalControl = true;
         controller = GetComponent<CharacterController>();
         animController = GetComponent<Animator>();
+        OnRequestDisableControl += DisablePlayerControls;
+        OnRequestRestoreControl += RestorePlayerControls;
+    }
+
+    private void RestorePlayerControls()
+    {
+        controller.enabled = true;
+        animController.enabled = true;
+    }
+
+    private void DisablePlayerControls()
+    {
+        controller.enabled = false;
+        animController.enabled = false;
     }
 
     void Update()
