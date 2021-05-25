@@ -49,6 +49,14 @@ public class @MainInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""DEBUGFPS"",
+                    ""type"": ""Button"",
+                    ""id"": ""df0bb51f-97d9-4ca9-b532-c86861d2e642"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -139,6 +147,17 @@ public class @MainInput : IInputActionCollection, IDisposable
                     ""action"": ""SwitchRoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ca81d9a0-722c-4666-bd48-b9ad50b6fb38"",
+                    ""path"": ""<Keyboard>/f6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""DEBUGFPS"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -168,6 +187,7 @@ public class @MainInput : IInputActionCollection, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_SwitchRoom = m_Player.FindAction("SwitchRoom", throwIfNotFound: true);
+        m_Player_DEBUGFPS = m_Player.FindAction("DEBUGFPS", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -221,6 +241,7 @@ public class @MainInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_SwitchRoom;
+    private readonly InputAction m_Player_DEBUGFPS;
     public struct PlayerActions
     {
         private @MainInput m_Wrapper;
@@ -229,6 +250,7 @@ public class @MainInput : IInputActionCollection, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @SwitchRoom => m_Wrapper.m_Player_SwitchRoom;
+        public InputAction @DEBUGFPS => m_Wrapper.m_Player_DEBUGFPS;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -250,6 +272,9 @@ public class @MainInput : IInputActionCollection, IDisposable
                 @SwitchRoom.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchRoom;
                 @SwitchRoom.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchRoom;
                 @SwitchRoom.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchRoom;
+                @DEBUGFPS.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
+                @DEBUGFPS.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
+                @DEBUGFPS.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -266,6 +291,9 @@ public class @MainInput : IInputActionCollection, IDisposable
                 @SwitchRoom.started += instance.OnSwitchRoom;
                 @SwitchRoom.performed += instance.OnSwitchRoom;
                 @SwitchRoom.canceled += instance.OnSwitchRoom;
+                @DEBUGFPS.started += instance.OnDEBUGFPS;
+                @DEBUGFPS.performed += instance.OnDEBUGFPS;
+                @DEBUGFPS.canceled += instance.OnDEBUGFPS;
             }
         }
     }
@@ -285,5 +313,6 @@ public class @MainInput : IInputActionCollection, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnSwitchRoom(InputAction.CallbackContext context);
+        void OnDEBUGFPS(InputAction.CallbackContext context);
     }
 }

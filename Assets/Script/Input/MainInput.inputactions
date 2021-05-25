@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "DEBUGFPS",
+                    "type": "Button",
+                    "id": "df0bb51f-97d9-4ca9-b532-c86861d2e642",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -124,6 +132,17 @@
                     "processors": "",
                     "groups": "PC",
                     "action": "SwitchRoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca81d9a0-722c-4666-bd48-b9ad50b6fb38",
+                    "path": "<Keyboard>/f6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "DEBUGFPS",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

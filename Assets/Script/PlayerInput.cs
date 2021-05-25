@@ -17,6 +17,18 @@ public class PlayerInput : MonoBehaviour
     /// </summary>
     public static event PlayerRequestSwitch OnPlayerRequestSwitch;
 
+    public delegate void CameraMovement(Vector2 delta);
+    public static event CameraMovement OnCameraMovementPerformed;
+
+    public delegate void StopCameraMovement();
+    public static event StopCameraMovement OnCameraMovementCancelled;
+
+    public delegate void EnterDebugView();
+    public static event EnterDebugView OnRequestEnterDebugFPS;
+
+    public delegate void LeaveDebugView();
+    public static event LeaveDebugView OnRequestLeaveDebugFPS;
+
     private MainInput inputManage;
 
     private void Awake()
@@ -27,6 +39,10 @@ public class PlayerInput : MonoBehaviour
         inputManage.Player.Movement.canceled += context => { if (OnPlayerMovementCanceled != null) OnPlayerMovementCanceled(); };
         inputManage.Player.Interact.performed += context => OnPlayerInteracted?.Invoke();
         inputManage.Player.SwitchRoom.performed += context => OnPlayerRequestSwitch?.Invoke();
+        inputManage.Player.Look.performed += context => OnCameraMovementPerformed?.Invoke(context.ReadValue<Vector2>());
+        inputManage.Player.Look.canceled += context => OnCameraMovementCancelled?.Invoke();
+        inputManage.Player.DEBUGFPS.performed += context => OnRequestEnterDebugFPS?.Invoke();
+        inputManage.Player.DEBUGFPS.canceled += context => OnRequestLeaveDebugFPS?.Invoke();
     }
 
     private void OnEnable()
