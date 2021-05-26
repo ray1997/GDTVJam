@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/bigroom.unity
+    guid: 42530172bb4731944897197cde828cdf
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: c1d09c23c9b8c574981a440ab113930c, type: 2}
