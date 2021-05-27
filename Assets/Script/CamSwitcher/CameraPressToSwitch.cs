@@ -36,20 +36,39 @@ public class CameraPressToSwitch : MonoBehaviour
     public Transform TargetCameraPositionB;
 
     public Collider PlayerForcefield;
+
+    public Animator ThatClip;
     private void SwitchingCamera()
     {
         if (!Switchable)
             return;
+        //Temporary disable player
+        PlayerTransform.gameObject.SetActive(false);
+        //Temporary disable main camera
+        CameraTransform.gameObject.SetActive(false);
+        //Play animation overlay
+        ThatClip.SetTrigger("OPEN");
         //Move player position based on Target boolean
         PlayerControl.ForceTriggerDisabler();
         MoveObject(PlayerTransform,
             TargetAB ? TargetPlayerPositionA : TargetPlayerPositionB);
         PlayerControl.ForceTriggerRestorer();
+        //
+        //Invoke camera move N seconds after animation finish?
+        Invoke("MoveCameraAndShow", 3.25f);        
+    }
+
+    public void MoveCameraAndShow()
+    {
         //Move camera position based on Target boolean
         MoveObject(CameraTransform,
             TargetAB ? TargetCameraPositionA : TargetCameraPositionB);
         //Toggle target AB
         TargetAB = !TargetAB;
+        //Restore player
+        PlayerTransform.gameObject.SetActive(true);
+        //Restore camera
+        CameraTransform.gameObject.SetActive(true);
     }
 
     public void MoveObject(Transform item, Transform target)
