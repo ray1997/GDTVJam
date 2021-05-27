@@ -1,11 +1,8 @@
 fileFormatVersion: 2
-guid: 130323d55f14b5e41aa7314f38a0d851
+guid: afe3ab62d623ab64fbae7521b228d90a
 ModelImporter:
   serializedVersion: 21100
-  internalIDToNameTable:
-  - first:
-      74: -4379138895778929148
-    second: Door|DoorAction
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2
