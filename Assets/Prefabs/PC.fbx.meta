@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 247e9acf7b103564394cdf7946ed22e5
+guid: 91dcce2addcc4c94ab0e39fa73ff5a41
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Bed wood
-    second: {fileID: 2100000, guid: 5c571d5d715840646844ed7d44b96def, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mattress
-    second: {fileID: 2100000, guid: d0301d56b1764cf4cab146b464d60773, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
