@@ -34,6 +34,11 @@ public class DisableMainCam : MonoBehaviour
             FPSControl.transform.position = MainPlayer.transform.position;
             FPSControl.transform.rotation = MainPlayer.transform.rotation;
         }
+        else
+        {
+            MainPlayer.transform.position = FPSControl.transform.position;
+            MainPlayer.transform.rotation = FPSControl.transform.rotation;
+        }
         MainPlayer.SetActive(!IsDebugging);
         MainCamera.SetActive(!IsDebugging);
         FPSControl.SetActive(IsDebugging);
