@@ -589,7 +589,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 3a12e86cceb99084f89900cc601d5b60, type: 3}
 --- !u!4 &1490584834 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1463392379983190226, guid: 3a12e86cceb99084f89900cc601d5b60, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3545718920935599692, guid: 3a12e86cceb99084f89900cc601d5b60, type: 3}
   m_PrefabInstance: {fileID: 1490584833}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1679768950
@@ -847,7 +847,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3739527169115929059, guid: a95610992cbddb7488871802c4575053, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4268895794131065281, guid: a95610992cbddb7488871802c4575053, type: 3}
       propertyPath: m_RootOrder
