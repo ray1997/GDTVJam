@@ -30,7 +30,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "SwitchRoom",
+                    "name": "Switch",
                     "type": "Button",
                     "id": "fdf40910-ab6a-4412-94f8-6bc18b8a83f8",
                     "expectedControlType": "Button",
@@ -131,7 +131,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
-                    "action": "SwitchRoom",
+                    "action": "Switch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

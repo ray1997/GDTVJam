@@ -38,7 +38,7 @@ public class PlayerInput : MonoBehaviour
         inputManage.Player.Movement.performed += context => { if (OnPlayerMovementPerformed != null) OnPlayerMovementPerformed(context.ReadValue<Vector2>()); };
         inputManage.Player.Movement.canceled += context => { if (OnPlayerMovementCanceled != null) OnPlayerMovementCanceled(); };
         inputManage.Player.Interact.performed += context => OnPlayerInteracted?.Invoke();
-        inputManage.Player.SwitchRoom.performed += context => OnPlayerRequestSwitch?.Invoke();
+        inputManage.Player.Switch.performed += context => OnPlayerRequestSwitch?.Invoke();
         inputManage.Player.Look.performed += context => OnCameraMovementPerformed?.Invoke(context.ReadValue<Vector2>());
         inputManage.Player.Look.canceled += context => OnCameraMovementCancelled?.Invoke();
         inputManage.Player.DEBUGFPS.performed += context => OnRequestEnterDebugFPS?.Invoke();
