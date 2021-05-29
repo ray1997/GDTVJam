@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraTriggerToSwitch : MonoBehaviour
 {
-    Transform CameraTransform;
-    Transform PlayerTransform;
+    public Transform CameraTransform;
+    public Transform PlayerTransform;
     private void Awake()
     {
         CameraTransform = Camera.main.transform;
@@ -36,8 +36,15 @@ public class CameraTriggerToSwitch : MonoBehaviour
 
     public GameObject TriggerA;
     public GameObject TriggerB;
-    public void RestoreTrigger()
+    public bool RestoreAllTriggers;
+    public virtual void RestoreTrigger()
     {
+        if (RestoreAllTriggers)
+        {
+            TriggerA.SetActive(true);
+            TriggerB.SetActive(true);
+            return;
+        }
         //Check which trigger furthest from player
         float a = Vector3.Distance(PlayerTransform.position, TriggerA.transform.position);
         float b = Vector3.Distance(PlayerTransform.position, TriggerB.transform.position);
