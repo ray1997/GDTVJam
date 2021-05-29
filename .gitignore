@@ -36,3 +36,10 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Ignore every files on Model folder
+Assets/Model/*.*
+Assets/Model/*/*
+# Excepts
+!Assets/Model/*.glb
+!Assets/Model/*.glb.meta
