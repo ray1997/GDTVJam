@@ -11,11 +11,18 @@ public class Inspect : MonoBehaviour
         PlayerInput.OnPlayerInteracted += AllowInteraction;
         //Get player
         Player = GameObject.FindGameObjectWithTag("Player");
+        PlayerSwitcher.OnPlayerChanged += UpdatePlayer;
+    }
+
+    private void UpdatePlayer(GameObject player)
+    {
+        Player = player;
     }
 
     private void OnDisable()
     {
         PlayerInput.OnPlayerInteracted -= AllowInteraction;
+        PlayerSwitcher.OnPlayerChanged -= UpdatePlayer;
     }
     private void AllowInteraction()
     {

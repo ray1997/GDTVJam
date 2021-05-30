@@ -10,6 +10,12 @@ public class CameraTriggerToSwitch : MonoBehaviour
     {
         CameraTransform = Camera.main.transform;
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        PlayerSwitcher.OnPlayerChanged += UpdatePlayer;
+    }
+
+    private void UpdatePlayer(GameObject player)
+    {
+        PlayerTransform = player.transform;
     }
 
     public Transform CameraPointA;

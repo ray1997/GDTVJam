@@ -13,6 +13,12 @@ public class DisableMainCam : MonoBehaviour
     {
         MainPlayer = GameObject.FindGameObjectWithTag("Player");
         MainCamera = Camera.main.gameObject;
+        PlayerSwitcher.OnPlayerChanged += UpdateCurrentPlayer;
+    }
+
+    private void UpdateCurrentPlayer(GameObject player)
+    {
+        MainPlayer = player;
     }
 
     private void OnEnable()

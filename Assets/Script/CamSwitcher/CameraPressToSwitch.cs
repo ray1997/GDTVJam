@@ -10,6 +10,12 @@ public class CameraPressToSwitch : MonoBehaviour
     {
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         CameraTransform = Camera.main.transform;
+        PlayerSwitcher.OnPlayerChanged += UpdatePlayer;
+    }
+
+    private void UpdatePlayer(GameObject player)
+    {
+        PlayerTransform = player.transform;
     }
 
     private void OnEnable()

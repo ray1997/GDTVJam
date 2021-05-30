@@ -39,12 +39,16 @@ public class PlayerControl : MonoBehaviour
 
     private void RestorePlayerControls()
     {
+        if (!gameObject.activeSelf)
+            return;
         controller.enabled = true;
         animController.enabled = true;
     }
 
     private void DisablePlayerControls()
     {
+        if (!gameObject.activeSelf)
+            return;
         controller.enabled = false;
         animController.enabled = false;
     }
