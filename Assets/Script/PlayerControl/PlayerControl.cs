@@ -14,7 +14,7 @@ public class PlayerControl : MonoBehaviour
     public static void ForceTriggerRestorer() => OnRequestRestoreControl?.Invoke();
 
     [SerializeField]
-    private float playerSpeed = 4.0f;
+    public float playerSpeed = 4.0f;
 
     [SerializeField]
     private float rotationSpeed = 8.0f;
@@ -39,12 +39,16 @@ public class PlayerControl : MonoBehaviour
 
     private void RestorePlayerControls()
     {
+        if (!gameObject.activeSelf)
+            return;
         controller.enabled = true;
         animController.enabled = true;
     }
 
     private void DisablePlayerControls()
     {
+        if (!gameObject.activeSelf)
+            return;
         controller.enabled = false;
         animController.enabled = false;
     }

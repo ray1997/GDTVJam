@@ -43,7 +43,7 @@ public class @MainInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""SwitchRoom"",
+                    ""name"": ""Switch"",
                     ""type"": ""Button"",
                     ""id"": ""fdf40910-ab6a-4412-94f8-6bc18b8a83f8"",
                     ""expectedControlType"": ""Button"",
@@ -144,7 +144,7 @@ public class @MainInput : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PC"",
-                    ""action"": ""SwitchRoom"",
+                    ""action"": ""Switch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -186,7 +186,7 @@ public class @MainInput : IInputActionCollection, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_SwitchRoom = m_Player.FindAction("SwitchRoom", throwIfNotFound: true);
+        m_Player_Switch = m_Player.FindAction("Switch", throwIfNotFound: true);
         m_Player_DEBUGFPS = m_Player.FindAction("DEBUGFPS", throwIfNotFound: true);
     }
 
@@ -240,7 +240,7 @@ public class @MainInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_SwitchRoom;
+    private readonly InputAction m_Player_Switch;
     private readonly InputAction m_Player_DEBUGFPS;
     public struct PlayerActions
     {
@@ -249,7 +249,7 @@ public class @MainInput : IInputActionCollection, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
-        public InputAction @SwitchRoom => m_Wrapper.m_Player_SwitchRoom;
+        public InputAction @Switch => m_Wrapper.m_Player_Switch;
         public InputAction @DEBUGFPS => m_Wrapper.m_Player_DEBUGFPS;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -269,9 +269,9 @@ public class @MainInput : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                @SwitchRoom.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchRoom;
-                @SwitchRoom.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchRoom;
-                @SwitchRoom.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchRoom;
+                @Switch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitch;
+                @Switch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitch;
+                @Switch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitch;
                 @DEBUGFPS.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
                 @DEBUGFPS.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
                 @DEBUGFPS.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
@@ -288,9 +288,9 @@ public class @MainInput : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
-                @SwitchRoom.started += instance.OnSwitchRoom;
-                @SwitchRoom.performed += instance.OnSwitchRoom;
-                @SwitchRoom.canceled += instance.OnSwitchRoom;
+                @Switch.started += instance.OnSwitch;
+                @Switch.performed += instance.OnSwitch;
+                @Switch.canceled += instance.OnSwitch;
                 @DEBUGFPS.started += instance.OnDEBUGFPS;
                 @DEBUGFPS.performed += instance.OnDEBUGFPS;
                 @DEBUGFPS.canceled += instance.OnDEBUGFPS;
@@ -312,7 +312,7 @@ public class @MainInput : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-        void OnSwitchRoom(InputAction.CallbackContext context);
+        void OnSwitch(InputAction.CallbackContext context);
         void OnDEBUGFPS(InputAction.CallbackContext context);
     }
 }
