@@ -54,7 +54,7 @@ public class TutorialAInteract : MonoBehaviour
             DOTween.Play(UIText);
         }
         WasSeenTutorialA = true;
-        Invoke("SelfDestruct", 4f);
+        Invoke(nameof(SelfDestruct), 4f);
     }
 
     private void PlayerDidInteract()

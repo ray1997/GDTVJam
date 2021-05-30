@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Helper : MonoBehaviour
 {
@@ -29,5 +30,10 @@ public class Helper : MonoBehaviour
     public void DestroyItem(GameObject item)
     {
         Destroy(item);
+    }
+
+    public void MoveItemX(Transform item)
+    {
+        item.DOLocalMoveX(1.5f, 0.5f);
     }
 }

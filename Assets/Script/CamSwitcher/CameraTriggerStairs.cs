@@ -40,7 +40,7 @@ public class CameraTriggerStairs : CameraTriggerToSwitch
     {
         UpdatingCameras = true;
         PlayerControl.ForceTriggerDisabler();
-        Invoke("RestoreControl", 0.5f);
+        Invoke(nameof(RestoreControl), 0.5f);
     }
 
     public void RestoreControl() => PlayerControl.ForceTriggerRestorer();
@@ -49,7 +49,7 @@ public class CameraTriggerStairs : CameraTriggerToSwitch
     {
         UpdatingCameras = true;
         PlayerControl.ForceTriggerDisabler();
-        Invoke("RestoreControl", 0.5f);
+        Invoke(nameof(RestoreControl), 0.5f);
     }
 
     public void LeftCameraAreaFirstFloor()
