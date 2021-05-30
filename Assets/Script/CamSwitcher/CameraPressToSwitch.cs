@@ -48,20 +48,14 @@ public class CameraPressToSwitch : MonoBehaviour
             return;
         //Move player position based on Target boolean
         PlayerControl.ForceTriggerDisabler();
-        MoveObject(PlayerTransform,
+        Helper.help.MoveObject(PlayerTransform,
             TargetAB ? TargetPlayerPositionA : TargetPlayerPositionB);
         PlayerControl.ForceTriggerRestorer();
         //Move camera position based on Target boolean
-        MoveObject(CameraTransform,
+        Helper.help.MoveObject(CameraTransform,
             TargetAB ? TargetCameraPositionA : TargetCameraPositionB);
         //Toggle target AB
         TargetAB = !TargetAB;
-    }
-
-    public void MoveObject(Transform item, Transform target)
-    {
-        item.position = target.position;
-        item.rotation = target.rotation;
     }
 
     private void OnTriggerEnter(Collider other)

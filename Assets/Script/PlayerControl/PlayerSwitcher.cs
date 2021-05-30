@@ -4,6 +4,25 @@ using UnityEngine;
 
 public class PlayerSwitcher : MonoBehaviour
 {
+    private void Start()
+    {
+        PlayerControl.OnRequestDisableControl += DisablePlayerSwitcher;
+        PlayerControl.OnRequestRestoreControl += RestorePlayerSwitcher;
+    }
+
+    float cachedTime;
+    private void RestorePlayerSwitcher()
+    {
+        NextSwitchAllow = cachedTime;
+    }
+
+    private void DisablePlayerSwitcher(DisableType disable)
+    {
+        //Disallow character switch
+        cachedTime = NextSwitchAllow;
+        NextSwitchAllow = float.MaxValue;
+    }
+
     public GameObject Player1;
     public GameObject Player2;
 
@@ -30,9 +49,9 @@ public class PlayerSwitcher : MonoBehaviour
 
     private void SwitchPlayer()
     {
-        if (Time.timeSinceLevelLoad < NextSwitchAllow)
+        if (Time.realtimeSinceStartup < NextSwitchAllow)
             return;
-        NextSwitchAllow = Time.timeSinceLevelLoad + Cooldown;
+        NextSwitchAllow = Time.realtimeSinceStartup + Cooldown;
         //Sync location
         if (CurrentPlayer == Player.First)
         {

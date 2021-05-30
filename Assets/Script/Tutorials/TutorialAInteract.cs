@@ -1,22 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using TMPro;
 
 public class TutorialAInteract : MonoBehaviour
 {
+    public bool TestTutorialDisplay;
     private void Awake()
     {
+        if (TestTutorialDisplay)
+            return;
         if (WasSeenTutorialA)
         {
-            DestroyItself();
+            SelfDestruct();
         }
-    }
-
-    public void DestroyItself()
-    {
-        //Remove the script
-        Destroy(this);
-        Destroy(ShowText.gameObject);
     }
 
     bool? _tutorialA = null;
@@ -40,18 +38,33 @@ public class TutorialAInteract : MonoBehaviour
 
     }
 
-    public Animator ShowText;
-    private void OnTriggerEnter(Collider other)
+    public Transform ShowText;
+    public TMP_Text UIText;
+    public void ShowTutorialText()
     {
-        if (other.tag == "Player")
+        //While in this timeframe, if player is interact immediately destroy itself
+        PlayerInput.OnPlayerInteracted += PlayerDidInteract;
+        if (WasSeenTutorialA && !TestTutorialDisplay)
+            return;
+        if (ShowText != null)
+            ShowText.gameObject.SetActive(true);
+        if (UIText != null)
         {
-            if (!WasSeenTutorialA)
-            {
-                ShowText.gameObject.SetActive(true);
-                ShowText.SetTrigger("show");
-                Invoke(nameof(DestroyItself), 8);
-                WasSeenTutorialA = true;
-            }
+            UIText.DOFade(1, 1);
+            DOTween.Play(UIText);
         }
+        WasSeenTutorialA = true;
+        Invoke("SelfDestruct", 4f);
+    }
+
+    private void PlayerDidInteract()
+    {
+        SelfDestruct();
+    }
+
+    public void SelfDestruct()
+    {
+        PlayerInput.OnPlayerInteracted -= PlayerDidInteract;
+        Destroy(gameObject);
     }
 }
