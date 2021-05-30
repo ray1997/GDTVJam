@@ -33,14 +33,14 @@ public class CameraTriggerStairs : CameraTriggerToSwitch
             }
         }
         if (CameraTransform.position != ClosestCam.position)
-            MoveObject(CameraTransform, ClosestCam);
+            Helper.help.MoveObject(CameraTransform, ClosestCam);
     }
 
     public void SwitchToFirstFloorCamera()
     {
         UpdatingCameras = true;
         PlayerControl.ForceTriggerDisabler();
-        Invoke("RestoreControl", 0.5f);
+        Invoke(nameof(RestoreControl), 0.5f);
     }
 
     public void RestoreControl() => PlayerControl.ForceTriggerRestorer();
@@ -49,7 +49,7 @@ public class CameraTriggerStairs : CameraTriggerToSwitch
     {
         UpdatingCameras = true;
         PlayerControl.ForceTriggerDisabler();
-        Invoke("RestoreControl", 0.5f);
+        Invoke(nameof(RestoreControl), 0.5f);
     }
 
     public void LeftCameraAreaFirstFloor()
@@ -75,9 +75,9 @@ public class CameraTriggerStairs : CameraTriggerToSwitch
         float a = Vector3.Distance(playerPos, TriggerA.transform.position);
         float b = Vector3.Distance(playerPos, TriggerB.transform.position);
         if (a > b)
-            MoveObject(CameraTransform, CameraPointB);
+            Helper.help.MoveObject(CameraTransform, CameraPointB);
         else
-            MoveObject(CameraTransform, CameraPointA);
+            Helper.help.MoveObject(CameraTransform, CameraPointA);
         //
         UpdatingCameras = false;
     }

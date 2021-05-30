@@ -23,7 +23,7 @@ public class CameraTriggerToSwitch : MonoBehaviour
     {
         if (CameraTransform.position == CameraPointA.position) //Immediately switch other one on?
             TriggerB.SetActive(true);
-        MoveObject(CameraTransform, CameraPointA);
+        Helper.help.MoveObject(CameraTransform, CameraPointA);
     }
 
     public Transform CameraPointB;
@@ -31,13 +31,7 @@ public class CameraTriggerToSwitch : MonoBehaviour
     {
         if (CameraTransform.position == CameraPointB.position) //Immediately switch other one on?
             TriggerA.SetActive(true);
-        MoveObject(CameraTransform, CameraPointB);
-    }
-
-    public void MoveObject(Transform item, Transform target)
-    {
-        item.position = target.position;
-        item.rotation = target.rotation;
+        Helper.help.MoveObject(CameraTransform, CameraPointB);
     }
 
     public GameObject TriggerA;
@@ -60,14 +54,14 @@ public class CameraTriggerToSwitch : MonoBehaviour
             //Player is leaving trigger B?
             TriggerA.SetActive(true);
             //Restore camera to that point
-            MoveObject(CameraTransform, CameraPointB);
+            Helper.help.MoveObject(CameraTransform, CameraPointB);
         }
         else if (b > a)
         {
             //Player is leaving trigger A?
             TriggerB.SetActive(true);
             //Restore to B
-            MoveObject(CameraTransform, CameraPointA);
+            Helper.help.MoveObject(CameraTransform, CameraPointA);
         }
     }
 

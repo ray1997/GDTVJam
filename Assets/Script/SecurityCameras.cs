@@ -22,7 +22,7 @@ public class SecurityCameras : MonoBehaviour
     {
         //Set camera view to feed view
         if (UpdateCameraView)
-            MoveObject(Camera.main.transform, SecurityCamsView);
+            Helper.help.MoveObject(Camera.main.transform, SecurityCamsView);
         foreach (var cam in Cameras)
         {
             cam.SetActive(true);
@@ -32,16 +32,10 @@ public class SecurityCameras : MonoBehaviour
     public void DeactivateCameraFeed()
     {
         if (UpdateCameraView)
-            MoveObject(Camera.main.transform, SecurityRoomView);
+            Helper.help.MoveObject(Camera.main.transform, SecurityRoomView);
         foreach (var cam in Cameras)
         {
             cam.SetActive(false);
         }
-    }
-
-    public void MoveObject(Transform item, Transform target)
-    {
-        item.position = target.position;
-        item.rotation = target.rotation;
     }
 }

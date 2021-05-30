@@ -1,13 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public delegate void RequestDisableControl();
+    //public delegate void RequestDisableControl();
+    public delegate void RequestDisableControl(DisableType disable = DisableType.Everything);
+
     public static event RequestDisableControl OnRequestDisableControl;
     public static void ForceTriggerDisabler() => OnRequestDisableControl?.Invoke();
+    public static void ForceTriggerDisabler(DisableType disable) => OnRequestDisableControl?.Invoke(disable);
 
     public delegate void RequestRestoreControl();
     public static event RequestRestoreControl OnRequestRestoreControl;
@@ -28,6 +32,7 @@ public class PlayerControl : MonoBehaviour
 
     public static bool GlobalControl = true;
 
+    public List<GameObject> PlayerParts;
     void Start()
     {
         GlobalControl = true;
@@ -35,6 +40,12 @@ public class PlayerControl : MonoBehaviour
         animController = GetComponent<Animator>();
         OnRequestDisableControl += DisablePlayerControls;
         OnRequestRestoreControl += RestorePlayerControls;
+        foreach (Transform t in transform)
+        {
+            if (t.name.StartsWith("FlashLight"))
+                continue;
+            PlayerParts.Add(t.gameObject);
+        }
     }
 
     private void RestorePlayerControls()
@@ -43,14 +54,33 @@ public class PlayerControl : MonoBehaviour
             return;
         controller.enabled = true;
         animController.enabled = true;
+        PlayerParts.ForEach(g => g.SetActive(true));
+        PlayerInput.OnPlayerMovementPerformed += OnPlayerMovementPerformed;
+        PlayerInput.OnPlayerMovementCanceled += OnPlayerMovementCanceled;
     }
 
-    private void DisablePlayerControls()
+    private void DisablePlayerControls(DisableType disable = DisableType.Everything)
     {
         if (!gameObject.activeSelf)
             return;
-        controller.enabled = false;
-        animController.enabled = false;
+        switch (disable)
+        {
+            case DisableType.Control:
+                controller.enabled = false;
+                animController.enabled = false;
+                break;
+            case DisableType.Visibility:
+                PlayerParts.ForEach(g => g.SetActive(false));
+                break;
+            case DisableType.Input:
+                break;
+            case DisableType.Everything:
+                PlayerInput.OnPlayerMovementPerformed -= OnPlayerMovementPerformed;
+                PlayerInput.OnPlayerMovementCanceled -= OnPlayerMovementCanceled;
+                //Visibility
+                PlayerParts.ForEach(g => g.SetActive(false));
+                break;
+        }
     }
 
     void Update()
@@ -105,4 +135,24 @@ public class PlayerControl : MonoBehaviour
         inputDirection = Vector2.zero;
         animController.SetFloat("axis", 0);
     }
+}
+
+/// <summary>
+/// Control disabler type
+/// </summary>
+public enum DisableType
+{
+    /// <summary>
+    /// Disable only control, make player unable to move
+    /// </summary>
+    Control,
+    /// <summary>
+    /// Hide player, but can still move
+    /// </summary>
+    Visibility,
+    /// <summary>
+    /// Do both of the above
+    /// </summary>
+    Everything,
+    Input
 }
