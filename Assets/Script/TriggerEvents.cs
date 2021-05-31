@@ -20,4 +20,12 @@ public class TriggerEvents : MonoBehaviour
             return;
         TriggerExiting?.Invoke();
     }
+
+    public UnityEvent TriggerStay;
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag != "Player")
+            return;
+        TriggerStay?.Invoke();
+    }
 }
