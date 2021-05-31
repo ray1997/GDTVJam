@@ -9,6 +9,11 @@ public class Objectives : MonoBehaviour
 
     public static Objectives Instance;
 
+    public delegate void TriggerQuestFinish(int id, Player forPlayer = Player.First);
+    public static event TriggerQuestFinish OnRequestFinished;
+
+    public static void RequestFinishQuest(int id, Player player) => OnRequestFinished?.Invoke(id, player);
+
     private void Start()
     {
         if (Instance is null)
@@ -17,6 +22,18 @@ public class Objectives : MonoBehaviour
             Destroy(gameObject);
         PlayerState.OnRequestAddingItem += InventoryCheck;
         ObjectiveInfo.OnObjectiveFinished += ConditionChecks;
+        Objectives.OnRequestFinished += SetAsFinish;
+    }
+
+    private void SetAsFinish(int id, Player forPlayer = Player.First)
+    {
+        foreach (var quest in ActiveObjectives)
+        {
+            if (quest.ID == id && (quest.AssignedPlayer == Player.Both || quest.AssignedPlayer == forPlayer))
+            {
+                quest.IsDone = true;
+            }
+        }
     }
 
     private void ConditionChecks(ObjectiveInfo sender, int id)

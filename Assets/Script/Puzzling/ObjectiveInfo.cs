@@ -10,7 +10,25 @@ public class ObjectiveInfo
     public string Name;
     public int ID;
     public Player AssignedPlayer;
-    public bool IsUnlock;
+    [SerializeField] bool _unlock;
+    public bool IsUnlock
+    {
+        get => _unlock;
+        set
+        {
+            if (value)
+            {
+                if (SubObjective?.Length > 0)
+                {
+                    foreach (var obj in SubObjective)
+                    {
+                        obj.IsUnlock = true;
+                    }
+                }
+            }
+            _unlock = value; 
+        }
+    }
 
     public delegate void FinishObjective(ObjectiveInfo sender, int id);
     public static event FinishObjective OnObjectiveFinished;

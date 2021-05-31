@@ -1,11 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TriggerInteractForItem : MonoBehaviour
 {
     public InGameItem ItemInfo;
     public Player Assigned;
+
+    public int WaitedQuestID;
+    private void WaitForUnlockFromQuest(ObjectiveInfo sender, int id)
+    {
+        Debug.Log($"[{name}] Request unlock from quest ID {sender.ID} ({sender.Name})" +
+            $"Item pickup {(WaitedQuestID == id ? "allowed" : "disallowed")}" +
+            $"Wanted quest ID: {WaitedQuestID}");
+        if (WaitedQuestID == id)
+        {
+            IsAllowToPickup = true;
+        }
+    }
 
     [SerializeField] bool _allowPickup;
     /// <summary>
@@ -38,23 +51,37 @@ public class TriggerInteractForItem : MonoBehaviour
     //Press E to pick up
     private void OnEnable()
     {
-        PlayerInput.OnPlayerInteracted += Pickup;
+        if (!RequireClick)
+            PlayerInput.OnPlayerInteracted += Pickup;
     }
 
     private void OnDisable()
     {
-        PlayerInput.OnPlayerInteracted -= Pickup;
+        if (!RequireClick)
+            PlayerInput.OnPlayerInteracted -= Pickup;
     }
 
-    private void Pickup()
+    private void Awake()
+    {
+        ObjectiveInfo.OnObjectiveFinished += WaitForUnlockFromQuest;
+    }
+
+    public bool RequireClick;
+    public void Pickup()
     {
         if (!IsAllowToPickup)
             return;
         if (!Interactable)
             return;
+        Debug.Log($"Picked up {ItemInfo.Name}");
         PlayerState.RequestAddItem(ItemInfo, Assigned);
-        Destroy(gameObject);
+        ObjectiveInfo.OnObjectiveFinished -= WaitForUnlockFromQuest;
+        if (!RequireClick)
+            PlayerInput.OnPlayerInteracted -= Pickup;
+        PostPickup?.Invoke();
     }
+
+    public UnityEvent PostPickup;
 }
 
 public enum Specific

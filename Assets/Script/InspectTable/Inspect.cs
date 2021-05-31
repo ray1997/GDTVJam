@@ -56,7 +56,12 @@ public class Inspect : MonoBehaviour
     {
         Debug.Log("Entering inspect table");
         //Show interactable items
-        InspectableItems.ForEach(g => g.SetActive(true));
+        foreach (var btn in InspectableItems)
+        {
+            if (btn is null)
+                continue;
+            btn.SetActive(true);
+        }
         //Disable player control
         PlayerControl.ForceTriggerDisabler();
         //Lerp camera to that inspect position
@@ -73,7 +78,12 @@ public class Inspect : MonoBehaviour
     {
         Debug.Log("Leaving inspect table");
         //Hide interactable items
-        InspectableItems.ForEach(g => g.SetActive(false));
+        foreach (var btn in InspectableItems)
+        {
+            if (btn is null)
+                continue;
+            btn.SetActive(false);
+        }
         //Restore camera position
         Camera.main.transform.DOMove(RestorePosition.position, MovingTime);
         Camera.main.transform.DORotateQuaternion(RestorePosition.rotation, MovingTime);
