@@ -57,6 +57,14 @@ public class @MainInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""63986a99-f979-4b58-89d4-1f9f0ca37378"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -158,6 +166,17 @@ public class @MainInput : IInputActionCollection, IDisposable
                     ""action"": ""DEBUGFPS"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a47f25b-02e2-4906-8780-9a7f3f3e65fd"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -188,6 +207,7 @@ public class @MainInput : IInputActionCollection, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Switch = m_Player.FindAction("Switch", throwIfNotFound: true);
         m_Player_DEBUGFPS = m_Player.FindAction("DEBUGFPS", throwIfNotFound: true);
+        m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -242,6 +262,7 @@ public class @MainInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Switch;
     private readonly InputAction m_Player_DEBUGFPS;
+    private readonly InputAction m_Player_Inventory;
     public struct PlayerActions
     {
         private @MainInput m_Wrapper;
@@ -251,6 +272,7 @@ public class @MainInput : IInputActionCollection, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Switch => m_Wrapper.m_Player_Switch;
         public InputAction @DEBUGFPS => m_Wrapper.m_Player_DEBUGFPS;
+        public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -275,6 +297,9 @@ public class @MainInput : IInputActionCollection, IDisposable
                 @DEBUGFPS.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
                 @DEBUGFPS.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
                 @DEBUGFPS.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
+                @Inventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
+                @Inventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
+                @Inventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -294,6 +319,9 @@ public class @MainInput : IInputActionCollection, IDisposable
                 @DEBUGFPS.started += instance.OnDEBUGFPS;
                 @DEBUGFPS.performed += instance.OnDEBUGFPS;
                 @DEBUGFPS.canceled += instance.OnDEBUGFPS;
+                @Inventory.started += instance.OnInventory;
+                @Inventory.performed += instance.OnInventory;
+                @Inventory.canceled += instance.OnInventory;
             }
         }
     }
@@ -314,5 +342,6 @@ public class @MainInput : IInputActionCollection, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnSwitch(InputAction.CallbackContext context);
         void OnDEBUGFPS(InputAction.CallbackContext context);
+        void OnInventory(InputAction.CallbackContext context);
     }
 }

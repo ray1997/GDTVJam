@@ -6,4 +6,5 @@ public class InGameItem : ScriptableObject
     public string Name;
     public Specific ItemSepecification;
     public int ForQuestID;
+    public Sprite Icon;
 }
