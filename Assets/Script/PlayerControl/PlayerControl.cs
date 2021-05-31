@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    public Player ControlFor;
+    public Player Current;
+
     //public delegate void RequestDisableControl();
     public delegate void RequestDisableControl(DisableType disable = DisableType.Everything);
 
@@ -21,7 +24,7 @@ public class PlayerControl : MonoBehaviour
     public float playerSpeed = 4.0f;
 
     [SerializeField]
-    private float rotationSpeed = 8.0f;
+    public float rotationSpeed = 8.0f;
 
     private float gravityValue = -9.81f;
 
@@ -57,6 +60,7 @@ public class PlayerControl : MonoBehaviour
         PlayerParts.ForEach(g => g.SetActive(true));
         PlayerInput.OnPlayerMovementPerformed += OnPlayerMovementPerformed;
         PlayerInput.OnPlayerMovementCanceled += OnPlayerMovementCanceled;
+        GlobalControl = true;
     }
 
     private void DisablePlayerControls(DisableType disable = DisableType.Everything)
@@ -79,6 +83,7 @@ public class PlayerControl : MonoBehaviour
                 PlayerInput.OnPlayerMovementCanceled -= OnPlayerMovementCanceled;
                 //Visibility
                 PlayerParts.ForEach(g => g.SetActive(false));
+                GlobalControl = false;
                 break;
         }
     }
@@ -86,6 +91,8 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         if (!GlobalControl)
+            return;
+        if (Current != ControlFor)
             return;
         // Set moveAngle to match input directions
         moveAngle = new Vector3(inputDirection.x, 0, inputDirection.y);
@@ -112,6 +119,12 @@ public class PlayerControl : MonoBehaviour
     {
         PlayerInput.OnPlayerMovementPerformed += OnPlayerMovementPerformed;
         PlayerInput.OnPlayerMovementCanceled += OnPlayerMovementCanceled;
+        PlayerSwitcher.OnPlayerChanged += UpdatePlayerInfo;
+    }
+
+    private void UpdatePlayerInfo(GameObject player, Player current)
+    {
+        Current = current;
     }
 
     private void OnDisable()
@@ -124,6 +137,8 @@ public class PlayerControl : MonoBehaviour
     {
         if (!GlobalControl)
             return;
+        if (Current != ControlFor)
+            return;
         inputDirection = direction;
         animController.SetFloat("axis", 1);
     }
@@ -131,6 +146,8 @@ public class PlayerControl : MonoBehaviour
     private void OnPlayerMovementCanceled()
     {
         if (!GlobalControl)
+            return;
+        if (Current != ControlFor)
             return;
         inputDirection = Vector2.zero;
         animController.SetFloat("axis", 0);

@@ -34,6 +34,8 @@ public class PlayerInput : MonoBehaviour
 
     private MainInput inputManage;
 
+    public static void ForceMovementCancelled() => OnPlayerMovementCanceled?.Invoke();
+
     private void Awake()
     {
         inputManage = new MainInput();

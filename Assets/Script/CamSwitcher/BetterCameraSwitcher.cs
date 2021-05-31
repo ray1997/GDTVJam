@@ -5,6 +5,24 @@ using UnityEngine;
 
 public class BetterCameraSwitcher : MonoBehaviour
 {
+    public delegate void ToggleCameraUpdator();
+    public static event ToggleCameraUpdator OnRequestStopCameraUpdate;
+
+    public static void ForceToggleCameraUpdate() => OnRequestStopCameraUpdate?.Invoke();
+
+    private void Start()
+    {
+        OnRequestStopCameraUpdate += ToggleCameraUpdate;
+    }
+
+    private void ToggleCameraUpdate()
+    {
+        if (untilSwitchAgain == float.MaxValue)
+            untilSwitchAgain = Time.realtimeSinceStartup + SwitchCooldown;
+        else
+            untilSwitchAgain = float.MaxValue;
+    }
+
     public Camera MainCamera;
 
     public List<GameObject> CameraPoints;
@@ -22,7 +40,7 @@ public class BetterCameraSwitcher : MonoBehaviour
         untilSwitchAgain = Time.realtimeSinceStartup + SwitchCooldown;
         //Switch to requested room
         //Get camera point
-        var point = CameraPoints.First(c => c.name == triggered.name);
+        var point = CameraPoints.FirstOrDefault(c => c.name == triggered.name);
         if (point is null)
         {
             Debug.LogError($"Error: No camera point with a name: {triggered.name}");
