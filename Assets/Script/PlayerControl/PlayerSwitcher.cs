@@ -8,6 +8,10 @@ public class PlayerSwitcher : MonoBehaviour
     {
         PlayerControl.OnRequestDisableControl += DisablePlayerSwitcher;
         PlayerControl.OnRequestRestoreControl += RestorePlayerSwitcher;
+        Player1.SetActive(CurrentPlayer == Player.First);
+        Player1.GetComponent<PlayerControl>().playerSpeed = CurrentPlayer == Player.First ? 4 : 0;
+        Player2.SetActive(CurrentPlayer == Player.Second);
+        Player2.GetComponent<PlayerControl>().playerSpeed = CurrentPlayer == Player.Second ? 4 : 0;
     }
 
     float cachedTime;
@@ -36,11 +40,6 @@ public class PlayerSwitcher : MonoBehaviour
     public float Cooldown = 3;
     public float NextSwitchAllow;
 
-    public enum Player
-    {
-        First,
-        Second
-    }
     public Player CurrentPlayer;
     private void OnEnable()
     {
@@ -79,4 +78,11 @@ public class PlayerSwitcher : MonoBehaviour
         Camera.main.transform.rotation =
             CurrentPlayer == Player.First ? LastPlayer1Location.rotation : LastPlayer2Location.rotation;
     }
+}
+
+public enum Player
+{
+    First,
+    Second,
+    Both
 }
