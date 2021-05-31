@@ -63,7 +63,8 @@ public class TriggerInteractForItem : MonoBehaviour
 
     private void Awake()
     {
-        ObjectiveInfo.OnObjectiveFinished += WaitForUnlockFromQuest;
+        if (WaitedQuestID != 0)
+            ObjectiveInfo.OnObjectiveFinished += WaitForUnlockFromQuest;
     }
 
     public bool RequireClick;
@@ -73,8 +74,9 @@ public class TriggerInteractForItem : MonoBehaviour
             return;
         if (!Interactable)
             return;
-        Debug.Log($"Picked up {ItemInfo.Name}");
-        PlayerState.RequestAddItem(ItemInfo, Assigned);
+        Debug.Log($"Picked up {ItemInfo?.Name}");
+        if (!(ItemInfo is null))
+            PlayerState.RequestAddItem(ItemInfo, Assigned);
         ObjectiveInfo.OnObjectiveFinished -= WaitForUnlockFromQuest;
         if (!RequireClick)
             PlayerInput.OnPlayerInteracted -= Pickup;
