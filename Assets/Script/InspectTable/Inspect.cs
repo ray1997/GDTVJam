@@ -10,6 +10,9 @@ public class Inspect : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
     }
 
+    public bool AutoDetectTrigger;
+    bool HaveTrigger;
+
     GameObject Player;
     private void OnEnable()
     {

@@ -29,6 +29,16 @@ public class Objectives : MonoBehaviour
     {
         foreach (var quest in ActiveObjectives)
         {
+            if (quest.SubObjective.Length > 0)
+            {
+                foreach (var sub in quest.SubObjective)
+                {
+                    if (sub.ID == id && (sub.AssignedPlayer == Player.Both || sub.AssignedPlayer == forPlayer))
+                    {
+                        sub.IsDone = true;
+                    }
+                }
+            }
             if (quest.ID == id && (quest.AssignedPlayer == Player.Both || quest.AssignedPlayer == forPlayer))
             {
                 quest.IsDone = true;
@@ -43,7 +53,9 @@ public class Objectives : MonoBehaviour
             if (ActiveObjectives[0].IsItAllDone())
             {
                 ActiveObjectives[0].IsDone = true;
+                //Unlock next 2 quests
                 ActiveObjectives[1].IsUnlock = true;
+                ActiveObjectives[2].IsUnlock = true;
             }
         }
     }
@@ -62,5 +74,48 @@ public class Objectives : MonoBehaviour
                 ActiveObjectives[0].SubObjective[1].IsDone = true;
             }            
         }
+    }
+
+    public bool IsQuestFinish(int id)
+    {
+        foreach (var quest in ActiveObjectives)
+        {
+            if (quest.SubObjective != null)
+            {
+                foreach (var sub in quest.SubObjective)
+                {
+                    if (sub.ID == id)
+                    {
+                        return sub.IsDone;
+                    }
+                }
+            }
+            if (quest.ID == id)
+            {
+                return quest.IsDone;
+            }
+        }
+        return false;
+    }
+    public bool IsQuestUnlock(int id)
+    {
+        foreach (var quest in ActiveObjectives)
+        {
+            if (quest.SubObjective != null)
+            {
+                foreach (var sub in quest.SubObjective)
+                {
+                    if (sub.ID == id)
+                    {
+                        return sub.IsUnlock;
+                    }
+                }
+            }
+            if (quest.ID == id)
+            {
+                return quest.IsUnlock;
+            }
+        }
+        return false;
     }
 }
