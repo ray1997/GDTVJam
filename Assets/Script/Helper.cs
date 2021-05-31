@@ -36,4 +36,14 @@ public class Helper : MonoBehaviour
     {
         item.DOLocalMoveX(1.5f, 0.5f);
     }
+
+    public void RotateItemYAdd90(Transform item)
+    {
+        item.DOLocalRotate(new Vector3(0, 90, 0), 1);
+    }
+
+    public void RotateItemYRemove90(Transform item)
+    {
+        item.DOLocalRotate(new Vector3(0, 0, 0), 1);
+    }
 }

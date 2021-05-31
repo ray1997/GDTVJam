@@ -34,17 +34,14 @@ public class PlayerState : MonoBehaviour
         else
             InventoryOfPlayer = Player.Second;
         PlayerInventory = new List<InGameItem>();
+        OnRequestAddingItem += PutOnInventory;
         Flashlight = transform.Find("FlashLight").gameObject;
         Flashlight.SetActive(HaveFlashlight);
     }
 
-    private void OnEnable()
-    {
-        OnRequestAddingItem += PutOnInventory;
-    }
-
     private void PutOnInventory(InGameItem info, Player target)
     {
+        Debug.Log($"Request adding item {info.Name} for player {target} (Current: {InventoryOfPlayer})");
         if (InventoryOfPlayer != target)
             return;
         if (info.ItemSepecification == Specific.UnlockFlashlight)
