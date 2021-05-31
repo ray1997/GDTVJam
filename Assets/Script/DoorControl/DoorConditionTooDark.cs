@@ -6,15 +6,25 @@ using DG.Tweening;
 public class DoorConditionTooDark : DoorTrigger
 {
     public TMPro.TMP_Text TextToShow;
+    public int WantedQuestID;
 
-    public PlayerState _PlayerState;
+    private void Start()
+    {
+        ObjectiveInfo.OnObjectiveFinished += UnlockDoor;
+    }
+
+    private void UnlockDoor(ObjectiveInfo sender, int id)
+    {
+        if (WantedQuestID == id)
+        {
+            DoorStatus = LockCondition.Unlocked;
+        }
+    }
+
     public override bool IsLocked()
     {
-        DoorStatus = _PlayerState.HaveFlashlight ? LockCondition.Unlocked : LockCondition.LockedNeedCondition;
         if (DoorStatus == LockCondition.LockedNeedCondition)
         {
-            if (_PlayerState.HaveFlashlight)
-                DoorStatus = LockCondition.Unlocked;
             //Show text and stuff
             TextToShow.DOFade(1, 1);
             Invoke(nameof(HideText), 5f);
