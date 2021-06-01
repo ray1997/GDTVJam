@@ -8,10 +8,6 @@ public class PlayerSwitcher : MonoBehaviour
     {
         PlayerControl.OnRequestDisableControl += DisablePlayerSwitcher;
         PlayerControl.OnRequestRestoreControl += RestorePlayerSwitcher;
-        Player1.SetActive(CurrentPlayer == Player.First);
-        Player1.GetComponent<PlayerControl>().playerSpeed = CurrentPlayer == Player.First ? 4 : 0;
-        Player2.SetActive(CurrentPlayer == Player.Second);
-        Player2.GetComponent<PlayerControl>().playerSpeed = CurrentPlayer == Player.Second ? 4 : 0;
     }
 
     float cachedTime;
@@ -33,7 +29,7 @@ public class PlayerSwitcher : MonoBehaviour
     public Transform LastPlayer1Location;
     public Transform LastPlayer2Location;
 
-    public delegate void PlayerChanged(GameObject player);
+    public delegate void PlayerChanged(GameObject player, Player current);
     public static event PlayerChanged OnPlayerChanged;
 
     [Range(1f, 60f)]
@@ -66,12 +62,14 @@ public class PlayerSwitcher : MonoBehaviour
         CurrentPlayer++;
         if (CurrentPlayer > Player.Second)
             CurrentPlayer = Player.First;
-        Player1.SetActive(CurrentPlayer == Player.First);
         Player1.GetComponent<PlayerControl>().playerSpeed = CurrentPlayer == Player.First ? 4 : 0;
-        Player2.SetActive(CurrentPlayer == Player.Second);
+        Player1.GetComponent<PlayerControl>().rotationSpeed = CurrentPlayer == Player.First ? 8 : 0;
+        Player1.tag = CurrentPlayer == Player.First ? "Player" : "OtherPlayer";
         Player2.GetComponent<PlayerControl>().playerSpeed = CurrentPlayer == Player.Second ? 4 : 0;
+        Player2.GetComponent<PlayerControl>().rotationSpeed = CurrentPlayer == Player.Second ? 8 : 0;
+        Player2.tag = CurrentPlayer == Player.Second ? "Player" : "OtherPlayer";
         //Send current active player
-        OnPlayerChanged?.Invoke(Player1.activeSelf ? Player1 : Player2);
+        OnPlayerChanged?.Invoke(CurrentPlayer == Player.First ? Player1 : Player2, CurrentPlayer);
         //Move camera to previous player location
         Camera.main.transform.position =
             CurrentPlayer == Player.First ? LastPlayer1Location.position : LastPlayer2Location.position;

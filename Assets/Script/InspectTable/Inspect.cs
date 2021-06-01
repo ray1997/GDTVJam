@@ -20,9 +20,8 @@ public class Inspect : MonoBehaviour
         PlayerInput.OnPlayerInteracted += AllowInteraction;
         PlayerSwitcher.OnPlayerChanged += UpdatePlayer;
     }
-    DG.Tweening.Core.TweenerCore<Vector3, Vector3, DG.Tweening.Plugins.Options.VectorOptions> CameraPos;
-    DG.Tweening.Core.TweenerCore<Quaternion, Quaternion, DG.Tweening.Plugins.Options.NoOptions> CameraRot;
-    private void UpdatePlayer(GameObject player)
+
+    private void UpdatePlayer(GameObject player, Player current)
     {
         Player = player;
     }
@@ -36,6 +35,7 @@ public class Inspect : MonoBehaviour
     {
         if (!Interactable)
             return;
+        BetterCameraSwitcher.ForceToggleCameraUpdate();
         if (!InTableView)
             InspectTable();
         else

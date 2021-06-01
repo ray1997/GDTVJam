@@ -16,7 +16,7 @@ public class DisableMainCam : MonoBehaviour
         PlayerSwitcher.OnPlayerChanged += UpdateCurrentPlayer;
     }
 
-    private void UpdateCurrentPlayer(GameObject player)
+    private void UpdateCurrentPlayer(GameObject player, Player current)
     {
         MainPlayer = player;
     }

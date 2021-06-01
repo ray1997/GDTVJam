@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RoomCam
   - RoomCam2
+  - OtherPlayer
   layers:
   - Default
   - TransparentFX

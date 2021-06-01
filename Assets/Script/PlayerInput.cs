@@ -29,7 +29,12 @@ public class PlayerInput : MonoBehaviour
     public delegate void LeaveDebugView();
     public static event LeaveDebugView OnRequestLeaveDebugFPS;
 
+    public delegate void ToggleInventory();
+    public static event ToggleInventory OnRequestToggleInventory;
+
     private MainInput inputManage;
+
+    public static void ForceMovementCancelled() => OnPlayerMovementCanceled?.Invoke();
 
     private void Awake()
     {
@@ -43,6 +48,7 @@ public class PlayerInput : MonoBehaviour
         inputManage.Player.Look.canceled += context => OnCameraMovementCancelled?.Invoke();
         inputManage.Player.DEBUGFPS.performed += context => OnRequestEnterDebugFPS?.Invoke();
         inputManage.Player.DEBUGFPS.canceled += context => OnRequestLeaveDebugFPS?.Invoke();
+        inputManage.Player.Inventory.performed += context => OnRequestToggleInventory?.Invoke();
     }
 
     private void OnEnable()
