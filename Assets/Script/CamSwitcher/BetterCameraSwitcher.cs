@@ -13,6 +13,13 @@ public class BetterCameraSwitcher : MonoBehaviour
     private void Start()
     {
         OnRequestStopCameraUpdate += ToggleCameraUpdate;
+        PlayerSwitcher.OnPlayerChanged += UpdateLocationTo;
+    }
+
+    public Player Current;
+    private void UpdateLocationTo(GameObject player, Player current)
+    {
+        Current = current;
     }
 
     private void ToggleCameraUpdate()
@@ -30,10 +37,14 @@ public class BetterCameraSwitcher : MonoBehaviour
     float untilSwitchAgain;
     public float SwitchCooldown = 2;
 
-    public Collider CurrentlyStayed;
+    public Collider CurrentlyStayed1;
+    public Collider CurrentlyStayed2;
     public void RequestSwitchTo(Collider triggered)
     {
-        CurrentlyStayed = triggered;
+        if (Current == Player.First)
+            CurrentlyStayed1 = triggered;
+        else
+            CurrentlyStayed2 = triggered;
         //Cooldown
         if (Time.realtimeSinceStartup < untilSwitchAgain)
             return;
