@@ -1,15 +1,69 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.Events;
 
 public class DoorTrigger : MonoBehaviour
 {
+    public LockCondition DoorStatus = LockCondition.Unlocked;
+
+    public TMPro.TMP_Text TextToShow;
+
+    private void OnEnable()
+    {
+        if (DoorStatus == LockCondition.LockedNeedCondition)
+            ObjectiveInfo.OnObjectiveFinished += UnlockDoor;
+        if (DoorStatus == LockCondition.LockedBlocked)
+            PlayerInput.OnPlayerInteracted += InteractClearBlockage;
+    }
+
+    private void OnDisable()
+    {
+        if (DoorStatus == LockCondition.LockedNeedCondition)
+            ObjectiveInfo.OnObjectiveFinished -= UnlockDoor;
+        if (DoorStatus == LockCondition.LockedBlocked)
+            PlayerInput.OnPlayerInteracted -= InteractClearBlockage;
+    }
+
+    #region Conditional
+    public int WantedQuestID;
+    #endregion
+
+    #region Blockage
+    public bool Interactable;
+    public GameObject Blockage;
+    public UnityEvent InteractedClear;
+    private void InteractClearBlockage()
+    {
+        if (!Interactable)
+            return;
+        if (IsCleared)
+            return;
+        InteractedClear?.Invoke();
+        PlayerInput.OnPlayerInteracted -= InteractClearBlockage;
+        DoorStatus = LockCondition.Unlocked;
+    }
+
+    #endregion
+
+    private void UnlockDoor(ObjectiveInfo sender, int id)
+    {
+        Debug.Log($"Request unlock door as quest {id} has finished." +
+            $"\r\nUnlock {(WantedQuestID == id ? "allowed" : "disallowed")}." +
+            $"\r\nWaiting for quest ID {WantedQuestID}. Finished quest ID is {id}");
+        if (WantedQuestID == id)
+        {
+            DoorStatus = LockCondition.Unlocked;
+        }
+    }
+
     public UnityEvent TriggerEntering;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "Player")
             return;
+        Interactable = true;
         TriggerEntering?.Invoke();
     }
 
@@ -18,6 +72,7 @@ public class DoorTrigger : MonoBehaviour
     {
         if (other.tag != "Player")
             return;
+        Interactable = false;
         TriggerExiting?.Invoke();
     }
 
@@ -44,14 +99,35 @@ public class DoorTrigger : MonoBehaviour
         DoorAnimator.SetBool("Open", false);
     }
 
+    public bool IsCleared;
     public virtual bool IsLocked()
     {
+        if (DoorStatus == LockCondition.LockedNeedCondition)
+        {
+            TextToShow.DOFade(1, 1);
+            Invoke(nameof(HideText), 5f);
+        }
+        if (DoorStatus == LockCondition.LockedBlocked)
+        {
+            if (Blockage != null)
+            {
+                if (IsCleared)
+                    return false;
+                TextToShow.DOFade(1, 1);
+                Invoke(nameof(HideText), 4f);
+                return true;
+            }
+        }
         if (DoorStatus != LockCondition.Unlocked)
             return true;
         return false;
     }
 
-    public LockCondition DoorStatus = LockCondition.Unlocked;
+    void HideText()
+    {
+        TextToShow.DOFade(0, 1);
+    }
+
 }
 
 public enum LockCondition

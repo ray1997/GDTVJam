@@ -40,10 +40,15 @@ public class TutorialAInteract : MonoBehaviour
 
     public Transform ShowText;
     public TMP_Text UIText;
+    bool register;
     public void ShowTutorialText()
     {
         //While in this timeframe, if player is interact immediately destroy itself
-        PlayerInput.OnPlayerInteracted += PlayerDidInteract;
+        if (!register)
+        {
+            PlayerInput.OnPlayerInteracted += PlayerDidInteract;
+            register = true;
+        }
         if (WasSeenTutorialA && !TestTutorialDisplay)
             return;
         if (ShowText != null)
@@ -54,15 +59,22 @@ public class TutorialAInteract : MonoBehaviour
             DOTween.Play(UIText);
         }
         WasSeenTutorialA = true;
-        Invoke(nameof(SelfDestruct), 4f);
+        StartCoroutine(SelfDestruct());
     }
 
     private void PlayerDidInteract()
     {
-        SelfDestruct();
+        StopAllCoroutines();
+        DestroyAll();
     }
 
-    public void SelfDestruct()
+    public IEnumerator SelfDestruct()
+    {
+        yield return new WaitForSeconds(4f);
+        DestroyAll();
+    }
+
+    public void DestroyAll()
     {
         PlayerInput.OnPlayerInteracted -= PlayerDidInteract;
         Destroy(gameObject);

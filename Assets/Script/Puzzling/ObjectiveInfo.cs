@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable()]
 public class ObjectiveInfo
@@ -17,21 +18,14 @@ public class ObjectiveInfo
         get => _unlock;
         set
         {
-            if (value)
-            {
-                if (SubObjective?.Length > 0)
-                {
-                    foreach (var obj in SubObjective)
-                    {
-                        obj.IsUnlock = true;
-                    }
-                }
-            }
             _unlock = value; 
         }
     }
 
     public delegate void FinishObjective(ObjectiveInfo sender, int id);
+    /// <summary>
+    /// When quest finished
+    /// </summary>
     public static event FinishObjective OnObjectiveFinished;
 
     [SerializeField] bool _done;
@@ -42,34 +36,12 @@ public class ObjectiveInfo
         {
             if (value)
             {
-                if (!IsItAllDone())
-                    value = false;
+                Debug.Log($"Objective: [{ID}] {Name} completed");
+                OnObjectiveFinished?.Invoke(this, ID);
             }
-            Debug.Log($"Objective: [{ID}] {Name} completed");
             _done = value;
-            OnObjectiveFinished?.Invoke(this, ID);
         }
     }
 
-    public bool IsItAllDone()
-    {
-        if (SubObjective is null)
-            return true;
-        if (SubObjective != null || SubObjective?.Length > 0)
-        {
-            //Check this first then set value
-            foreach (ObjectiveInfo o in SubObjective)
-            {
-                if (!o.IsDone)
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
-    public ObjectiveInfo[] SubObjective;
-
-    public int[] Unlockable;
+    public List<int> Unlockable;
 }

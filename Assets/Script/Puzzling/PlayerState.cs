@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 public class PlayerState : MonoBehaviour
@@ -33,10 +34,16 @@ public class PlayerState : MonoBehaviour
             InventoryOfPlayer = Player.First;
         else
             InventoryOfPlayer = Player.Second;
-        PlayerInventory = new List<InGameItem>();
+        PlayerInventory = new ObservableCollection<InGameItem>();
+        PlayerInventory.CollectionChanged += ItemsUpdated;
         OnRequestAddingItem += PutOnInventory;
         Flashlight = transform.Find("FlashLight").gameObject;
         Flashlight.SetActive(HaveFlashlight);
+    }
+
+    private void ItemsUpdated(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+    {
+        InventoryScreen.ForceUpdateInventory();
     }
 
     private void PutOnInventory(InGameItem info, Player target)
@@ -49,5 +56,5 @@ public class PlayerState : MonoBehaviour
         PlayerInventory.Add(info);
     }
 
-    public List<InGameItem> PlayerInventory;
+    public ObservableCollection<InGameItem> PlayerInventory;
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -9,11 +10,6 @@ public class Objectives : MonoBehaviour
 
     public static Objectives Instance;
 
-    public delegate void TriggerQuestFinish(int id, Player forPlayer = Player.First);
-    public static event TriggerQuestFinish OnRequestFinished;
-
-    public static void RequestFinishQuest(int id, Player player) => OnRequestFinished?.Invoke(id, player);
-
     private void Start()
     {
         if (Instance is null)
@@ -21,41 +17,20 @@ public class Objectives : MonoBehaviour
         else
             Destroy(gameObject);
         PlayerState.OnRequestAddingItem += InventoryCheck;
-        ObjectiveInfo.OnObjectiveFinished += ConditionChecks;
-        Objectives.OnRequestFinished += SetAsFinish;
+        ObjectiveInfo.OnObjectiveFinished += UnlockableCheck;
     }
 
-    private void SetAsFinish(int id, Player forPlayer = Player.First)
+    private void UnlockableCheck(ObjectiveInfo sender, int id)
     {
-        foreach (var quest in ActiveObjectives)
+        if (sender.IsDone && sender.Unlockable?.Count > 0)
         {
-            if (quest.SubObjective.Length > 0)
+            //Unlock quests
+            foreach (var quest in ActiveObjectives)
             {
-                foreach (var sub in quest.SubObjective)
+                if (sender.Unlockable.Contains(quest.ID))
                 {
-                    if (sub.ID == id && (sub.AssignedPlayer == Player.Both || sub.AssignedPlayer == forPlayer))
-                    {
-                        sub.IsDone = true;
-                    }
+                    quest.IsUnlock = true;
                 }
-            }
-            if (quest.ID == id && (quest.AssignedPlayer == Player.Both || quest.AssignedPlayer == forPlayer))
-            {
-                quest.IsDone = true;
-            }
-        }
-    }
-
-    private void ConditionChecks(ObjectiveInfo sender, int id)
-    {
-        if (ActiveObjectives[0].IsDone == false)
-        {
-            if (ActiveObjectives[0].IsItAllDone())
-            {
-                ActiveObjectives[0].IsDone = true;
-                //Unlock next 2 quests
-                ActiveObjectives[1].IsUnlock = true;
-                ActiveObjectives[2].IsUnlock = true;
             }
         }
     }
@@ -64,15 +39,7 @@ public class Objectives : MonoBehaviour
     {
         if (info.ItemSepecification == Specific.UnlockFlashlight)
         {
-            //Unlock next objective?
-            if (Target == Player.First)
-            {
-                ActiveObjectives[0].SubObjective[0].IsDone = true;
-            }
-            else if (Target == Player.Second)
-            {
-                ActiveObjectives[0].SubObjective[1].IsDone = true;
-            }            
+
         }
     }
 
@@ -80,16 +47,6 @@ public class Objectives : MonoBehaviour
     {
         foreach (var quest in ActiveObjectives)
         {
-            if (quest.SubObjective != null)
-            {
-                foreach (var sub in quest.SubObjective)
-                {
-                    if (sub.ID == id)
-                    {
-                        return sub.IsDone;
-                    }
-                }
-            }
             if (quest.ID == id)
             {
                 return quest.IsDone;
@@ -101,21 +58,22 @@ public class Objectives : MonoBehaviour
     {
         foreach (var quest in ActiveObjectives)
         {
-            if (quest.SubObjective != null)
-            {
-                foreach (var sub in quest.SubObjective)
-                {
-                    if (sub.ID == id)
-                    {
-                        return sub.IsUnlock;
-                    }
-                }
-            }
             if (quest.ID == id)
             {
                 return quest.IsUnlock;
             }
         }
         return false;
+    }
+
+    public void MarkQuestAsFinish(int id)
+    {
+        Debug.Log("Try to mark quest ID " + id + "as finished");
+        var quest = ActiveObjectives.FirstOrDefault(q => q.ID == id);
+        Debug.Log($"Attempt {(quest is null ? "failed" : "working, found quest with that ID")}");
+        if (quest != null)
+        {
+            quest.IsDone = true;
+        }
     }
 }

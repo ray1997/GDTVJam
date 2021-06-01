@@ -4,9 +4,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class InventoryScreen : MonoBehaviour
 {
+    public delegate void RequestUpdateInventory();
+    public static event RequestUpdateInventory TakingRequestUpdateInventory;
+    public static void ForceUpdateInventory() => TakingRequestUpdateInventory?.Invoke();
+
+    public delegate void UpdateItemUsageLog(string message);
+    public static event UpdateItemUsageLog OnLogAdded;
+    public static void PrintLogText(string text) => OnLogAdded?.Invoke(text);
+
     public GameObject InventoryUI;
 
     public PlayerState Player1;
@@ -24,6 +33,12 @@ public class InventoryScreen : MonoBehaviour
         PlayerInput.OnRequestToggleInventory += ToggleInventory;
     }
 
+    public TMP_Text LogDisplay;
+    private void UpdateLogText(string message)
+    {
+        LogDisplay.text = message;
+    }
+
     private void OnDisable()
     {
         PlayerInput.OnRequestToggleInventory -= ToggleInventory;
@@ -38,15 +53,30 @@ public class InventoryScreen : MonoBehaviour
     private void ToggleInventory()
     {
         IsShowingInventory = !IsShowingInventory;
-        InventoryUI.SetActive(IsShowingInventory);
+        //Move UI out of screen
         if (IsShowingInventory)
+            InventoryUI.transform.DOLocalMove(Vector3.zero, 0.5f);
+        else
+            InventoryUI.transform.DOLocalMove(new Vector3(0, (Screen.height * 5) * - 1), 0.5f);
+        //
+        if (IsShowingInventory)
+        {
             UpdateInventory();
+            TakingRequestUpdateInventory += UpdateInventoryItems;
+            OnLogAdded += UpdateLogText;
+        }
+        else
+        {
+            TakingRequestUpdateInventory -= UpdateInventoryItems;
+            OnLogAdded -= UpdateLogText;
+        }
     }
 
     public Image P1Portrait;
     public TMP_Text P1Location;
 
     public Image P2Portrait;
+    public TMP_Text P2Location;
     public GameObject TaskTemplate;
     public GameObject ItemTemplate;
     private void UpdateInventory()
@@ -56,29 +86,22 @@ public class InventoryScreen : MonoBehaviour
         P1Portrait.sprite = Player1PortraitState[PlayerSwitch.CurrentPlayer == Player.First ? 1 : 0];
         P2Portrait.sprite = Player1PortraitState[PlayerSwitch.CurrentPlayer == Player.Second ? 1 : 0];
         //Location
-        P1Location.text = Helper.help.TranslateColliderToLocationName(CameraSwitch.CurrentlyStayed1.name);
+        P1Location.text = Helper.help.TranslateColliderToLocationName(CameraSwitch.CurrentlyStayed1);
+        P2Location.text = Helper.help.TranslateColliderToLocationName(CameraSwitch.CurrentlyStayed2);
         //Objective
         foreach (var quest in Quest.ActiveObjectives)
         {
-            if (quest.SubObjective.Length > 1)
-            {
-                foreach (var sub in quest.SubObjective)
-                {
-                    if (sub.IsDone)
-                        continue;
-                    if (!sub.IsUnlock)
-                        continue;
-                    PutATaskOntoMap(sub);
-                }
-                
-            }
             if (quest.IsDone)
                 continue;
             if (!quest.IsUnlock)
                 continue;
             PutATaskOntoMap(quest);
         }
-        //Items
+        UpdateInventoryItems();
+    }
+
+    public void UpdateInventoryItems()
+    {//Items
         //Player 1
         //Clear previous
         Helper.help.ChildObliterator(Player1Inventory);

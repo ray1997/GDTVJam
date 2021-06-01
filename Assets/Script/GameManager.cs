@@ -1,6 +1,8 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -40,10 +42,8 @@ public class GameManager : MonoBehaviour
 
     public void PickupFlashlightPlayer1(TriggerInteractForItem info)
     {
-        if (!info.Interactable) { Debug.Log("Can't pickup flashlight. It's not within interaction range"); return; }
-        if (!info.IsAllowToPickup) { Debug.LogError("Not allow to pickup, previous quest not complete"); return; }
         //Mark objective as complete
-        Objectives.RequestFinishQuest(info.ItemInfo.ForQuestID, info.Assigned);
+        Objectives.Instance.MarkQuestAsFinish(info.ItemInfo.ForQuestID);
         //Add item to inventory
         PlayerState.RequestAddItem(info.ItemInfo, info.Assigned);
         //Destroy pickup
@@ -52,10 +52,8 @@ public class GameManager : MonoBehaviour
 
     public void PickupFlashlightPlayer2(TriggerInteractForItem info)
     {
-        if (!info.Interactable) { Debug.Log("Can't pickup flashlight. It's not within interaction range"); return; }
-        if (!info.IsAllowToPickup) { Debug.LogError("Not allow to pickup, previous quest not complete"); return; }
         //Mark objective as complete
-        Objectives.RequestFinishQuest(info.ItemInfo.ForQuestID, info.Assigned);
+        Objectives.Instance.MarkQuestAsFinish(info.ItemInfo.ForQuestID);
         //Add item to inventory
         PlayerState.RequestAddItem(info.ItemInfo, info.Assigned);
         //Trigger post event
@@ -68,10 +66,8 @@ public class GameManager : MonoBehaviour
 
     public void PickupFoodElevatorSwitch(TriggerInteractForItem info)
     {
-        if (!info.Interactable) { Debug.Log("Can't pickup switch. It's not within interaction range"); return; }
-        if (!info.IsAllowToPickup) { Debug.LogError("Not allow to pickup, previous quest not complete"); return; }
         //Mark objective as complete
-        Objectives.RequestFinishQuest(info.ItemInfo.ForQuestID, info.Assigned);
+        Objectives.Instance.MarkQuestAsFinish(info.ItemInfo.ForQuestID);
         //Add item to inventory
         PlayerState.RequestAddItem(info.ItemInfo, info.Assigned);
         //Trigger post event
@@ -80,18 +76,15 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent PostP2PickupElevatorSwitch;
 
-    public void PickupPowerFuse(TriggerInteractForItem info)
+    public void PickupFuseP1(TriggerInteractForItem pick) 
     {
-        if (!info.Interactable) { Debug.Log("Can't pickup switch. It's not within interaction range"); return; }
-        if (!info.IsAllowToPickup) { Debug.LogError("Not allow to pickup, previous quest not complete"); return; }
-        //Mark objective as complete
-        Objectives.RequestFinishQuest(info.ItemInfo.ForQuestID, info.Assigned);
-        //Add item to inventory
-        PlayerState.RequestAddItem(info.ItemInfo, info.Assigned);
-        //Trigger post event
-        PostPickupPowerFuse?.Invoke();
+        Objectives.Instance.MarkQuestAsFinish(pick.ItemInfo.ForQuestID);
+
+        PlayerState.RequestAddItem(pick.ItemInfo, pick.Assigned);
+
+        PostP1PickupFuse?.Invoke();
     }
-    public UnityEvent PostPickupPowerFuse;
+    public UnityEvent PostP1PickupFuse;
 
     public TMPro.TMP_Text ElectricityBoxFailStatus;
     public int FuseQuestID;
@@ -101,7 +94,7 @@ public class GameManager : MonoBehaviour
             return;
         if (!Objectives.Instance.IsQuestFinish(FuseQuestID))
         {
-            ElectricityBoxFailStatus.text = "You don't have a fuse yet.";
+            ShowNotificationOnText("You don't have a fuse yet.", ElectricityBoxFailStatus);
             return;
         }
 
@@ -111,11 +104,20 @@ public class GameManager : MonoBehaviour
         {
             var fuse = Player1Inventory.PlayerInventory.First(i => i.ForQuestID == FuseQuestID);
             Player1Inventory.PlayerInventory.Remove(fuse);
-            ElectricityBoxFailStatus.text = "Fuse reinstalled";
+            InventoryScreen.PrintLogText("Fuse reinstalled");
             FuseReinstalled?.Invoke();
         }
     }
     public UnityEvent FuseReinstalled;
+
+    public void ShowNotificationOnText(string text, TMP_Text label)
+    {
+        if (label is null)
+            return;
+        label.text = text;
+        label.DOFade(1, 0.5f);
+        label.DOFade(0, 8f);
+    }
 
     public void FlipOnElectricity()
     {

@@ -56,8 +56,11 @@ public class Helper : MonoBehaviour
         item.DOLocalRotate(new Vector3(0, 0, 0), 1);
     }
 
-    public string TranslateColliderToLocationName(string input)
+    public string TranslateColliderToLocationName(Collider colInput)
     {
+        if (colInput is null)
+            return "Somewhere";
+        string input = colInput.name;
         if (input.StartsWith("Hall"))
             return "Hallway";
         if (input.StartsWith("Worker"))
@@ -70,7 +73,7 @@ public class Helper : MonoBehaviour
             return "Stairwell";
         if (char.IsDigit(input.Last()))
         {
-            input = input.Insert(input.IndexOf(input.Last()) - 1, " ");
+            input = input.Insert(input.IndexOf(input.Last()), " ");
             return input;
         }
         return input;

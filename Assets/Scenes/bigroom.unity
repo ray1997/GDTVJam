@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &9939396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5755087009775721449, guid: 9cbdd3931b314f844a9ec03d6c6ad688, type: 3}
-  m_PrefabInstance: {fileID: 438575373}
-  m_PrefabAsset: {fileID: 0}
 --- !u!54 &27109909
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -597,109 +592,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &90555674
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 90555675}
-  - component: {fileID: 90555678}
-  - component: {fileID: 90555677}
-  - component: {fileID: 90555676}
-  m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &90555675
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90555674}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.71}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 682572049}
-  - {fileID: 1497884347}
-  - {fileID: 651810473}
-  - {fileID: 1018017316}
-  m_Father: {fileID: 1351268571}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.91}
-  m_SizeDelta: {x: 2, y: 2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &90555676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90555674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &90555677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90555674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
---- !u!223 &90555678
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90555674}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 1679768952}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1001 &109285476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1273,90 +1165,6 @@ Transform:
   m_Father: {fileID: 886535121}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &159003199
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 159003200}
-  - component: {fileID: 159003202}
-  - component: {fileID: 159003201}
-  m_Layer: 0
-  m_Name: Lift_Swich_up (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &159003200
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159003199}
-  m_LocalRotation: {x: 0.51755726, y: -0.5053992, z: 0.49633223, w: 0.4799588}
-  m_LocalPosition: {x: 5.772, y: 10.1146, z: 11.3496}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1351268571}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 86.866, y: -211.563, z: -121.321}
---- !u!23 &159003201
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159003199}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &159003202
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159003199}
-  m_Mesh: {fileID: 0}
 --- !u!65 &161549390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1706,6 +1514,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4325449137885532111, guid: 7ae506e7ea6ddb64aae5e38c477a0bb9, type: 3}
   m_PrefabInstance: {fileID: 2083451545}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &274369270 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8635124220329814817, guid: 839c27f0cd10c3046b50dbe10ef00607, type: 3}
+  m_PrefabInstance: {fileID: 6844447464604445377}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &292813367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,19 +1640,7 @@ MonoBehaviour:
         m_MethodName: DestroyItem
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 9939396}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 296459681}
-        m_TargetAssemblyTypeName: Helper, Assembly-CSharp
-        m_MethodName: DestroyItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 682572048}
+          m_ObjectArgument: {fileID: 1351268570}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1854,38 +1655,14 @@ MonoBehaviour:
         m_MethodName: DestroyItem
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1018017315}
+          m_ObjectArgument: {fileID: 1327980015}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 296459681}
-        m_TargetAssemblyTypeName: Helper, Assembly-CSharp
-        m_MethodName: DestroyItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 159003199}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 296459681}
-        m_TargetAssemblyTypeName: Helper, Assembly-CSharp
-        m_MethodName: DestroyItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1345972501}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  PostPickupPowerFuse:
+  PostP1PickupFuse:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 296459681}
@@ -1900,7 +1677,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ElectricityBoxFailStatus: {fileID: 0}
+  ElectricityBoxFailStatus: {fileID: 890410270}
   FuseQuestID: -51
   FuseReinstalled:
     m_PersistentCalls:
@@ -1910,19 +1687,7 @@ MonoBehaviour:
         m_MethodName: DestroyItem
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 296459681}
-        m_TargetAssemblyTypeName: Helper, Assembly-CSharp
-        m_MethodName: DestroyItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 741612052}
+          m_ObjectArgument: {fileID: 300716192}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1968,61 +1733,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveObjectives:
-  - Name: Find flashlight
+  - Name: Find flashlight on a table
     ID: 42
-    AssignedPlayer: 2
-    Location: 5
+    AssignedPlayer: 0
+    Location: 3
     _unlock: 1
     _done: 0
-    SubObjective:
-    - Name: Get a flashlight on a table
-      ID: 86
-      AssignedPlayer: 0
-      Location: 3
-      _unlock: 1
-      _done: 0
-      SubObjective: []
-      Unlockable: 
-    - Name: Get a flashlight on a table
-      ID: 295
-      AssignedPlayer: 1
-      Location: 16
-      _unlock: 1
-      _done: 0
-      SubObjective: []
-      Unlockable: 
-    Unlockable: 7400000019000000
-  - Name: Fix food elevator to allow both of you send items
+    Unlockable: cdffffff
+  - Name: Find fuse to power house electricity
+    ID: -51
+    AssignedPlayer: 0
+    Location: 6
+    _unlock: 0
+    _done: 0
+    Unlockable: c9ffffff
+  - Name: Replace Circuit breaker fuse
+    ID: -55
+    AssignedPlayer: 0
+    Location: 0
+    _unlock: 0
+    _done: 0
+    Unlockable: a9ffffff
+  - Name: Turn on Circuit breaker
+    ID: -87
+    AssignedPlayer: 0
+    Location: 0
+    _unlock: 0
+    _done: 0
+    Unlockable: 
+  - Name: Find flashlight on a table
+    ID: 72
+    AssignedPlayer: 1
+    Location: 16
+    _unlock: 1
+    _done: 0
+    Unlockable: 19000000
+  - Name: Find elevator switch to activate food elevator
     ID: 25
     AssignedPlayer: 2
     Location: 17
     _unlock: 0
     _done: 0
-    SubObjective:
-    - Name: Find elevator button
-      ID: -50
-      AssignedPlayer: 1
-      Location: 16
-      _unlock: 0
-      _done: 0
-      SubObjective: []
-      Unlockable: 
-    Unlockable: 
-  - Name: Activate fusebox to restore electricity
-    ID: 116
-    AssignedPlayer: 0
-    Location: 0
-    _unlock: 0
-    _done: 0
-    SubObjective:
-    - Name: Find fuse to power house electricity
-      ID: -51
-      AssignedPlayer: 0
-      Location: 6
-      _unlock: 0
-      _done: 0
-      SubObjective: []
-      Unlockable: 
     Unlockable: 
   - Name: 
     ID: 0
@@ -2030,7 +1781,6 @@ MonoBehaviour:
     Location: 0
     _unlock: 0
     _done: 0
-    SubObjective: []
     Unlockable: 
 --- !u!1 &300716192
 GameObject:
@@ -2042,11 +1792,10 @@ GameObject:
   m_Component:
   - component: {fileID: 300716193}
   - component: {fileID: 300716194}
+  - component: {fileID: 300716198}
   - component: {fileID: 300716195}
-  - component: {fileID: 300716196}
-  - component: {fileID: 300716197}
   m_Layer: 0
-  m_Name: Player1TurnOnLight
+  m_Name: Player1InsertFuse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2064,8 +1813,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 741612053}
+  - {fileID: 1870360614}
   m_Father: {fileID: 1190513142}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &300716194
 BoxCollider:
@@ -2076,7 +1826,7 @@ BoxCollider:
   m_GameObject: {fileID: 300716192}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 2.057713, z: 1.0082083}
   m_Center: {x: 0, y: 0.5288565, z: 0.0041041374}
@@ -2087,53 +1837,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300716192}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dd799c8752e8bf4ab8fc21b33d03141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AutoDetectTrigger: 1
-  InspectCameraPosition: {fileID: 0}
-  RestorePosition: {fileID: 2968096877803835748}
-  InspectID: powerbox
-  InTableView: 0
-  InspectableItems:
-  - {fileID: 0}
-  MovingTime: 1
---- !u!114 &300716196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300716192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be53735a14195a1408c95bb7e861a735, type: 3}
+  m_Script: {fileID: 11500000, guid: 63b732ba27b34194eb358e752fdbcb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TriggerEntering:
+  AllowInteractWin: 0
+  WaitForQuestID: -55
+  InteractForQuestID: -87
+  PlayerInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 300716197}
-        m_TargetAssemblyTypeName: TriggerInteractForItem, Assembly-CSharp
-        m_MethodName: set_Interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  TriggerExiting:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 300716197}
-        m_TargetAssemblyTypeName: TriggerInteractForItem, Assembly-CSharp
-        m_MethodName: set_Interactable
-        m_Mode: 6
+      - m_Target: {fileID: 296459679}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: FlipOnElectricity
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2142,10 +1860,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  TriggerStay:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &300716197
+--- !u!114 &300716198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2154,29 +1869,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 300716192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca1849b7e21da214288c9dcb017ae74f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c2165cc1a3f7a14a830188df7f7ae41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemInfo: {fileID: 0}
-  Assigned: 0
-  WaitedQuestID: 0
-  _allowPickup: 1
-  _canInteract: 0
-  RequireClick: 0
-  PostPickup:
+  QuestID: -51
+  ItemUsed:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 296459679}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: set_GlobalElectricityStatus
-        m_Mode: 6
+        m_MethodName: InsertFuseToFusebox
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!65 &312696758
 BoxCollider:
@@ -2191,6 +1901,112 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.686158, y: 1.934268, z: 0.123592086}
   m_Center: {x: -0.34307885, y: -0.00000008940697, z: 0}
+--- !u!1 &350739076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 350739077}
+  - component: {fileID: 350739078}
+  - component: {fileID: 350739079}
+  m_Layer: 0
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &350739077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350739076}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.3271885, y: 2.568, z: 2.6064196}
+  m_LocalScale: {x: 0.3289597, y: 0.3289597, z: 0.3289597}
+  m_Children: []
+  m_Father: {fileID: 1495279596}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &350739078
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350739076}
+  m_Enabled: 0
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!114 &350739079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350739076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313ed42e2faa1024f929f32b6bbdedeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &362207643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,7 +2313,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 76252009ec98db840a68ac96ed05f5c3, type: 2}
     - target: {fileID: 4713764315611928527, guid: 9cbdd3931b314f844a9ec03d6c6ad688, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4713764315611928527, guid: 9cbdd3931b314f844a9ec03d6c6ad688, type: 3}
       propertyPath: m_LocalScale.x
@@ -3297,162 +3113,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &651810472
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 651810473}
-  - component: {fileID: 651810476}
-  - component: {fileID: 651810475}
-  - component: {fileID: 651810474}
-  m_Layer: 5
-  m_Name: Close
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &651810473
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651810472}
-  m_LocalRotation: {x: 0, y: -0.5961548, z: 0, w: 0.8028695}
-  m_LocalPosition: {x: 0, y: 0, z: -1.73}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 90555675}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -73.19, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.13, y: 0.653}
-  m_SizeDelta: {x: 0.15, y: 0.15}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &651810474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651810472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 651810475}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 651810472}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 296459681}
-        m_TargetAssemblyTypeName: Helper, Assembly-CSharp
-        m_MethodName: RotateItemYRemove90
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 978004164}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1497884346}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
---- !u!114 &651810475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651810472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e9b63bd959ea4f4ead0187d983b49f0, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &651810476
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651810472}
-  m_CullTransparentMesh: 1
 --- !u!1 &662236500
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,7 +3144,7 @@ Transform:
   - {fileID: 1885988687}
   - {fileID: 2104357119}
   m_Father: {fileID: 886535121}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &662236502
 MonoBehaviour:
@@ -3535,8 +3195,8 @@ MonoBehaviour:
   - {fileID: 8890848756866919050}
   - {fileID: 8890848756236745306}
   SwitchCooldown: 0.5
-  CurrentlyStayed1: {fileID: 0}
-  CurrentlyStayed2: {fileID: 0}
+  CurrentlyStayed1: {fileID: 444537164}
+  CurrentlyStayed2: {fileID: 154387507}
 --- !u!1 &662321472
 GameObject:
   m_ObjectHideFlags: 0
@@ -3615,138 +3275,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &682572048
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 682572049}
-  - component: {fileID: 682572053}
-  - component: {fileID: 682572052}
-  - component: {fileID: 682572051}
-  m_Layer: 5
-  m_Name: UnlockFlashlight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &682572049
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682572048}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -1.365}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 90555675}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.121, y: 0.964}
-  m_SizeDelta: {x: 0.20628, y: 0.15}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &682572051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682572048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 682572052}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 296459679}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: PickupFlashlightPlayer2
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1351268572}
-          m_ObjectArgumentAssemblyTypeName: TriggerInteractForItem, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &682572052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682572048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e9b63bd959ea4f4ead0187d983b49f0, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &682572053
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682572048}
-  m_CullTransparentMesh: 1
 --- !u!1 &688179794
 GameObject:
   m_ObjectHideFlags: 0
@@ -4438,11 +3966,145 @@ Transform:
   - {fileID: 1070279698}
   - {fileID: 1577418974}
   - {fileID: 119112545}
-  - {fileID: 1190513142}
   - {fileID: 662236501}
+  - {fileID: 1190513142}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &890410268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 890410269}
+  - component: {fileID: 890410271}
+  - component: {fileID: 890410270}
+  m_Layer: 5
+  m_Name: Notification
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &890410269
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890410268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0000010858774}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1870360614}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.0000038146973, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &890410270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890410268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Fuse busted
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 33554431
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.003921569}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 8
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 6
+  m_fontSizeMax: 8
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &890410271
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890410268}
+  m_CullTransparentMesh: 1
 --- !u!1 &891817341
 GameObject:
   m_ObjectHideFlags: 0
@@ -4469,7 +4131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891817341}
   m_LocalRotation: {x: 0.6501114, y: 0, z: 0, w: 0.75983894}
-  m_LocalPosition: {x: 0.062, y: 2.393, z: 0.121}
+  m_LocalPosition: {x: -0.117, y: 2.393, z: -0.009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1345972502}
@@ -4601,11 +4263,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.686158, y: 1.934268, z: 0.123592086}
   m_Center: {x: -0.343079, y: -0.00000008940697, z: 0}
---- !u!4 &978004164 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8430773872245438940, guid: 839c27f0cd10c3046b50dbe10ef00607, type: 3}
-  m_PrefabInstance: {fileID: 6844447464604445377}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &981934030
 GameObject:
   m_ObjectHideFlags: 0
@@ -4698,7 +4355,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Flashlight: {fileID: 0}
   _haveFlashlight: 0
-  PlayerInventory: []
 --- !u!1 &997933202
 GameObject:
   m_ObjectHideFlags: 0
@@ -4974,138 +4630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313ed42e2faa1024f929f32b6bbdedeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1018017315
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1018017316}
-  - component: {fileID: 1018017319}
-  - component: {fileID: 1018017318}
-  - component: {fileID: 1018017317}
-  m_Layer: 5
-  m_Name: PickSwitch
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1018017316
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018017315}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -1.2145}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 90555675}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.07484, y: 0.4404}
-  m_SizeDelta: {x: 0.20628, y: 0.15}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1018017317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018017315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1018017318}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 296459679}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: PickupFoodElevatorSwitch
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1351268576}
-          m_ObjectArgumentAssemblyTypeName: TriggerInteractForItem, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1018017318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018017315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e9b63bd959ea4f4ead0187d983b49f0, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1018017319
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018017315}
-  m_CullTransparentMesh: 1
 --- !u!1 &1048912011 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 297049484124125730, guid: a95610992cbddb7488871802c4575053, type: 3}
@@ -5645,11 +5169,12 @@ Transform:
   m_Children:
   - {fileID: 133913689}
   - {fileID: 1501021082}
-  - {fileID: 1351268571}
   - {fileID: 1642981784}
   - {fileID: 300716193}
+  - {fileID: 1351268571}
+  - {fileID: 1327980016}
   m_Father: {fileID: 886535121}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1198901342
 GameObject:
@@ -6027,6 +5552,84 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1327980015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1327980016}
+  - component: {fileID: 1327980017}
+  - component: {fileID: 1327980018}
+  m_Layer: 0
+  m_Name: Player2ElevatorSwitch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1327980016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327980015}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1969312561}
+  m_Father: {fileID: 1190513142}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1327980017
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327980015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6361837, y: 0.29880333, z: 1.5922527}
+  m_Center: {x: 10.334597, y: 5.0287113, z: -4.843611}
+--- !u!114 &1327980018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327980015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1849b7e21da214288c9dcb017ae74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Picked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 296459679}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PickupFoodElevatorSwitch
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1327980018}
+          m_ObjectArgumentAssemblyTypeName: TriggerInteractForItem, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ItemInfo: {fileID: 11400000, guid: 90d188b6eb3ab2c41895366f15ff8ac2, type: 2}
+  Assigned: 1
+  WaitedQuestID: 72
+  AllowPickup: 0
+  WithinInteractedZone: 0
 --- !u!65 &1335246121
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6082,9 +5685,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1351268571}
   - component: {fileID: 1351268573}
-  - component: {fileID: 1351268574}
-  - component: {fileID: 1351268575}
-  - component: {fileID: 1351268576}
   - component: {fileID: 1351268572}
   m_Layer: 0
   m_Name: Player2Flashlight
@@ -6105,12 +5705,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1345972502}
-  - {fileID: 159003200}
   - {fileID: 438575374}
-  - {fileID: 1975349353}
-  - {fileID: 90555675}
   m_Father: {fileID: 1190513142}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1351268572
 MonoBehaviour:
@@ -6124,15 +5721,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1849b7e21da214288c9dcb017ae74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Picked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 296459679}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PickupFlashlightPlayer2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1351268572}
+          m_ObjectArgumentAssemblyTypeName: TriggerInteractForItem, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ItemInfo: {fileID: 11400000, guid: 52c11d6d8b2d93b43bf8885f36c433a2, type: 2}
   Assigned: 1
   WaitedQuestID: 0
-  _allowPickup: 1
-  _canInteract: 0
-  RequireClick: 1
-  PostPickup:
-    m_PersistentCalls:
-      m_Calls: []
+  AllowPickup: 1
+  WithinInteractedZone: 0
 --- !u!65 &1351268573
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6146,92 +5754,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.96467686, y: 1.1807178, z: 1.178759}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1351268574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351268570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dd799c8752e8bf4ab8fc21b33d03141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AutoDetectTrigger: 0
-  InspectCameraPosition: {fileID: 1975349352}
-  RestorePosition: {fileID: 8890848756866919051}
-  InspectID: flashandbutton
-  InTableView: 0
-  InspectableItems:
-  - {fileID: 90555674}
-  MovingTime: 1
---- !u!114 &1351268575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351268570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be53735a14195a1408c95bb7e861a735, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TriggerEntering:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1351268574}
-        m_TargetAssemblyTypeName: Inspect, Assembly-CSharp
-        m_MethodName: set_Interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  TriggerExiting:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1351268574}
-        m_TargetAssemblyTypeName: Inspect, Assembly-CSharp
-        m_MethodName: set_Interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  TriggerStay:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1351268576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351268570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca1849b7e21da214288c9dcb017ae74f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemInfo: {fileID: 11400000, guid: 90d188b6eb3ab2c41895366f15ff8ac2, type: 2}
-  Assigned: 1
-  WaitedQuestID: 42
-  _allowPickup: 0
-  _canInteract: 1
-  RequireClick: 1
-  PostPickup:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!65 &1358093387
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6446,174 +5968,72 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!1 &1497884346
-GameObject:
+--- !u!1001 &1495279595
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 274369270}
+    m_Modifications:
+    - target: {fileID: 2647024841199707083, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_Name
+      value: LampTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402974834130466580, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402974834130466580, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.212
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402974834130466580, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.558
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402974834130466580, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.861
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402974834130466580, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402974834130466580, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402974834130466580, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402974834130466580, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402974834130466580, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402974834130466580, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402974834130466580, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5310318730256044558, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+--- !u!4 &1495279596 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3402974834130466580, guid: abaa4bedd7fcfe34ea12a7390807678b, type: 3}
+  m_PrefabInstance: {fileID: 1495279595}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1497884347}
-  - component: {fileID: 1497884350}
-  - component: {fileID: 1497884349}
-  - component: {fileID: 1497884348}
-  m_Layer: 5
-  m_Name: Open
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1497884347
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497884346}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.426}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 90555675}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1051, y: 0.653}
-  m_SizeDelta: {x: 0.15, y: 0.15}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1497884348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497884346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1497884349}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1497884346}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 296459681}
-        m_TargetAssemblyTypeName: Helper, Assembly-CSharp
-        m_MethodName: RotateItemYAdd90
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 978004164}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 651810472}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1018017315}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
---- !u!114 &1497884349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497884346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e9b63bd959ea4f4ead0187d983b49f0, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1497884350
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497884346}
-  m_CullTransparentMesh: 1
 --- !u!1 &1501021081
 GameObject:
   m_ObjectHideFlags: 0
@@ -6660,27 +6080,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1849b7e21da214288c9dcb017ae74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemInfo: {fileID: 11400000, guid: 52c11d6d8b2d93b43bf8885f36c433a2, type: 2}
-  Assigned: 0
-  WaitedQuestID: 0
-  _allowPickup: 1
-  _canInteract: 0
-  RequireClick: 0
-  PostPickup:
+  Picked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 296459681}
-        m_TargetAssemblyTypeName: Helper, Assembly-CSharp
-        m_MethodName: DestroyItem
+      - m_Target: {fileID: 296459679}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PickupFlashlightPlayer1
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1501021081}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 1501021083}
+          m_ObjectArgumentAssemblyTypeName: TriggerInteractForItem, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ItemInfo: {fileID: 11400000, guid: 5ff4fd465edccfe4d954f637840180dc, type: 2}
+  Assigned: 0
+  WaitedQuestID: 0
+  AllowPickup: 1
+  WithinInteractedZone: 0
 --- !u!65 &1501021084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7187,7 +6606,7 @@ Transform:
   m_Children:
   - {fileID: 733283749}
   m_Father: {fileID: 1190513142}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1642981786
 BoxCollider:
@@ -7214,18 +6633,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1849b7e21da214288c9dcb017ae74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemInfo: {fileID: 11400000, guid: d6fab10a033a72a4db29a1212fe271c0, type: 2}
-  Assigned: 0
-  WaitedQuestID: 42
-  _allowPickup: 0
-  _canInteract: 0
-  RequireClick: 0
-  PostPickup:
+  Picked:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 296459679}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: PickupPowerFuse
+        m_MethodName: PickupFuseP1
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1642981787}
@@ -7235,6 +6648,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ItemInfo: {fileID: 11400000, guid: d6fab10a033a72a4db29a1212fe271c0, type: 2}
+  Assigned: 0
+  WaitedQuestID: 42
+  AllowPickup: 0
+  WithinInteractedZone: 0
 --- !u!1 &1643602838
 GameObject:
   m_ObjectHideFlags: 0
@@ -11592,6 +11010,106 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1870360613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870360614}
+  - component: {fileID: 1870360617}
+  - component: {fileID: 1870360616}
+  - component: {fileID: 1870360615}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1870360614
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870360613}
+  m_LocalRotation: {x: 0, y: -0.7118421, z: 0, w: 0.7023395}
+  m_LocalPosition: {x: 0, y: 0, z: 0.104}
+  m_LocalScale: {x: 0.028549377, y: 0.028549377, z: 0.028549373}
+  m_Children:
+  - {fileID: 890410269}
+  m_Father: {fileID: 300716193}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -90.77, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.474, y: 1.758}
+  m_SizeDelta: {x: 45.564, y: 18.313}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1870360615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870360613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1870360616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870360613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!223 &1870360617
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870360613}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1885988686
 GameObject:
   m_ObjectHideFlags: 0
@@ -11854,7 +11372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313ed42e2faa1024f929f32b6bbdedeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1975349352
+--- !u!1 &1969312560
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11862,105 +11380,82 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1975349353}
-  - component: {fileID: 1975349355}
-  - component: {fileID: 1975349354}
+  - component: {fileID: 1969312561}
+  - component: {fileID: 1969312563}
+  - component: {fileID: 1969312562}
   m_Layer: 0
-  m_Name: InspectView
+  m_Name: Lift_Swich_up (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1975349353
+  m_IsActive: 1
+--- !u!4 &1969312561
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975349352}
-  m_LocalRotation: {x: 0.21723337, y: -0.0131771285, z: 0.0029330251, w: 0.9760264}
-  m_LocalPosition: {x: -0.08280754, y: 0.38644123, z: -0.78859305}
+  m_GameObject: {fileID: 1969312560}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 15.811, z: 1.235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1351268571}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1975349354
-MonoBehaviour:
+  m_Father: {fileID: 1327980016}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!23 &1969312562
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975349352}
+  m_GameObject: {fileID: 1969312560}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
---- !u!20 &1975349355
-Camera:
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c22ffb0fcd4b0bd4fb1d97d0db10a88a, type: 2}
+  - {fileID: 2100000, guid: 22eaf46bb553e0e4b85dea0380231c38, type: 2}
+  - {fileID: 2100000, guid: 94cea5523585f13409c7746e6d7b536f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1969312563
+MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975349352}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
+  m_GameObject: {fileID: 1969312560}
+  m_Mesh: {fileID: 4300000, guid: 2535219885cd4dd4aab1f6a460b42344, type: 2}
 --- !u!1001 &1975997659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14547,7 +14042,7 @@ GameObject:
   - component: {fileID: 7023437367177532894}
   - component: {fileID: 6349539330913826166}
   m_Layer: 0
-  m_Name: Balcony
+  m_Name: Bedroom1<>Office
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14564,7 +14059,7 @@ GameObject:
   - component: {fileID: 7023437367659649891}
   - component: {fileID: 6349539331528588235}
   m_Layer: 0
-  m_Name: Hall (1)
+  m_Name: Bedroom2<>Bathroom2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14581,7 +14076,7 @@ GameObject:
   - component: {fileID: 7023437367262370742}
   - component: {fileID: 6349539331397384990}
   m_Layer: 0
-  m_Name: Kitchen>Hall2 (1)
+  m_Name: Art<>Office
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14598,7 +14093,7 @@ GameObject:
   - component: {fileID: 7023437366692063593}
   - component: {fileID: 6349539330357037505}
   m_Layer: 0
-  m_Name: Bedroom (1)
+  m_Name: Bedroom2<>Gameroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14640,7 +14135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Flashlight: {fileID: 0}
   _haveFlashlight: 0
-  PlayerInventory: []
 --- !u!1 &1300849804481498975
 GameObject:
   m_ObjectHideFlags: 0
@@ -14717,6 +14211,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -14736,7 +14238,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 6349539331397384990}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &1449327924468603661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14840,6 +14342,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -14859,7 +14369,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 6349539331528588235}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &1449327924642692267
 Transform:
   m_ObjectHideFlags: 0
@@ -14949,6 +14459,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -14968,7 +14486,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 6349539331397384990}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &1449327924878466008
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14994,6 +14512,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -15013,7 +14539,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 6349539331528588235}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &1449327924878466010
 Transform:
   m_ObjectHideFlags: 0
@@ -15103,6 +14629,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -15122,7 +14656,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 6349539330913826166}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &1449327925105940725
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15166,6 +14700,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -15185,7 +14727,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 6349539330357037505}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &1449327925105940731
 Transform:
   m_ObjectHideFlags: 0
@@ -15212,6 +14754,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -15231,7 +14781,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 6349539330913826166}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &1449327925327549797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15289,6 +14839,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -15308,7 +14866,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 6349539330357037505}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &1449327925610270369
 Transform:
   m_ObjectHideFlags: 0
@@ -15390,9 +14948,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1449327925622907983}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450e0d6270194db41842d51b6ee1d992, type: 3}
+  m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 1
+  TextToShow: {fileID: 1643602840}
+  WantedQuestID: 72
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -15412,9 +14978,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 6349539330913826166}
-  DoorStatus: 1
-  TextToShow: {fileID: 1643602840}
-  WantedQuestID: 295
+  IsCleared: 0
 --- !u!1 &1449327925622907983
 GameObject:
   m_ObjectHideFlags: 0
@@ -15556,6 +15120,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -15575,7 +15147,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 6349539330357037505}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &1449327926188974080
 GameObject:
   m_ObjectHideFlags: 0
@@ -15621,6 +15193,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -15640,7 +15220,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 6349539331528588235}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &1449327926206147313
 Transform:
   m_ObjectHideFlags: 0
@@ -15712,6 +15292,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -15731,7 +15319,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 6349539331397384990}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &1449327926347311655
 GameObject:
   m_ObjectHideFlags: 0
@@ -17137,6 +16725,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3933124465034014969, guid: d81df41d098cceb498c2f1efe9a8d691, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0013580322
+      objectReference: {fileID: 0}
     - target: {fileID: 3933124465754161345, guid: d81df41d098cceb498c2f1efe9a8d691, type: 3}
       propertyPath: m_Name
       value: InventoryUI
@@ -18275,6 +17867,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -18294,7 +17894,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 2968096876387926635}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &2968096875960512944
 Transform:
   m_ObjectHideFlags: 0
@@ -18352,6 +17952,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -18371,7 +17979,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 2968096876659777962}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!20 &2968096876027904551
 Camera:
   m_ObjectHideFlags: 0
@@ -18459,6 +18067,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -18478,7 +18094,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 2968096876659777962}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &2968096876233921136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18536,6 +18152,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -18555,7 +18179,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 2968096876387926635}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!95 &2968096876387926635
 Animator:
   serializedVersion: 3
@@ -18708,6 +18332,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -18727,7 +18359,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 2968096876387926635}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!20 &2968096876498095506
 Camera:
   m_ObjectHideFlags: 0
@@ -18909,6 +18541,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 2
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -18928,7 +18568,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 2968096876659777962}
-  DoorStatus: 2
+  IsCleared: 0
 --- !u!20 &2968096876771727116
 Camera:
   m_ObjectHideFlags: 0
@@ -19138,6 +18778,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -19157,7 +18805,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 2968096877718693596}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &2968096876815742661
 GameObject:
   m_ObjectHideFlags: 0
@@ -19260,6 +18908,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -19279,7 +18935,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 2968096877822888040}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!114 &2968096876997776418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19292,6 +18948,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -19311,7 +18975,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 2968096877364903945}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!20 &2968096877118483466
 Camera:
   m_ObjectHideFlags: 0
@@ -19399,6 +19063,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -19418,7 +19090,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 2968096877822888040}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &2968096877135400976
 GameObject:
   m_ObjectHideFlags: 0
@@ -19476,6 +19148,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -19495,7 +19175,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 2968096877364903945}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &2968096877155905000
 Transform:
   m_ObjectHideFlags: 0
@@ -19659,6 +19339,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -19678,7 +19366,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 2968096877718693596}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!20 &2968096877257518118
 Camera:
   m_ObjectHideFlags: 0
@@ -19860,6 +19548,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -19879,7 +19575,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 2968096877364903945}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!20 &2968096877514823659
 Camera:
   m_ObjectHideFlags: 0
@@ -19967,6 +19663,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -19986,7 +19690,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 2968096877718693596}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!95 &2968096877718693596
 Animator:
   serializedVersion: 3
@@ -24815,6 +24519,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -24834,7 +24546,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099799305745680}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &5066377666266879235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24891,6 +24603,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -24910,7 +24630,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099797784776453}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377666293800511
 Transform:
   m_ObjectHideFlags: 0
@@ -25015,6 +24735,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -25034,7 +24762,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099799160433401}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377666500866672
 Transform:
   m_ObjectHideFlags: 0
@@ -25061,6 +24789,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -25080,7 +24816,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 742099799305745680}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &5066377666500866674
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25142,6 +24878,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -25161,7 +24905,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099797517526749}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377666561062887
 Transform:
   m_ObjectHideFlags: 0
@@ -25219,6 +24963,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -25238,7 +24990,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099797516462649}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377666562128643
 Transform:
   m_ObjectHideFlags: 0
@@ -25278,6 +25030,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -25297,7 +25057,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 742099799160433401}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377666615635353
 Transform:
   m_ObjectHideFlags: 0
@@ -25420,6 +25180,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -25439,7 +25207,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099798536913464}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &5066377666741752588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25496,6 +25264,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -25515,7 +25291,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 742099798821226471}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377666821652615
 Transform:
   m_ObjectHideFlags: 0
@@ -25607,6 +25383,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -25626,7 +25410,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099798280254904}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &5066377666871026828
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25665,6 +25449,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -25684,7 +25476,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099798821226471}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377667124553718
 Transform:
   m_ObjectHideFlags: 0
@@ -25840,6 +25632,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -25859,7 +25659,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099798090645316}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377667342681432
 Transform:
   m_ObjectHideFlags: 0
@@ -25886,6 +25686,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -25905,7 +25713,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 742099798536913464}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &5066377667342681434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25963,6 +25771,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -25982,7 +25798,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 742099798280254904}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &5066377667346068186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26039,6 +25855,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -26058,7 +25882,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099798821226471}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377667395393245
 Transform:
   m_ObjectHideFlags: 0
@@ -26135,6 +25959,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -26154,7 +25986,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099798090645316}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &5066377667467173719
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26243,32 +26075,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5066377667576603176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b483d27dfa726504b8908f1e941e94e9, type: 3}
+  m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TriggerEntering:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5066377667576603178}
-        m_TargetAssemblyTypeName: DoorTrigger, Assembly-CSharp
-        m_MethodName: OpenDoorOutward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  TriggerExiting:
-    m_PersistentCalls:
-      m_Calls: []
-  DoorAnimator: {fileID: 742099798536913464}
   DoorStatus: 3
+  TextToShow: {fileID: 7023687064193804944}
+  WantedQuestID: 0
+  Interactable: 0
   Blockage: {fileID: 8586651444356780771}
-  BlockageNotification: {fileID: 7023687064193804944}
-  _interactable: 0
   InteractedClear:
     m_PersistentCalls:
       m_Calls:
@@ -26332,6 +26146,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  TriggerEntering:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5066377667576603178}
+        m_TargetAssemblyTypeName: DoorTrigger, Assembly-CSharp
+        m_MethodName: OpenDoorOutward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  TriggerExiting:
+    m_PersistentCalls:
+      m_Calls: []
+  DoorAnimator: {fileID: 742099798536913464}
   IsCleared: 0
 --- !u!65 &5066377667576603179
 BoxCollider:
@@ -26390,6 +26223,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -26409,7 +26250,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099798280254904}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &5066377667648722347
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26500,6 +26341,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -26519,7 +26368,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 742099798090645316}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &5066377667701684262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26590,6 +26439,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -26609,7 +26466,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099797516462649}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377667891513036
 Transform:
   m_ObjectHideFlags: 0
@@ -26667,6 +26524,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -26686,7 +26551,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099797517526749}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377667902804624
 Transform:
   m_ObjectHideFlags: 0
@@ -26750,6 +26615,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -26769,7 +26642,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 742099797784776453}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377667924297829
 Transform:
   m_ObjectHideFlags: 0
@@ -26854,6 +26727,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -26873,7 +26754,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099799305745680}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377668159041300
 Transform:
   m_ObjectHideFlags: 0
@@ -26931,6 +26812,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -26950,7 +26839,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099797784776453}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!114 &5066377668192890200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26963,6 +26852,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -26982,7 +26879,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 742099797516462649}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377668192890201
 Transform:
   m_ObjectHideFlags: 0
@@ -27058,6 +26955,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -27077,7 +26982,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 742099797517526749}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377668193919421
 Transform:
   m_ObjectHideFlags: 0
@@ -27135,6 +27040,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -27154,7 +27067,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 742099799160433401}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &5066377668273601475
 Transform:
   m_ObjectHideFlags: 0
@@ -29011,7 +28924,7 @@ GameObject:
   - component: {fileID: 2526052767679013668}
   - component: {fileID: 1902785034273244044}
   m_Layer: 0
-  m_Name: LivingRoom
+  m_Name: Library<>Hall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29028,7 +28941,7 @@ GameObject:
   - component: {fileID: 2526052768264180179}
   - component: {fileID: 1902785035265143163}
   m_Layer: 0
-  m_Name: Garden>LivingRoom
+  m_Name: Fishtank<>Library
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29045,7 +28958,7 @@ GameObject:
   - component: {fileID: 2526052768412470842}
   - component: {fileID: 1902785035144081042}
   m_Layer: 0
-  m_Name: Bedroom>Toilet
+  m_Name: Bedroom1>Bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29062,7 +28975,7 @@ GameObject:
   - component: {fileID: 2526052766902456058}
   - component: {fileID: 1902785033432870482}
   m_Layer: 0
-  m_Name: Hall
+  m_Name: Fishtank<>Utility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29079,7 +28992,7 @@ GameObject:
   - component: {fileID: 2526052766903517726}
   - component: {fileID: 1902785033429738166}
   m_Layer: 0
-  m_Name: Stairwell>Dining
+  m_Name: Stairwell>Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29096,7 +29009,7 @@ GameObject:
   - component: {fileID: 2526052766634175430}
   - component: {fileID: 1902785033164311406}
   m_Layer: 0
-  m_Name: Bedroom
+  m_Name: Stairwell<>Bedroom2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29113,7 +29026,7 @@ GameObject:
   - component: {fileID: 2526052767333768071}
   - component: {fileID: 1902785034050173743}
   m_Layer: 0
-  m_Name: Stairwell
+  m_Name: Art<>Hall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29130,7 +29043,7 @@ GameObject:
   - component: {fileID: 2526052767146217851}
   - component: {fileID: 1902785033723949523}
   m_Layer: 0
-  m_Name: Security
+  m_Name: Hall<>Bedroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29416,6 +29329,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -29435,7 +29356,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 1902785035265143163}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &6227097953143109147
 Transform:
   m_ObjectHideFlags: 0
@@ -29507,6 +29428,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -29526,7 +29455,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785033432870482}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &6227097953199325035
 GameObject:
   m_ObjectHideFlags: 0
@@ -29584,6 +29513,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -29603,7 +29540,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785033429738166}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &6227097953202451343
 GameObject:
   m_ObjectHideFlags: 0
@@ -29694,6 +29631,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -29713,7 +29658,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 1902785035144081042}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &6227097953298901493
 GameObject:
   m_ObjectHideFlags: 0
@@ -29757,6 +29702,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -29776,7 +29729,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785035265143163}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &6227097953377898858
 Transform:
   m_ObjectHideFlags: 0
@@ -29835,6 +29788,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -29854,7 +29815,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785033164311406}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &6227097953467865687
 GameObject:
   m_ObjectHideFlags: 0
@@ -29931,6 +29892,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -29950,7 +29919,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785035144081042}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &6227097953534709377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30106,6 +30075,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -30125,7 +30102,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785034273244044}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &6227097953728193439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30151,6 +30128,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -30170,7 +30155,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785034050173743}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &6227097953799940629
 Transform:
   m_ObjectHideFlags: 0
@@ -30274,6 +30259,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 1
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -30293,7 +30286,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785033723949523}
-  DoorStatus: 1
+  IsCleared: 0
 --- !u!4 &6227097953983029481
 Transform:
   m_ObjectHideFlags: 0
@@ -30370,6 +30363,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -30389,7 +30390,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 1902785034273244044}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &6227097954030257390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30458,9 +30459,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6227097954260685251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450e0d6270194db41842d51b6ee1d992, type: 3}
+  m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 1
+  TextToShow: {fileID: 1643602840}
+  WantedQuestID: 72
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -30480,9 +30489,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785033723949523}
-  DoorStatus: 1
-  TextToShow: {fileID: 1643602840}
-  WantedQuestID: 295
+  IsCleared: 0
 --- !u!4 &6227097954260685250
 Transform:
   m_ObjectHideFlags: 0
@@ -30559,6 +30566,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -30578,7 +30593,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 1902785034050173743}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &6227097954344057935
 Transform:
   m_ObjectHideFlags: 0
@@ -30670,6 +30685,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -30689,7 +30712,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785034273244044}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &6227097954515849912
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30728,6 +30751,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -30747,7 +30778,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 1902785033723949523}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &6227097954563126963
 Transform:
   m_ObjectHideFlags: 0
@@ -30805,6 +30836,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -30824,7 +30863,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785034050173743}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &6227097954578324286
 Transform:
   m_ObjectHideFlags: 0
@@ -30869,6 +30908,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -30888,7 +30935,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785035265143163}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &6227097954731925569
 Transform:
   m_ObjectHideFlags: 0
@@ -30991,6 +31038,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -31010,7 +31065,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 1902785033429738166}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &6227097954808916272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31050,6 +31105,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -31069,7 +31132,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 1902785033432870482}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &6227097954808916277
 GameObject:
   m_ObjectHideFlags: 0
@@ -31100,6 +31163,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -31119,7 +31190,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785033164311406}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &6227097954843290493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31201,9 +31272,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6227097954843557803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450e0d6270194db41842d51b6ee1d992, type: 3}
+  m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 1
+  TextToShow: {fileID: 1643602840}
+  WantedQuestID: 72
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -31223,9 +31302,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785035144081042}
-  DoorStatus: 1
-  TextToShow: {fileID: 1643602840}
-  WantedQuestID: 295
+  IsCleared: 0
 --- !u!1 &6227097954843557803
 GameObject:
   m_ObjectHideFlags: 0
@@ -31301,6 +31378,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -31320,7 +31405,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 1902785033164311406}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &6227097955081918202
 GameObject:
   m_ObjectHideFlags: 0
@@ -31366,6 +31451,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -31385,7 +31478,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785033429738166}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &6227097955108438693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31443,6 +31536,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -31462,7 +31563,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 1902785033432870482}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &6227097955111571009
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33980,6 +34081,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 886535121}
     m_Modifications:
+    - target: {fileID: 4604399519928299477, guid: 839c27f0cd10c3046b50dbe10ef00607, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6844447466114755100, guid: 839c27f0cd10c3046b50dbe10ef00607, type: 3}
       propertyPath: m_Name
       value: DECORATION
@@ -37510,6 +37615,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -37529,7 +37642,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 3414559967809358166}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &7161251463047944303
 GameObject:
   m_ObjectHideFlags: 0
@@ -37638,6 +37751,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -37657,7 +37778,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 3414559967809358166}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!114 &7161251464953030980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37670,6 +37791,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -37689,7 +37818,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 3414559967809358166}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &7161251464953030981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38481,7 +38610,7 @@ GameObject:
   - component: {fileID: 1586585660689803774}
   - component: {fileID: 3414559967809358166}
   m_Layer: 0
-  m_Name: Dining
+  m_Name: Fishtank<>Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39192,9 +39321,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8812249146968818029}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450e0d6270194db41842d51b6ee1d992, type: 3}
+  m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 1
+  TextToShow: {fileID: 7730104316318008980}
+  WantedQuestID: 42
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -39214,9 +39351,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 2968096877822888040}
-  DoorStatus: 1
-  TextToShow: {fileID: 7730104316318008980}
-  WantedQuestID: 86
+  IsCleared: 0
 --- !u!65 &7730104316107609848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41632,6 +41767,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -41651,7 +41794,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 4559488965381606717}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &8306216053513493511
 Transform:
   m_ObjectHideFlags: 0
@@ -41769,6 +41912,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -41788,7 +41939,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 4559488965381606717}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &8306216055146154586
 GameObject:
   m_ObjectHideFlags: 0
@@ -41819,6 +41970,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -41838,7 +41997,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 4559488965381606717}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!4 &8306216055146154589
 Transform:
   m_ObjectHideFlags: 0
@@ -42934,6 +43093,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -42953,7 +43120,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 3793348187430074826}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &8694122546713848051
 GameObject:
   m_ObjectHideFlags: 0
@@ -43057,6 +43224,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls: []
@@ -43076,7 +43251,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   DoorAnimator: {fileID: 3793348187430074826}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!1 &8694122548304314029
 GameObject:
   m_ObjectHideFlags: 0
@@ -43107,6 +43282,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c223e8e2ebee75c468ce46ae9d7a9246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorStatus: 0
+  TextToShow: {fileID: 0}
+  WantedQuestID: 0
+  Interactable: 0
+  Blockage: {fileID: 0}
+  InteractedClear:
+    m_PersistentCalls:
+      m_Calls: []
   TriggerEntering:
     m_PersistentCalls:
       m_Calls:
@@ -43126,7 +43309,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DoorAnimator: {fileID: 3793348187430074826}
-  DoorStatus: 0
+  IsCleared: 0
 --- !u!65 &8694122548606704089
 BoxCollider:
   m_ObjectHideFlags: 0
