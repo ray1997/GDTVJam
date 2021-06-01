@@ -33,6 +33,14 @@ public class Helper : MonoBehaviour
         Destroy(item);
     }
 
+    public void ChildObliterator(Transform parent)
+    {
+        foreach (Transform t in parent)
+        {
+            Destroy(t.gameObject);
+        }
+    }
+
     public void MoveItemX(Transform item)
     {
         item.DOLocalMoveX(1.5f, 0.5f);

@@ -34,5 +34,5 @@ Material:
     - _VColBlendMode: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.48451683, g: 0.59529257, b: 0.8, a: 1}
+    - _Color: {r: 0.17464742, g: 0.23839758, b: 0.28744084, a: 1}
   m_BuildTextureStacks: []
