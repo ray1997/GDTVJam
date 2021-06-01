@@ -10,6 +10,7 @@ public class ObjectiveInfo
     public string Name;
     public int ID;
     public Player AssignedPlayer;
+    public TaskLocation Location;
     [SerializeField] bool _unlock;
     public bool IsUnlock
     {
