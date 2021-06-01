@@ -15,3 +15,4 @@ MonoBehaviour:
   Name: Fuse
   ItemSepecification: 0
   ForQuestID: -51
+  Icon: {fileID: 21300000, guid: ef447df456447d248878b2e56e03976e, type: 3}

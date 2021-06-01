@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: Flashlight
   ItemSepecification: 1
   ForQuestID: 0
-  Icon: {fileID: 21300000, guid: 9d40bf6c70d0dac4f8ea51b8e8d1f1c2, type: 3}
+  Icon: {fileID: 21300000, guid: 888b796c7eff9cd4594c411479e243dd, type: 3}
