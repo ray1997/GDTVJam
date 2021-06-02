@@ -10,6 +10,8 @@ public class LightStatusUpdate : MonoBehaviour
     {
         child = GetComponent<Light>();
         lampRender = GetComponent<MeshRenderer>();
+        if (lampRender is null)
+            transform.parent.Find("Lamp").GetComponent<MeshRenderer>();
         GameManager.ElectricityChanged += UpdateState;
     }
 

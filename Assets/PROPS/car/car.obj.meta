@@ -3,7 +3,42 @@ guid: 18e1763d99175234e92db88d6081a32c
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder01Mat
+    second: {fileID: 2100000, guid: 832b1fe195c9fcc4bbce2837632fb95f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder02Mat
+    second: {fileID: 2100000, guid: 552f1c652832a8f4b86bcfaba246ea1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder03Mat
+    second: {fileID: 2100000, guid: eb623657cdc7a13499a3ac649dc987b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder04Mat
+    second: {fileID: 2100000, guid: 14b164586177a8e448ad0a54dab42bbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder05Mat
+    second: {fileID: 2100000, guid: 862f8ff2ce1a2f542971ae6999cb3e02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder06Mat
+    second: {fileID: 2100000, guid: 03bb776ac8eb34c4a91df1b5d07ed028, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Line02Mat
+    second: {fileID: 2100000, guid: 108f68c9afa27eb40b4bcb7475713782, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
