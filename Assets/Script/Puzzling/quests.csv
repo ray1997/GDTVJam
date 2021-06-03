@@ -1,0 +1,39 @@
+﻿ID,Unlockable,Quest String,Name,Assign,Location,IsUnlock,IsDone
+203,301,P1FindFlashlight,Find flashlight on a table,Player1,Worker2,1,0
+301,399,P1FindFuse,Find fuse to power house electricity,Player1,Hall1STEnd,0,0
+399,375,P1ReplaceFuse,Replace Circuit breaker fuse,Player1,Power,0,0
+375,305,P1TurnOnCircuit,Turn on Circuit breaker,Player1,Power,0,0
+208,209,P2FindFlashlight,Find flashlight on a table,Player2,Bedroom1,1,0
+209,117,P2FindElevatorSwitch,Find elevator switch to activate food elevator,Player2,Bathroom1,0,0
+117,136,P2PutSwitchToElevator,Put a switch back into elevator,Player2,Office,0,0
+136,305,P2ActivateElevator,Activate elevator,Player2,Office,0,0
+305,411,P1FindBoltCutter,Find a Bolt cutter in Power room,Player1,Power,0,0
+411,361,P1SendBoltCutter2P2,Send it to Player2,Player1,Kitchen,0,0
+361,176,P2GetBoltCutterFromP1,Get a Bolt cutter from Player1,Player2,Office,0,0
+176,144,P2OpenArtRoomDoor,Open art room door,Player2,Office,0,0
+144,347,P2FindChemistryBook,Find a Chemistry book,Player2,Library,0,0
+347,51,P2SendChemistryBookToP1,Send it to Player1,Player2,Kitchen,0,0
+51,474,P1FindAPenAndPaper,Find a pen&paper,Player1,Worker1,0,0
+474,420:249:485:185:115:153,P1WriteDownChemListToP2,Write down a list of items and send it to Player 2,Player1,Kitchen,0,0
+179,0,P1FindChemForLockMelt1,Find chemical to make a lock melter,Player1,Kitchen,0,0
+420,0,P1FindChemForLockMelt2,Find chemical to make a lock melter,Player1,WorkerBathroom,0,0
+249,0,P1FindChemForLockMelt3,Find chemical to make a lock melter,Player1,Power,0,0
+485,153,P2FindChemForLockMelt1,Find chemical to make a lock melter,Player2,Art,0,0
+185,153,P2FindChemForLockMelt2,Find chemical to make a lock melter,Player2,Storage,0,0
+115,153,P2FindChemForLockMelt3,Find chemical to make a lock melter,Player2,Bathroom1,0,0
+153,325,P2SendChemicalsToP1,Send found chemical to Player1,Player2,Office,0,0
+325,64,P1MixLockMelter,Mix down a chemical to make a Lock meter,Player1,Kitchen,0,0
+64,90,P1DestroySecurityLock,Destroy Security room's lock,Player1,Hall1ST,0,0
+90,110,P1GetAxe,Get an axe,Player1,Security,0,0
+110,2,P2TakeAxe,Take an axe,Player2,Office,0,0
+2,273,P2AxedHallwayDoor,Axed a Hallway's door,Player2,Hall2ND,0,0
+273,455,P2InspectCar,Inspect a car,Player2,Garage,0,0
+455,75,P2GiveListOfWishlistToP1,Give a list of items to Player1,Player2,Garage,0,0
+75,95:326:439:412,P1TakeWishlistFromP2,Take a wishlist of items from Player2,Player1,Garage,0,0
+95,389,P1FindEquipmentToFixCar1,Find an equipment to fix a car (Wire),Player1,Power,0,0
+326,389,P1FindEquipmentToFixCar2,Find an equipment to fix a car (Screwdriver),Player1,Storage,0,0
+439,389,P2FindEquipmentToFixCar3,Find an equipment to fix a car,Player2,Garage,0,0
+412,389,P1GetACarKey,Get a car key,Player1,Gameroom,0,0
+389,228:303,P2FixCar,Fix a car,Player2,Garage,0,0
+228,0,P1GetOut,Get out,Player1,Garage,0,0
+303,0,P2GetOut,Get out,Player2,Garage,0,0

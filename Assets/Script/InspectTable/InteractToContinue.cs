@@ -31,12 +31,15 @@ public class InteractToContinue : MonoBehaviour
     }
 
     public bool AllowInteractWin;
-    public int WaitForQuestID;
+    public Quests WaitForQuestID;
     public int InteractForQuestID;
-    private void WaitForQuestFinished(ObjectiveInfo sender, int id)
+    private void WaitForQuestFinished(ObjectiveInfo sender, ObjectiveFinishedEventArgs args)
     {
-        if (WaitForQuestID == id)
+        if (WaitForQuestID == args.FinishedQuest)
+        {
+            Debug.Log($"Waiting for quest {WaitForQuestID} and it's now finished. {name} can now be interact to win");
             AllowInteractWin = true;
+        }
     }
 
     bool _interactable;
