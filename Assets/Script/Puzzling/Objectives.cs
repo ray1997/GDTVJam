@@ -7,12 +7,12 @@ using UnityEngine;
 
 public class Objectives : MonoBehaviour
 {
-    public ObservableCollection<ObjectiveInfo> ActiveObjectives;
+    public List<ObjectiveInfo> ActiveObjectives;
     public TextAsset QuestBase;
 
     private void Awake()
     {
-        ActiveObjectives = new ObservableCollection<ObjectiveInfo>();
+        ActiveObjectives = new List<ObjectiveInfo>();
         var infos = QuestBase.text.Split("\r\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
         foreach (var info in infos)
         {
@@ -24,7 +24,7 @@ public class Objectives : MonoBehaviour
                 ID = int.Parse(sub[0]),
                 Unlockable = ParseUnlockable(sub[1]),
                 Name = sub[3],
-                AssignedPlayer = ParseEnum<Player>(sub[4]),
+                AssignedPlayer = sub[4] == "Player1" ? Player.First : Player.Second,
                 Location = ParseEnum<TaskLocation>(sub[5]),
                 IsUnlock = sub[6] == "1",
                 IsDone = sub[7] == "1"
