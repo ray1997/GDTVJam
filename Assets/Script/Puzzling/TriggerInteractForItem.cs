@@ -32,16 +32,16 @@ public class TriggerInteractForItem : MonoBehaviour
         }
     }
 
-    private void QuestMonitoring(ObjectiveInfo sender, int id)
+    private void QuestMonitoring(ObjectiveInfo sender, ObjectiveFinishedEventArgs args)
     {
-        if (id == WaitedQuestID)
+        if (args.FinishedQuest == WaitedQuestID)
             AllowPickup = true;
     }
 
     public InGameItem ItemInfo;
     public Player Assigned;
 
-    public int WaitedQuestID;
+    public Quests WaitedQuestID;
     public bool AllowPickup;
     public bool WithinInteractedZone;
 

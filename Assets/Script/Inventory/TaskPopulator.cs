@@ -11,11 +11,11 @@ public class TaskPopulator : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public Image TaskBackgrond;
     public TMP_Text TaskLocation;
     public TMP_Text TaskName;
-    public int TaskID;
+    public Quests TaskID;
 
     public void Initialize(ObjectiveInfo task)
     {
-        TaskID = task.ID;
+        TaskID = (Quests)task.ID;
         //Location
         TaskLocation.text = TranslateComputerEnumToHumananeLocationName(task.Location);
         TaskName.text = task.Name;
@@ -23,9 +23,9 @@ public class TaskPopulator : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         ObjectiveInfo.OnObjectiveFinished += WhenFinished;
     }
 
-    private void WhenFinished(ObjectiveInfo sender, int id)
+    private void WhenFinished(ObjectiveInfo sender, ObjectiveFinishedEventArgs args)
     {
-        if (TaskID != id)
+        if (TaskID != args.FinishedQuest)
             return;
         ObjectiveInfo.OnObjectiveFinished -= WhenFinished;
         Destroy(gameObject);

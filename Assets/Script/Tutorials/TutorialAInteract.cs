@@ -38,7 +38,6 @@ public class TutorialAInteract : MonoBehaviour
 
     }
 
-    public Transform ShowText;
     public TMP_Text UIText;
     bool register;
     public void ShowTutorialText()
@@ -51,8 +50,6 @@ public class TutorialAInteract : MonoBehaviour
         }
         if (WasSeenTutorialA && !TestTutorialDisplay)
             return;
-        if (ShowText != null)
-            ShowText.gameObject.SetActive(true);
         if (UIText != null)
         {
             UIText.DOFade(1, 1);

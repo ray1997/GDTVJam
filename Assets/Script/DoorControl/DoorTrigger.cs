@@ -27,7 +27,7 @@ public class DoorTrigger : MonoBehaviour
     }
 
     #region Conditional
-    public int WantedQuestID;
+    public Quests WantedQuestID;
     #endregion
 
     #region Blockage
@@ -47,12 +47,12 @@ public class DoorTrigger : MonoBehaviour
 
     #endregion
 
-    private void UnlockDoor(ObjectiveInfo sender, int id)
+    private void UnlockDoor(ObjectiveInfo sender, ObjectiveFinishedEventArgs args)
     {
-        Debug.Log($"Request unlock door as quest {id} has finished." +
-            $"\r\nUnlock {(WantedQuestID == id ? "allowed" : "disallowed")}." +
-            $"\r\nWaiting for quest ID {WantedQuestID}. Finished quest ID is {id}");
-        if (WantedQuestID == id)
+        Debug.Log($"Request unlock door as quest [{(int)args.FinishedQuest}]{args.FinishedQuest} has finished." +
+            $"\r\nUnlock {(WantedQuestID == args.FinishedQuest ? "allowed" : "disallowed")}." +
+            $"\r\nWaiting for quest ID {WantedQuestID}. Finished quest ID is {args.FinishedQuest}");
+        if (WantedQuestID == args.FinishedQuest)
         {
             DoorStatus = LockCondition.Unlocked;
         }
