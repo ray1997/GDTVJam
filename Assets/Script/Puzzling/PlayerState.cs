@@ -24,8 +24,13 @@ public class PlayerState : MonoBehaviour
     public delegate void AddItem(InGameItem info, Player Target = Player.First);
     public static event AddItem OnRequestAddingItem;
 
+    public delegate void RemoveItem(InGameItem info, Player target);
+    public static event RemoveItem OnRequestRemovingItem;
+
     public static void RequestAddItem(InGameItem info) => OnRequestAddingItem?.Invoke(info);
     public static void RequestAddItem(InGameItem info, Player assigned) => OnRequestAddingItem?.Invoke(info, assigned);
+
+    public static void RequestRemoveItem(InGameItem info, Player assigned) => OnRequestRemovingItem?.Invoke(info, assigned);
 
     private void Awake()
     {
@@ -37,8 +42,17 @@ public class PlayerState : MonoBehaviour
         PlayerInventory = new ObservableCollection<InGameItem>();
         PlayerInventory.CollectionChanged += ItemsUpdated;
         OnRequestAddingItem += PutOnInventory;
+        OnRequestRemovingItem += TakeFromInventory;
         Flashlight = transform.Find("FlashLight").gameObject;
         Flashlight.SetActive(HaveFlashlight);
+    }
+
+    private void TakeFromInventory(InGameItem info, Player target)
+    {
+        Debug.Log($"Request removing item {info.Name} for player {target} (Current: {InventoryOfPlayer})");
+        if (InventoryOfPlayer != target)
+            return;
+        PlayerInventory.Remove(info);
     }
 
     private void ItemsUpdated(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)

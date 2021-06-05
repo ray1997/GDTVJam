@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     public Player ControlFor;
     public Player Current;
 
+
     //public delegate void RequestDisableControl();
     public delegate void RequestDisableControl(DisableType disable = DisableType.Everything);
 
@@ -87,7 +88,6 @@ public class PlayerControl : MonoBehaviour
                 break;
         }
     }
-
     void Update()
     {
         if (!GlobalControl)

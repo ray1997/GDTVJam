@@ -5,6 +5,24 @@ using UnityEngine.Events;
 
 public class RequireUseItem : MonoBehaviour
 {
+    private void OnEnable()
+    {
+        if (WaitForQuest)
+            ObjectiveInfo.OnObjectiveFinished += Finished;
+    }
+
+    private void OnDisable()
+    {
+        if (WaitForQuest)
+            ObjectiveInfo.OnObjectiveFinished -= Finished;
+    }
+
+    private void Finished(ObjectiveInfo sender, ObjectiveFinishedEventArgs args)
+    {
+        if (Waited == args.FinishedQuest)
+            Allow = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         ItemPopulator.OnItemAttempUsage += ListeningToItemUse;
@@ -15,15 +33,29 @@ public class RequireUseItem : MonoBehaviour
         ItemPopulator.OnItemAttempUsage -= ListeningToItemUse;
     }
 
-    public int QuestID;
+    public Quests Waited;
+    public bool WaitForQuest;
+    public bool Allow;
+
+    public Quests QuestID;
     public UnityEvent ItemUsed;
     private void ListeningToItemUse(InGameItem info)
     {
-        if (info.ForQuestID != QuestID)
+        if (WaitForQuest && !Allow)
+        {
+            Debug.Log($"Wait for quest {Waited} to finish");
+            return;
+        }
+        if (!info.ForQuests.Contains(QuestID))
         {
             Debug.Log("Wrong quest, mate");
             return;
         }
+        //Activate quest finish
+        Objectives.Instance.MarkQuestAsFinish(QuestID);
+        //Request remove item
+        PlayerState.RequestRemoveItem(info, PlayerSwitcher.Instance.CurrentPlayer);
+        //
         ItemUsed?.Invoke();
     }
 }

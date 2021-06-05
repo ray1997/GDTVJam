@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Doors : MonoBehaviour
@@ -19,6 +20,79 @@ public class Doors : MonoBehaviour
         {
             AddDoor(t);
         }
+    }
+
+    private void OnEnable()
+    {
+        ObjectiveInfo.OnObjectiveFinished += UnlockDoors;
+        ItemPopulator.OnItemAttempUsage += UseItem;
+    }
+
+    private void UseItem(InGameItem info)
+    {
+        if (info.Unlock?.Count > 0)
+        {
+            Debug.Log("Try to unlock door with key");
+            foreach (var unlockable in info.Unlock)
+            {
+                var door = DoorsInfo.FirstOrDefault(door => door.DoorName == unlockable);
+                if (door is null)
+                    continue;
+                if (!DoorsInfo[DoorsInfo.IndexOf(door)].InteractableZone)
+                    continue;
+                DoorsInfo[DoorsInfo.IndexOf(door)].IsLocked = false;
+                Debug.Log($"Unlock {door.DoorName} via an item");
+            }
+        }
+    }
+
+    private void UnlockDoors(ObjectiveInfo sender, ObjectiveFinishedEventArgs args)
+    {
+        switch (args.FinishedQuest)
+        {
+            case Quests.P1FindFlashlight: //Player 1 pickup flashlight
+                UnlockDoors(DoorIdentity.WORKER1,
+                    DoorIdentity.WORKER2,
+                    DoorIdentity.WORKERB,
+                    DoorIdentity.POWER,
+                    DoorIdentity.HALL1A,
+                    DoorIdentity.HALL1B);
+                break;
+            case Quests.P2FindFlashlight:
+                UnlockDoors(DoorIdentity.BATH1, DoorIdentity.OFFICE);
+                break;
+            case Quests.P2OpenArtRoomDoor:
+                UnlockDoors(DoorIdentity.ART, DoorIdentity.TANKA2, DoorIdentity.TANKB2, DoorIdentity.STORAGE);
+                break;
+            case Quests.P1DestroySecurityLock:
+                UnlockDoors(DoorIdentity.SECURITY);
+                break;
+            case Quests.P2AxedHallwayDoor:
+                UnlockDoors(DoorIdentity.STAIRWELLB2, DoorIdentity.GARAGE);
+                break;
+        }
+    }
+
+    public bool UnlockDoor(DoorIdentity name)
+    {
+        var door = DoorsInfo.IndexOf(DoorsInfo.FirstOrDefault(d => d.DoorName == name));
+        if (door < 0)
+            return false;
+        DoorsInfo[door].IsLocked = false;
+        return true;
+    }
+
+    public bool UnlockDoors(params DoorIdentity[] doors)
+    {
+        if (doors == null)
+            return false;
+        if (doors.Length < 1)
+            return false;
+        foreach (var door in doors)
+        {
+            UnlockDoor(door);
+        }
+        return true;
     }
 
     public void AddDoor(Transform t)
@@ -42,7 +116,8 @@ public class Doors : MonoBehaviour
             tout.TriggerEntering.AddListener(delegate { OpenOutward(t.name); });
             var tleft = big.Find("Left").gameObject.AddComponent<TriggerEvents>();
             tleft.Initialize();
-            tleft.TriggerExiting.AddListener(delegate { CloseDoor(t.name); });
+            tleft.TriggerEntering.AddListener(delegate { EnterInteractZone(t.name); });
+            tleft.TriggerExiting.AddListener(delegate { CloseDoor(t.name); LeftInteractZone(t.name); });
             DoorsInfo.Add(new DoorInfo()
             {
                 Door = t,
@@ -51,7 +126,7 @@ public class Doors : MonoBehaviour
                 DoorOut = tout,
                 DoorLeft = tleft,
                 DoorName = (DoorIdentity)System.Enum.Parse(typeof(DoorIdentity),t.name),
-                IsLocked = false
+                IsLocked = true
             });
         }
         if (small != null)
@@ -64,7 +139,8 @@ public class Doors : MonoBehaviour
             tout.TriggerEntering.AddListener(delegate { OpenOutward(t.name); });
             var tleft = small.Find("Left").gameObject.AddComponent<TriggerEvents>();
             tleft.Initialize();
-            tleft.TriggerExiting.AddListener(delegate { CloseDoor(t.name); });
+            tleft.TriggerEntering.AddListener(delegate { EnterInteractZone(t.name); });
+            tleft.TriggerExiting.AddListener(delegate { CloseDoor(t.name); LeftInteractZone(t.name); });
             DoorsInfo.Add(new DoorInfo()
             {
                 Door = t,
@@ -73,9 +149,31 @@ public class Doors : MonoBehaviour
                 DoorOut = tout,
                 DoorLeft = tleft,
                 DoorName = (DoorIdentity)System.Enum.Parse(typeof(DoorIdentity), t.name),
-                IsLocked = false
+                IsLocked = true
             });
         }
+    }
+
+    public void EnterInteractZone(string name)
+    {
+        var door = DoorsInfo.Find(d => d.DoorName.ToString() == name);
+        if (door is null)
+        {
+            Debug.LogError("Unable to find a door " + name);
+            return;
+        }
+        door.InteractableZone = true;
+    }
+
+    public void LeftInteractZone(string name)
+    {
+        var door = DoorsInfo.Find(d => d.DoorName.ToString() == name);
+        if (door is null)
+        {
+            Debug.LogError("Unable to find a door " + name);
+            return;
+        }
+        door.InteractableZone = false;
     }
 
     public void OpenInward(string name)
@@ -142,10 +240,12 @@ public class DoorInfo
     public TriggerEvents DoorOut;
     public TriggerEvents DoorLeft;
 
+    public bool InteractableZone;
+
     public DoorInfo()
     {
-
     }
+
 }
 
 public enum DoorIdentity

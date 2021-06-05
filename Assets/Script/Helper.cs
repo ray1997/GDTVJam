@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System.Linq;
+using TMPro;
 
 public class Helper : MonoBehaviour
 {
@@ -56,6 +57,11 @@ public class Helper : MonoBehaviour
         item.DOLocalRotate(new Vector3(0, 0, 0), 1);
     }
 
+    public void RotateElectricalBoxHandle(Transform item)
+    {
+        item.DOLocalRotate(new Vector3(45, 0, 0), 1);
+    }
+
     public string TranslateColliderToLocationName(Collider colInput)
     {
         if (colInput is null)
@@ -77,5 +83,15 @@ public class Helper : MonoBehaviour
             return input;
         }
         return input;
+    }
+
+    public void DoFadeInText(TMP_Text text)
+    {
+        text.DOFade(1, 1);
+    }
+
+    public void DoFadeOutText(TMP_Text text)
+    {
+        text.DOFade(0, 1);
     }
 }

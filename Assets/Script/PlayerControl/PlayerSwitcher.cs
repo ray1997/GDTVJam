@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PlayerSwitcher : MonoBehaviour
 {
+    public static PlayerSwitcher Instance;
+    private void Awake()
+    {
+        if (Instance is null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
+
     private void Start()
     {
         PlayerControl.OnRequestDisableControl += DisablePlayerSwitcher;

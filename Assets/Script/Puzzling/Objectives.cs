@@ -116,6 +116,8 @@ public class Objectives : MonoBehaviour
             ActiveObjectives[quest].IsDone = true;
         }
     }
+
+    public void MarkQuestAsFinish(Quests id) => MarkQuestAsFinish((int)id);
 }
 
 public enum Quests

@@ -32,7 +32,7 @@ public class InteractToContinue : MonoBehaviour
 
     public bool AllowInteractWin;
     public Quests WaitForQuestID;
-    public int InteractForQuestID;
+    public Quests InteractForQuestID;
     private void WaitForQuestFinished(ObjectiveInfo sender, ObjectiveFinishedEventArgs args)
     {
         if (WaitForQuestID == args.FinishedQuest)

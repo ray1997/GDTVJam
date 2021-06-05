@@ -13,6 +13,7 @@ public class LightStatusUpdate : MonoBehaviour
         if (lampRender is null)
             transform.parent.Find("Lamp").GetComponent<MeshRenderer>();
         GameManager.ElectricityChanged += UpdateState;
+        child.enabled = GameManager.Instance.GlobalElectricityStatus;
     }
 
     private void UpdateState(bool status)
