@@ -5,6 +5,13 @@ using UnityEngine.Events;
 
 public class TriggerEvents : MonoBehaviour
 {
+    public void Initialize()
+    {
+        TriggerEntering = new UnityEvent();
+        TriggerExiting = new UnityEvent();
+        TriggerStay = new UnityEvent();
+    }
+
     public UnityEvent TriggerEntering;
     private void OnTriggerEnter(Collider other)
     {
