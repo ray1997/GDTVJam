@@ -5,14 +5,15 @@ using UnityEngine;
 public class LightStatusUpdate : MonoBehaviour
 {
     Light child;
-    MeshRenderer lampRender;
+    public MeshRenderer correspond_lampRender;
     private void Awake()
     {
         child = GetComponent<Light>();
-        lampRender = GetComponent<MeshRenderer>();
-        if (lampRender is null)
-            transform.parent.Find("Lamp").GetComponent<MeshRenderer>();
         GameManager.ElectricityChanged += UpdateState;
+    }
+
+    private void Start()
+    {
         child.enabled = GameManager.Instance.GlobalElectricityStatus;
     }
 
@@ -20,9 +21,15 @@ public class LightStatusUpdate : MonoBehaviour
     {
         if (child != null)
             child.enabled = status;
-        if (lampRender != null)
-            lampRender.material = status ?
-            GameManager.Instance.LampOn : GameManager.Instance.LampOff;
+        if (correspond_lampRender != null)
+        {
+            if (correspond_lampRender.materials.Length == 1) //One material lamp
+                correspond_lampRender.material = status ?
+                GameManager.Instance.LampOn : GameManager.Instance.LampOff;
+            else if (correspond_lampRender.materials.Length == 2)
+                correspond_lampRender.materials[1] = status ?
+                    GameManager.Instance.DeskLampOn : GameManager.Instance.DeskLampOff;
+        }
     }
 
     private void OnDestroy()

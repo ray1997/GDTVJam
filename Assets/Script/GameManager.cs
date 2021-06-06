@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public Material LampOn;
     public Material LampOff;
 
+    public Material DeskLampOn;
+    public Material DeskLampOff;
+
     public static GameManager Instance;
     private void Awake()
     {
