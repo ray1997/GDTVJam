@@ -20,10 +20,10 @@ public class TutorialBInventory : MonoBehaviour
         if (args.FinishedQuest == Quests.P1FindFuse)
             DisplayText.text = "You found a fuse!\r\nPress [Q] to open inventory\r\nThen use fuse it to replace the broken one";
         else if (args.FinishedQuest == Quests.P1ReplaceFuse)
-            DisplayText.text = "Now active the Circuit!";
+            DisplayText.text = "Before you activate the circuit, Go fix elevator first!\r\nPress [Space] to switch to your friend!";
         else if (args.FinishedQuest == Quests.P1TurnOnCircuit)
         {
-            DisplayText.text = "Now press [Space] to switch to your friend!";
+            DisplayText.text = "Lights on!";
             Invoke(nameof(DelayDisable), 5);
         }
     }

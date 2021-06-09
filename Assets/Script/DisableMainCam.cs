@@ -21,17 +21,7 @@ public class DisableMainCam : MonoBehaviour
         MainPlayer = player;
     }
 
-    private void OnEnable()
-    {
-        PlayerInput.OnRequestEnterDebugFPS += EnableDebugView;
-    }
-
-    private void OnDisable()
-    {
-        PlayerInput.OnRequestEnterDebugFPS -= EnableDebugView;
-    }
-
-    private void EnableDebugView()
+    public void EnableDebugView()
     {
         IsDebugging = !IsDebugging;
         if (IsDebugging)
