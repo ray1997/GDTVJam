@@ -8,6 +8,12 @@ public class PlayerInput : MonoBehaviour
     public delegate void PlayerMovementCanceled();
     public static event PlayerMovementCanceled OnPlayerMovementCanceled;
 
+    public delegate void PlayerStartRunning();
+    public static event PlayerStartRunning OnPlayerStartRunning;
+
+    public delegate void PlayerStopRunning();
+    public static event PlayerStopRunning OnPlayerStopRunning;
+
     public delegate void PlayerInteracted();
     public static event PlayerInteracted OnPlayerInteracted;
 
@@ -48,6 +54,8 @@ public class PlayerInput : MonoBehaviour
 
         inputManage.Player.Movement.performed += context => { if (OnPlayerMovementPerformed != null) OnPlayerMovementPerformed(context.ReadValue<Vector2>()); };
         inputManage.Player.Movement.canceled += context => { if (OnPlayerMovementCanceled != null) OnPlayerMovementCanceled(); };
+        inputManage.Player.Movement.performed += context => OnPlayerStartRunning?.Invoke();
+        inputManage.Player.Movement.canceled += context => OnPlayerStopRunning?.Invoke();
         inputManage.Player.Interact.performed += context => OnPlayerInteracted?.Invoke();
         inputManage.Player.Switch.performed += context => OnPlayerRequestSwitch?.Invoke();
         inputManage.Player.Look.performed += context => OnCameraMovementPerformed?.Invoke(context.ReadValue<Vector2>());
