@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Flashlight
   ItemSepecification: 1
-  ForQuestID: 203
+  ForQuests: cb000000
   Icon: {fileID: 21300000, guid: 888b796c7eff9cd4594c411479e243dd, type: 3}
+  Model: {fileID: 649317977884159364, guid: 33fb35707afb9874ea249a341f7d97d2, type: 3}
   Unlock: 
+  AllowSend: 0

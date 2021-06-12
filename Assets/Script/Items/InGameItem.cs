@@ -8,5 +8,7 @@ public class InGameItem : ScriptableObject
     public Specific ItemSepecification;
     public List<Quests> ForQuests;
     public Sprite Icon;
+    public GameObject Model;
     public List<DoorIdentity> Unlock;
+    public bool AllowSend = true;
 }

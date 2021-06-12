@@ -51,6 +51,14 @@ public class @MainInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""63986a99-f979-4b58-89d4-1f9f0ca37378"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""DEBUGFPS"",
                     ""type"": ""Button"",
                     ""id"": ""df0bb51f-97d9-4ca9-b532-c86861d2e642"",
@@ -59,9 +67,17 @@ public class @MainInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Inventory"",
+                    ""name"": ""DEBUGSKIPQUEST"",
                     ""type"": ""Button"",
-                    ""id"": ""63986a99-f979-4b58-89d4-1f9f0ca37378"",
+                    ""id"": ""648d2357-b274-48c1-985d-97234fbead50"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""DEBUGADDITEM"",
+                    ""type"": ""Button"",
+                    ""id"": ""6fe613f4-2bef-4fb4-8583-5ad52818d146"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -158,6 +174,17 @@ public class @MainInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""6a47f25b-02e2-4906-8780-9a7f3f3e65fd"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""ca81d9a0-722c-4666-bd48-b9ad50b6fb38"",
                     ""path"": ""<Keyboard>/f6"",
                     ""interactions"": """",
@@ -169,12 +196,23 @@ public class @MainInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""6a47f25b-02e2-4906-8780-9a7f3f3e65fd"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""id"": ""304713f4-a698-4008-813e-da174b5c1234"",
+                    ""path"": ""<Keyboard>/f7"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PC"",
-                    ""action"": ""Inventory"",
+                    ""action"": ""DEBUGSKIPQUEST"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c7fea41-401f-40a9-b636-303f4f05d9cf"",
+                    ""path"": ""<Keyboard>/f8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""DEBUGADDITEM"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -206,8 +244,10 @@ public class @MainInput : IInputActionCollection, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Switch = m_Player.FindAction("Switch", throwIfNotFound: true);
-        m_Player_DEBUGFPS = m_Player.FindAction("DEBUGFPS", throwIfNotFound: true);
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
+        m_Player_DEBUGFPS = m_Player.FindAction("DEBUGFPS", throwIfNotFound: true);
+        m_Player_DEBUGSKIPQUEST = m_Player.FindAction("DEBUGSKIPQUEST", throwIfNotFound: true);
+        m_Player_DEBUGADDITEM = m_Player.FindAction("DEBUGADDITEM", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -261,8 +301,10 @@ public class @MainInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Switch;
-    private readonly InputAction m_Player_DEBUGFPS;
     private readonly InputAction m_Player_Inventory;
+    private readonly InputAction m_Player_DEBUGFPS;
+    private readonly InputAction m_Player_DEBUGSKIPQUEST;
+    private readonly InputAction m_Player_DEBUGADDITEM;
     public struct PlayerActions
     {
         private @MainInput m_Wrapper;
@@ -271,8 +313,10 @@ public class @MainInput : IInputActionCollection, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Switch => m_Wrapper.m_Player_Switch;
-        public InputAction @DEBUGFPS => m_Wrapper.m_Player_DEBUGFPS;
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
+        public InputAction @DEBUGFPS => m_Wrapper.m_Player_DEBUGFPS;
+        public InputAction @DEBUGSKIPQUEST => m_Wrapper.m_Player_DEBUGSKIPQUEST;
+        public InputAction @DEBUGADDITEM => m_Wrapper.m_Player_DEBUGADDITEM;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -294,12 +338,18 @@ public class @MainInput : IInputActionCollection, IDisposable
                 @Switch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitch;
                 @Switch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitch;
                 @Switch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitch;
-                @DEBUGFPS.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
-                @DEBUGFPS.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
-                @DEBUGFPS.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
                 @Inventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
                 @Inventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
                 @Inventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
+                @DEBUGFPS.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
+                @DEBUGFPS.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
+                @DEBUGFPS.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGFPS;
+                @DEBUGSKIPQUEST.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGSKIPQUEST;
+                @DEBUGSKIPQUEST.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGSKIPQUEST;
+                @DEBUGSKIPQUEST.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGSKIPQUEST;
+                @DEBUGADDITEM.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGADDITEM;
+                @DEBUGADDITEM.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGADDITEM;
+                @DEBUGADDITEM.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUGADDITEM;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -316,12 +366,18 @@ public class @MainInput : IInputActionCollection, IDisposable
                 @Switch.started += instance.OnSwitch;
                 @Switch.performed += instance.OnSwitch;
                 @Switch.canceled += instance.OnSwitch;
-                @DEBUGFPS.started += instance.OnDEBUGFPS;
-                @DEBUGFPS.performed += instance.OnDEBUGFPS;
-                @DEBUGFPS.canceled += instance.OnDEBUGFPS;
                 @Inventory.started += instance.OnInventory;
                 @Inventory.performed += instance.OnInventory;
                 @Inventory.canceled += instance.OnInventory;
+                @DEBUGFPS.started += instance.OnDEBUGFPS;
+                @DEBUGFPS.performed += instance.OnDEBUGFPS;
+                @DEBUGFPS.canceled += instance.OnDEBUGFPS;
+                @DEBUGSKIPQUEST.started += instance.OnDEBUGSKIPQUEST;
+                @DEBUGSKIPQUEST.performed += instance.OnDEBUGSKIPQUEST;
+                @DEBUGSKIPQUEST.canceled += instance.OnDEBUGSKIPQUEST;
+                @DEBUGADDITEM.started += instance.OnDEBUGADDITEM;
+                @DEBUGADDITEM.performed += instance.OnDEBUGADDITEM;
+                @DEBUGADDITEM.canceled += instance.OnDEBUGADDITEM;
             }
         }
     }
@@ -341,7 +397,9 @@ public class @MainInput : IInputActionCollection, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnSwitch(InputAction.CallbackContext context);
-        void OnDEBUGFPS(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
+        void OnDEBUGFPS(InputAction.CallbackContext context);
+        void OnDEBUGSKIPQUEST(InputAction.CallbackContext context);
+        void OnDEBUGADDITEM(InputAction.CallbackContext context);
     }
 }

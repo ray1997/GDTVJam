@@ -101,7 +101,8 @@ public class InventoryScreen : MonoBehaviour
     }
 
     public void UpdateInventoryItems()
-    {//Items
+    {
+        //Items
         //Player 1
         //Clear previous
         Helper.help.ChildObliterator(Player1Inventory);
@@ -111,6 +112,9 @@ public class InventoryScreen : MonoBehaviour
             child.name = item.Name;
             child.SetActive(true);
             ItemPopulator info = child.GetComponent<ItemPopulator>();
+            info.CanSend = ElevatorControl.Instance.OverallCanUse
+                && ElevatorControl.Instance.WithinActiveZone
+                && ElevatorControl.Instance.ActivePlayer == ElevatorPlayer.Player1;
             info.Initialize(item);
         }
         //Player 2
@@ -122,6 +126,9 @@ public class InventoryScreen : MonoBehaviour
             child.name = item.Name;
             child.SetActive(true);
             ItemPopulator info = child.GetComponent<ItemPopulator>();
+            info.CanSend = ElevatorControl.Instance.OverallCanUse
+                 && ElevatorControl.Instance.WithinActiveZone
+                 && ElevatorControl.Instance.ActivePlayer == ElevatorPlayer.Player2;
             info.Initialize(item);
         }
     }

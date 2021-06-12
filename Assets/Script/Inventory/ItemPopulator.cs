@@ -32,6 +32,7 @@ public class ItemPopulator : MonoBehaviour
 
     public void OpenUseMenu()
     {
+        SendButton.SetActive(ItemInfo.AllowSend && CanSend);
         UseButtonMenu.SetActive(true);
         UseButton.Select();
     }
@@ -60,5 +61,12 @@ public class ItemPopulator : MonoBehaviour
     public void CloseUseMenu()
     {
         UseButtonMenu.SetActive(false);
+    }
+
+    public GameObject SendButton;
+    public bool CanSend;
+    public void SendItem()
+    {
+        ElevatorControl.Instance.PutInItem(ItemInfo);
     }
 }

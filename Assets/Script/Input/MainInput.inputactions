@@ -38,6 +38,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "63986a99-f979-4b58-89d4-1f9f0ca37378",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "DEBUGFPS",
                     "type": "Button",
                     "id": "df0bb51f-97d9-4ca9-b532-c86861d2e642",
@@ -46,9 +54,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Inventory",
+                    "name": "DEBUGSKIPQUEST",
                     "type": "Button",
-                    "id": "63986a99-f979-4b58-89d4-1f9f0ca37378",
+                    "id": "648d2357-b274-48c1-985d-97234fbead50",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "DEBUGADDITEM",
+                    "type": "Button",
+                    "id": "6fe613f4-2bef-4fb4-8583-5ad52818d146",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -145,6 +161,17 @@
                 },
                 {
                     "name": "",
+                    "id": "6a47f25b-02e2-4906-8780-9a7f3f3e65fd",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ca81d9a0-722c-4666-bd48-b9ad50b6fb38",
                     "path": "<Keyboard>/f6",
                     "interactions": "",
@@ -156,12 +183,23 @@
                 },
                 {
                     "name": "",
-                    "id": "6a47f25b-02e2-4906-8780-9a7f3f3e65fd",
-                    "path": "<Keyboard>/q",
+                    "id": "304713f4-a698-4008-813e-da174b5c1234",
+                    "path": "<Keyboard>/f7",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
-                    "action": "Inventory",
+                    "action": "DEBUGSKIPQUEST",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c7fea41-401f-40a9-b636-303f4f05d9cf",
+                    "path": "<Keyboard>/f8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "DEBUGADDITEM",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

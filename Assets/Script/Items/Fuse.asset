@@ -16,4 +16,6 @@ MonoBehaviour:
   ItemSepecification: 0
   ForQuests: 2d0100008f010000
   Icon: {fileID: 21300000, guid: ef447df456447d248878b2e56e03976e, type: 3}
+  Model: {fileID: 4639532849530898807, guid: 3da6ed38eac6ae64e80f88cceee6cbbc, type: 3}
   Unlock: 
+  AllowSend: 1

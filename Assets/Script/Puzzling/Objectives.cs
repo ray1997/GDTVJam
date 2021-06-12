@@ -73,12 +73,10 @@ public class Objectives : MonoBehaviour
             {
                 if (sender.Unlockable.Contains(quest.ID))
                 {
+                    Debug.Log($"Try to mark quest as finish found \r\n[{quest.ID}] {quest.Name}\r\nAnd now marked as finished");
                     quest.IsUnlock = true;
-                    Debug.Log($"Try to mark quest as finish found {quest.ID} and now marked as finished");
-                    return;
                 }
             }
-            Debug.Log($"Unable to find quest with the ID {(int)args.FinishedQuest}");
         }
     }
 
