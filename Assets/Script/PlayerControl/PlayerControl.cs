@@ -21,10 +21,11 @@ public class PlayerControl : MonoBehaviour
     public static event RequestRestoreControl OnRequestRestoreControl;
     public static void ForceTriggerRestorer() => OnRequestRestoreControl?.Invoke();
 
-    [SerializeField]
+    public float walkingSpeed = 1.5f;
+    public float runningSpeed = 4f;
+
     public float playerSpeed = 4.0f;
 
-    [SerializeField]
     public float rotationSpeed = 8.0f;
 
     private float gravityValue = -9.81f;

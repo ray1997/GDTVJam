@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1abb1d8010b293046ad1776f2304faab, type: 3}
-  m_Name: Fuse
+  m_Name: BoltCutter
   m_EditorClassIdentifier: 
-  Name: Fuse
+  Name: Bolt cutter
   ItemSepecification: 0
-  ForQuests: 2d0100008f010000
-  Icon: {fileID: 21300000, guid: ef447df456447d248878b2e56e03976e, type: 3}
-  Model: {fileID: 4639532849530898807, guid: 3da6ed38eac6ae64e80f88cceee6cbbc, type: 3}
-  Unlock: 
+  ForQuests: 310100009b01000069010000b0000000
+  Icon: {fileID: 21300000, guid: e2da7f8e219c20544bb2adbb034048c8, type: 3}
+  Model: {fileID: 9138148594389715949, guid: 4c05d70f5eddcff47a7d4d622ff0fff2, type: 3}
+  Unlock: 19000000
   AllowSend: 1

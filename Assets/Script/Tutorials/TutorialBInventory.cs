@@ -41,7 +41,12 @@ public class TutorialBInventory : MonoBehaviour
         //Check inventory for context
         var fuse = Player1Inv.PlayerInventory.FirstOrDefault(i => i.Name == "Fuse");
         if (fuse is null)
-            DisplayText.text = "It's appear that the fuse is busted.\r\nGo find a replacement fuse";
+        {
+            if (Objectives.Instance.IsQuestFinish((int)Quests.P1ReplaceFuse))
+                DisplayText.text = "Fuse replaced, ready to switch on!";
+            else
+                DisplayText.text = "It's appear that the fuse is busted.\r\nGo find a replacement fuse";
+        }
         else
             DisplayText.text = "You found a fuse!\r\nPress [Q] to open inventory\r\nThen use fuse it to replace the broken one";
         if (other.tag == "Player")

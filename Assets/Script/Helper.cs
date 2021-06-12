@@ -57,6 +57,11 @@ public class Helper : MonoBehaviour
         item.DOLocalRotate(new Vector3(0, 0, 0), 1);
     }
 
+    public void RotateItemYNegative90(Transform item)
+    {
+        item.DOLocalRotate(new Vector3(0, -90, 0), 1);
+    }
+
     public void RotateElectricalBoxHandle(Transform item)
     {
         item.DOLocalRotate(new Vector3(45, 0, 0), 1);

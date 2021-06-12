@@ -147,6 +147,7 @@ public class ElevatorControl : MonoBehaviour
     {
         //Add to inventory
         PlayerState.RequestAddItem(HoldingItem, PlayerSwitcher.Instance.CurrentPlayer);
+        OnElevatorItemChanged?.Invoke(this, new ElevatorItemUpdatedArgs(HoldingItem, UpdateType.ItemRemoved));
         //Remove model
         Destroy(HoldingModel);
         HoldingModel = null;
@@ -168,7 +169,11 @@ public class ElevatorControl : MonoBehaviour
         HoldingModel = model;
         //Set item holding info
         HoldingItem = item;
+        OnElevatorItemChanged?.Invoke(this, new ElevatorItemUpdatedArgs(item, UpdateType.ItemAdded));
     }
+
+    public delegate void ElevatorItemUpdate(ElevatorControl sender, ElevatorItemUpdatedArgs args);
+    public static event ElevatorItemUpdate OnElevatorItemChanged;
 
     public delegate void ElevatorGoUp();
     public static event ElevatorGoUp ElevatorGoingUpward;
@@ -193,6 +198,22 @@ public class ElevatorControl : MonoBehaviour
             return Floor.None;
         }
     }
+}
+
+public class ElevatorItemUpdatedArgs : System.EventArgs
+{
+    public UpdateType TriggerStatus { get; private set; }
+    public InGameItem TriggerItem { get; private set; }
+    public ElevatorItemUpdatedArgs(InGameItem item, UpdateType update)
+    {
+        TriggerStatus = update;
+        TriggerItem = item;
+    }
+}
+public enum UpdateType
+{
+    ItemAdded,
+    ItemRemoved
 }
 public enum Floor
 {

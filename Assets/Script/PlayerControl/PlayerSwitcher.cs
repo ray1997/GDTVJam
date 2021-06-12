@@ -71,12 +71,14 @@ public class PlayerSwitcher : MonoBehaviour
         CurrentPlayer++;
         if (CurrentPlayer > Player.Second)
             CurrentPlayer = Player.First;
-        Player1.GetComponent<PlayerControl>().playerSpeed = CurrentPlayer == Player.First ? 4 : 0;
-        Player1.GetComponent<PlayerControl>().rotationSpeed = CurrentPlayer == Player.First ? 8 : 0;
-        Player1.tag = CurrentPlayer == Player.First ? "Player" : "OtherPlayer";
-        Player2.GetComponent<PlayerControl>().playerSpeed = CurrentPlayer == Player.Second ? 4 : 0;
-        Player2.GetComponent<PlayerControl>().rotationSpeed = CurrentPlayer == Player.Second ? 8 : 0;
-        Player2.tag = CurrentPlayer == Player.Second ? "Player" : "OtherPlayer";
+        var p1 = Player1.GetComponent<PlayerControl>();
+        p1.playerSpeed = CurrentPlayer == Player.First ? p1.walkingSpeed : 0;
+        p1.rotationSpeed = CurrentPlayer == Player.First ? 8 : 0;
+        p1.tag = CurrentPlayer == Player.First ? "Player" : "OtherPlayer";
+        var p2 = Player2.GetComponent<PlayerControl>();
+        p2.playerSpeed = CurrentPlayer == Player.Second ? p2.walkingSpeed : 0;
+        p2.rotationSpeed = CurrentPlayer == Player.Second ? 8 : 0;
+        p2.tag = CurrentPlayer == Player.Second ? "Player" : "OtherPlayer";
         //Send current active player
         OnPlayerChanged?.Invoke(CurrentPlayer == Player.First ? Player1 : Player2, CurrentPlayer);
         //Move camera to previous player location

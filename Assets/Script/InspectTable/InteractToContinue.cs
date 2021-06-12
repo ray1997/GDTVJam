@@ -15,7 +15,6 @@ public class InteractToContinue : MonoBehaviour
     {
         PlayerInput.OnPlayerInteracted -= Interacted;
         ObjectiveInfo.OnObjectiveFinished -= WaitForQuestFinished;
-
     }
 
     private void OnTriggerEnter(Collider other)

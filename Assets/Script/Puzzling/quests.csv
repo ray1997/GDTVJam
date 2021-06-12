@@ -7,7 +7,7 @@
 209,117,P2FindElevatorSwitch,Find elevator switch to activate food elevator,Player2,Bathroom1,0,0
 117,136,P2PutSwitchToElevator,Put a switch back into elevator,Player2,Office,0,0
 136,305,P2ActivateElevator,Activate elevator,Player2,Office,0,0
-305,411,P1FindBoltCutter,Find a Bolt cutter in Power room,Player1,Power,0,0
+305,411:361,P1FindBoltCutter,Find a Bolt cutter in Power room,Player1,Power,0,0
 411,361,P1SendBoltCutter2P2,Send it to Player2,Player1,Kitchen,0,0
 361,176,P2GetBoltCutterFromP1,Get a Bolt cutter from Player1,Player2,Office,0,0
 176,144,P2OpenArtRoomDoor,Open art room door,Player2,Office,0,0
