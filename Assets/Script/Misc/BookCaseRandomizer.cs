@@ -1,16 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static BookDatabase;
 
 public class BookCaseRandomizer : MonoBehaviour
 {
-    public GameObject[] Books;
+    [SerializeField] MeshRenderer[] RowRender;
+    [SerializeField] MeshRenderer[] BookRender;
+
+    public bool[] Lock;
 
     private void OnEnable()
     {
-        foreach (var book in Books)
+        Invoke(nameof(Shuffle), Random.Range(2, 5));
+    }
+
+    public void Shuffle()
+    {
+        for (int i = 0; i < RowRender.Length; i++)
         {
-            book.SetActive(Random.value > 0.8f);
+            if (Lock != null)
+                if (Lock.Length > i)
+                    if (Lock[i])
+                        continue;
+            int random = Random.Range(0, Instance.BookCovers.Length);
+            RowRender[i].material = Instance.BookCovers[random];
+            BookRender[i].material = Instance.BookCovers[random];
         }
     }
 }
