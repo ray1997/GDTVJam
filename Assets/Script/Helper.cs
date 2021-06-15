@@ -99,4 +99,9 @@ public class Helper : MonoBehaviour
     {
         text.DOFade(0, 1);
     }
+
+    public void ShowToastMessage(string message)
+    {
+        ToastReceiver.ShowToastMessage(message);
+    }
 }

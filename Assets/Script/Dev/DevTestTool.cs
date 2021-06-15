@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DevTestTool : MonoBehaviour
 {
@@ -78,7 +79,16 @@ public class DevTestTool : MonoBehaviour
                 "skip [id]: Skip quest ID\r\n" +
                 "randitem: Add random item to inventory\r\n" +
                 "lift [second]: Change elevator travel time\r\n" +
-                "walk [speed]: Change both player walk speed";
+                "walk [speed]: Change both player walk speed\r\n" +
+                "exit: Exit the game";
+        }
+        else if (cmd.StartsWith("exit"))
+        {
+            Application.Quit();
+        }
+        else if (cmd.StartsWith("reset"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 #if UNITY_EDITOR
         else if (cmd.StartsWith("dev"))

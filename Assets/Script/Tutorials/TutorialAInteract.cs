@@ -38,7 +38,6 @@ public class TutorialAInteract : MonoBehaviour
 
     }
 
-    public TMP_Text UIText;
     bool register;
     public void ShowTutorialText()
     {
@@ -50,11 +49,8 @@ public class TutorialAInteract : MonoBehaviour
         }
         if (WasSeenTutorialA && !TestTutorialDisplay)
             return;
-        if (UIText != null)
-        {
-            UIText.DOFade(1, 1);
-            DOTween.Play(UIText);
-        }
+        //Show toast message
+        ToastReceiver.ShowToastMessage($"To interact with items press [E]\r\nIn this case, pick up Flashlight");
         WasSeenTutorialA = true;
         StartCoroutine(SelfDestruct());
     }

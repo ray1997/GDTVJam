@@ -5,12 +5,19 @@ using UnityEngine;
 
 public class Doors : MonoBehaviour
 {
+    public static Doors Instance;
+
     public Transform FirstFloorDoors;
     public Transform SecondFloorDoors;
     public List<DoorInfo> DoorsInfo;
 
     public void Awake()
     {
+        if (Instance is null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
         DoorsInfo = new List<DoorInfo>();
         foreach (Transform t in FirstFloorDoors)
         {
@@ -176,6 +183,18 @@ public class Doors : MonoBehaviour
         door.InteractableZone = false;
     }
 
+    public List<LockReason> LockedInfo;
+
+    public string GetLockInfo(string name)
+    {
+        var lockInfo = LockedInfo.FirstOrDefault(l => l.name == name);
+        if (!(lockInfo is null))
+        {
+            return lockInfo.DoorLockedReason;
+        }
+        return "It's locked";
+    }
+
     public void OpenInward(string name)
     {
         var door = DoorsInfo.Find(d => d.DoorName.ToString() == name);
@@ -204,7 +223,6 @@ public class Doors : MonoBehaviour
             Debug.LogError("Unable to find a door " + name);
             return;
         }
-
         if (door.IsLocked)
         {
             Debug.LogWarning($"Can't open door {name} it's locked");
@@ -240,7 +258,20 @@ public class DoorInfo
     public TriggerEvents DoorOut;
     public TriggerEvents DoorLeft;
 
-    public bool InteractableZone;
+    [SerializeField] bool _interact;
+    public bool InteractableZone
+    {
+        get => _interact;
+        set
+        {
+            if (!Equals(_interact, value))
+            {
+                _interact = value;
+                if (value && IsLocked)
+                    ToastReceiver.ShowToastMessage(Doors.Instance.GetLockInfo(DoorName.ToString()));
+            }
+        }
+    }
 
     public DoorInfo()
     {

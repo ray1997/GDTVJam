@@ -48,9 +48,12 @@ public class RequireUseItem : MonoBehaviour
         }
         if (!info.ForQuests.Contains(QuestID))
         {
+            ToastReceiver.ShowToastMessage($"You tried to use {info.Name}\r\nIt's not working");
             Debug.Log("Wrong quest, mate");
             return;
         }
+        else
+            ToastReceiver.ShowToastMessage($"You tried to use {info.Name}\r\nIt's work!");
         //Activate quest finish
         Objectives.Instance.MarkQuestAsFinish(QuestID);
         //Request remove item
