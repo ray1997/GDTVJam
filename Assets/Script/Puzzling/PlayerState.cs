@@ -27,10 +27,11 @@ public class PlayerState : MonoBehaviour
     public delegate void RemoveItem(InGameItem info, Player target);
     public static event RemoveItem OnRequestRemovingItem;
 
-    public static void RequestAddItem(InGameItem info) => OnRequestAddingItem?.Invoke(info);
+    public static void RequestAddItem(InGameItem info) => OnRequestAddingItem?.Invoke(info, PlayerSwitcher.Instance.CurrentPlayer);
     public static void RequestAddItem(InGameItem info, Player assigned) => OnRequestAddingItem?.Invoke(info, assigned);
 
     public static void RequestRemoveItem(InGameItem info, Player assigned) => OnRequestRemovingItem?.Invoke(info, assigned);
+    public static void RequestRemoveItem(InGameItem info) => OnRequestRemovingItem?.Invoke(info, PlayerSwitcher.Instance.CurrentPlayer);
 
     private void Awake()
     {
@@ -39,13 +40,25 @@ public class PlayerState : MonoBehaviour
             InventoryOfPlayer = Player.First;
         else
             InventoryOfPlayer = Player.Second;
-        PlayerInventory = new ObservableCollection<InGameItem>();
-        PlayerInventory.CollectionChanged += ItemsUpdated;
-        OnRequestAddingItem += PutOnInventory;
-        OnRequestRemovingItem += TakeFromInventory;
+        PlayerInventory = new List<InGameItem>();
         Flashlight = transform.Find("FlashLight").gameObject;
         Flashlight.SetActive(HaveFlashlight);
     }
+
+    private void OnEnable()
+    {
+        OnRequestAddingItem += PutOnInventory;
+        OnRequestRemovingItem += TakeFromInventory;
+        PlayerSwitcher.OnPlayerChanged += UpdatePlayerChange;
+    }
+
+    private void OnDisable()
+    {
+        OnRequestAddingItem -= PutOnInventory;
+        OnRequestRemovingItem -= TakeFromInventory;
+    }
+
+    private void UpdatePlayerChange(GameObject player, Player current) => InventoryOfPlayer = current;
 
     private void TakeFromInventory(InGameItem info, Player target)
     {
@@ -55,20 +68,22 @@ public class PlayerState : MonoBehaviour
         PlayerInventory.Remove(info);
     }
 
-    private void ItemsUpdated(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-    {
-        InventoryScreen.ForceUpdateInventory();
-    }
-
     private void PutOnInventory(InGameItem info, Player target)
     {
         Debug.Log($"Request adding item {info.Name} for player {target} (Current: {InventoryOfPlayer})");
         if (InventoryOfPlayer != target)
+        {
             return;
-        if (info.ItemSepecification == Specific.UnlockFlashlight)
-            HaveFlashlight = true;
-        PlayerInventory.Add(info);
+        }
+        else
+        {
+            Debug.Log($"Adding item {info.Name} for player {target}");
+            if (info.ItemSepecification == Specific.UnlockFlashlight)
+                HaveFlashlight = true;
+            PlayerInventory.Add(info);
+            InventoryScreen.ForceUpdateInventory();
+        }
     }
 
-    public ObservableCollection<InGameItem> PlayerInventory;
+    public List<InGameItem> PlayerInventory;
 }

@@ -23,6 +23,18 @@ public class ItemPopulator : MonoBehaviour
         ItemInfo = item;
     }
 
+    public void OpenSubMenu()
+    {
+        if (InventoryScreen.Instance.CombiningMode)
+        {
+            InventoryScreen.CallRequestCombineItems(ItemInfo);
+            return;
+        }
+        UseButton.Select();
+        UseButtonMenu.SetActive(true);
+        SendButton.interactable = ItemInfo.AllowSend && CanSend;
+    }
+
     public void TryUseItem()
     {
         Debug.Log($"You try to use {ItemInfo.Name}");
@@ -30,14 +42,7 @@ public class ItemPopulator : MonoBehaviour
         CloseUseMenu();
     }
 
-    public void OpenUseMenu()
-    {
-        SendButton.SetActive(ItemInfo.AllowSend && CanSend);
-        UseButtonMenu.SetActive(true);
-        UseButton.Select();
-    }
-
-
+    #region Context menu system (Leave to close menu)
     public Selectable CurrentSelectionArea;
     public float DelayCloseTime = 0.25f;
     public void LeaveArea(Selectable item)
@@ -63,10 +68,33 @@ public class ItemPopulator : MonoBehaviour
         UseButtonMenu.SetActive(false);
     }
 
-    public GameObject SendButton;
+    #endregion
+
+    public Button SendButton;
     public bool CanSend;
     public void SendItem()
     {
         ElevatorControl.Instance.PutInItem(ItemInfo);
+    }
+
+    public GameObject CombinePrimaryActiveRing;
+    public void CombineItem()
+    {
+        InventoryScreen.CallRequestCombineItemStart(ItemInfo);
+        CombinePrimaryActiveRing.SetActive(true);
+        CloseUseMenu();
+        InventoryScreen.OnRequestCombineEnd += WaitForCombineModeEnd;
+    }
+
+    private void WaitForCombineModeEnd()
+    {
+        CombinePrimaryActiveRing.SetActive(false);
+        InventoryScreen.OnRequestCombineEnd -= WaitForCombineModeEnd;
+    }
+
+    private void OnDestroy()
+    {
+        if (CombinePrimaryActiveRing.activeSelf)
+            InventoryScreen.OnRequestCombineEnd -= WaitForCombineModeEnd;
     }
 }
