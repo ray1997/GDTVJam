@@ -32,6 +32,9 @@ public class PlayerInput : MonoBehaviour
     public delegate void ToggleInventory();
     public static event ToggleInventory OnRequestToggleInventory;
 
+    public delegate void TogglePause();
+    public static event TogglePause OnRequestTogglePause;
+
     public delegate void ToggleDebugConsole();
     public static event ToggleDebugConsole OnRequestToggleConsole;
 
@@ -52,6 +55,7 @@ public class PlayerInput : MonoBehaviour
         inputManage.Player.Look.performed += context => OnCameraMovementPerformed?.Invoke(context.ReadValue<Vector2>());
         inputManage.Player.Look.canceled += context => OnCameraMovementCancelled?.Invoke();
         inputManage.Player.Inventory.performed += context => OnRequestToggleInventory?.Invoke();
+        inputManage.Player.Pause.performed += context => OnRequestTogglePause?.Invoke();
         //DEBUG
         inputManage.Player.DEBUG_TOGGLECONSOLE.performed += context => OnRequestToggleConsole?.Invoke();
     }

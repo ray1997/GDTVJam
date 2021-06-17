@@ -73,6 +73,14 @@ public class @MainInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""6eba5fd7-f5b6-4d90-b609-c782a4b00583"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -196,6 +204,17 @@ public class @MainInput : IInputActionCollection, IDisposable
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b8121d74-e25a-4a7f-9895-bd82b9b9a370"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -228,6 +247,7 @@ public class @MainInput : IInputActionCollection, IDisposable
         m_Player_Switch = m_Player.FindAction("Switch", throwIfNotFound: true);
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
         m_Player_DEBUG_TOGGLECONSOLE = m_Player.FindAction("DEBUG_TOGGLECONSOLE", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -284,6 +304,7 @@ public class @MainInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Switch;
     private readonly InputAction m_Player_Inventory;
     private readonly InputAction m_Player_DEBUG_TOGGLECONSOLE;
+    private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
         private @MainInput m_Wrapper;
@@ -295,6 +316,7 @@ public class @MainInput : IInputActionCollection, IDisposable
         public InputAction @Switch => m_Wrapper.m_Player_Switch;
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
         public InputAction @DEBUG_TOGGLECONSOLE => m_Wrapper.m_Player_DEBUG_TOGGLECONSOLE;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -325,6 +347,9 @@ public class @MainInput : IInputActionCollection, IDisposable
                 @DEBUG_TOGGLECONSOLE.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUG_TOGGLECONSOLE;
                 @DEBUG_TOGGLECONSOLE.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUG_TOGGLECONSOLE;
                 @DEBUG_TOGGLECONSOLE.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDEBUG_TOGGLECONSOLE;
+                @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -350,6 +375,9 @@ public class @MainInput : IInputActionCollection, IDisposable
                 @DEBUG_TOGGLECONSOLE.started += instance.OnDEBUG_TOGGLECONSOLE;
                 @DEBUG_TOGGLECONSOLE.performed += instance.OnDEBUG_TOGGLECONSOLE;
                 @DEBUG_TOGGLECONSOLE.canceled += instance.OnDEBUG_TOGGLECONSOLE;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -372,5 +400,6 @@ public class @MainInput : IInputActionCollection, IDisposable
         void OnSwitch(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnDEBUG_TOGGLECONSOLE(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
