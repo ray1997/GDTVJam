@@ -8,6 +8,15 @@ using DG.Tweening;
 
 public class InventoryScreen : MonoBehaviour
 {
+    public static InventoryScreen Instance;
+    private void Awake()
+    {
+        if (Instance is null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
+
     public delegate void RequestUpdateInventory();
     public static event RequestUpdateInventory TakingRequestUpdateInventory;
     public static void ForceUpdateInventory() => TakingRequestUpdateInventory?.Invoke();
@@ -31,6 +40,8 @@ public class InventoryScreen : MonoBehaviour
     private void OnEnable()
     {
         PlayerInput.OnRequestToggleInventory += ToggleInventory;
+        OnRequestCombineStart += StartItemCombineMode;
+        OnRequestCombineEnd += EndItemCombineMode;
     }
 
     public TMP_Text LogDisplay;
@@ -42,6 +53,8 @@ public class InventoryScreen : MonoBehaviour
     private void OnDisable()
     {
         PlayerInput.OnRequestToggleInventory -= ToggleInventory;
+        OnRequestCombineStart -= StartItemCombineMode;
+        OnRequestCombineEnd -= EndItemCombineMode;
     }
 
     bool _show;
@@ -157,5 +170,40 @@ public class InventoryScreen : MonoBehaviour
             var task = child.GetComponent<TaskPopulator>();
             task.Initialize(info);
         }
+    }
+
+    public InGameItem PrimaryCombineItem;
+    public bool CombiningMode;
+    
+    public delegate void RequestCombineBegin(InGameItem primary);
+    public static event RequestCombineBegin OnRequestCombineStart;
+    public static void CallRequestCombineItemStart(InGameItem item) => OnRequestCombineStart?.Invoke(item);
+
+    public delegate void RequestCombineItems(InGameItem itemA, InGameItem itemB);
+    public static event RequestCombineItems OnRequestCombineItems;
+    public static void CallRequestCombineItems(InGameItem item)
+    {
+        if (item == Instance.PrimaryCombineItem)
+        {
+            OnRequestCombineEnd?.Invoke();
+            return;
+        }
+        OnRequestCombineItems?.Invoke(Instance.PrimaryCombineItem, item);
+    } 
+
+    public delegate void RequestCombineDone();
+    public static event RequestCombineDone OnRequestCombineEnd;
+    public static void CallRequestCombineItemEnd() => OnRequestCombineEnd?.Invoke();
+
+    public void StartItemCombineMode(InGameItem item)
+    {
+        PrimaryCombineItem = item;
+        CombiningMode = true;
+    }
+
+    public void EndItemCombineMode()
+    {
+        PrimaryCombineItem = null;
+        CombiningMode = false;        
     }
 }

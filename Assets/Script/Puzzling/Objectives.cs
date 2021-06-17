@@ -117,7 +117,6 @@ public class Objectives : MonoBehaviour
 
     public void MarkQuestAsFinish(Quests id) => MarkQuestAsFinish((int)id);
 }
-
 public enum Quests
 {
     P1FindFlashlight = 203,
@@ -139,11 +138,13 @@ public enum Quests
     P1FindChemForLockMelt1 = 179,
     P1FindChemForLockMelt2 = 420,
     P1FindChemForLockMelt3 = 249,
+    P1SendChemListToP2 = 684,
     P2FindChemForLockMelt1 = 485,
     P2FindChemForLockMelt2 = 185,
     P2FindChemForLockMelt3 = 115,
-    P2SendChemicalsToP1 = 153,
-    P1MixLockMelter = 325,
+    P2SendChemicalsToP2 = 153,
+    P2MixLockMelter = 325,
+    P1TakeLockMelter = 28,
     P1DestroySecurityLock = 64,
     P1GetAxe = 90,
     P2TakeAxe = 110,
@@ -151,6 +152,8 @@ public enum Quests
     P2InspectCar = 273,
     P2GiveListOfWishlistToP1 = 455,
     P1TakeWishlistFromP2 = 75,
+    P1UnlockBedroom1 = 67,
+    P1UnlockBedroom2 = 68,
     P1FindEquipmentToFixCar1 = 95,
     P1FindEquipmentToFixCar2 = 326,
     P2FindEquipmentToFixCar3 = 439,
