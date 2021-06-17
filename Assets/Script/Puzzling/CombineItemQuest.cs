@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CombineItemQuest : MonoBehaviour
 {
+    public bool CanCombine;
+    public Quests WaitFor;
+    public Quests Finish;
     //TODO:Add a way to prevent item from combine before quest unlock
     //TODO:Unlock quest after combine
     public bool KeepPrimaryItemAfterCombine;
@@ -13,24 +16,22 @@ public class CombineItemQuest : MonoBehaviour
 
     public InGameItem CombineFulfiled;
 
-        #if UNITY_EDITOR
-        public bool TestCombine;
-        #endif
     void OnEnable()
     {
-        #if UNITY_EDITOR
-        if (TestCombine)
-        {
-            PlayerState.RequestAddItem(PrimaryRequirement);
-            PlayerState.RequestAddItem(SecondaryRequirement);
-        }
-        #endif
         InventoryScreen.OnRequestCombineItems += CombineItem;
+        ObjectiveInfo.OnObjectiveFinished += MonitoringQuest;
     }
 
     void OnDisable()
     {
         InventoryScreen.OnRequestCombineItems -= CombineItem;
+        ObjectiveInfo.OnObjectiveFinished -= MonitoringQuest;
+    }
+
+    public void MonitoringQuest(ObjectiveInfo sender, ObjectiveFinishedEventArgs args)
+    {
+        if (args.FinishedQuest == WaitFor)
+            CanCombine = true;
     }
 
     public void CombineItem(InGameItem a, InGameItem b)
@@ -56,5 +57,7 @@ public class CombineItemQuest : MonoBehaviour
         InventoryScreen.CallRequestCombineItemEnd();
 
         gameObject.SetActive(false);
+
+        Objectives.Instance.MarkQuestAsFinish(Finish);
     }
 }
