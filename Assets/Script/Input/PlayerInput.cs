@@ -32,17 +32,8 @@ public class PlayerInput : MonoBehaviour
     public delegate void ToggleInventory();
     public static event ToggleInventory OnRequestToggleInventory;
 
-    public delegate void EnterDebugView();
-    public static event EnterDebugView OnRequestEnterDebugFPS;
-
-    public delegate void LeaveDebugView();
-    public static event LeaveDebugView OnRequestLeaveDebugFPS;
-
-    public delegate void RequestDebugQuestSkip();
-    public static event RequestDebugQuestSkip OnRequestSkipQuests;
-
-    public delegate void RequestAddRandomItem();
-    public static event RequestAddRandomItem OnRequestAddRandomItem;
+    public delegate void ToggleDebugConsole();
+    public static event ToggleDebugConsole OnRequestToggleConsole;
 
     private MainInput inputManage;
 
@@ -54,18 +45,15 @@ public class PlayerInput : MonoBehaviour
 
         inputManage.Player.Movement.performed += context => { if (OnPlayerMovementPerformed != null) OnPlayerMovementPerformed(context.ReadValue<Vector2>()); };
         inputManage.Player.Movement.canceled += context => { if (OnPlayerMovementCanceled != null) OnPlayerMovementCanceled(); };
-        inputManage.Player.Movement.performed += context => OnPlayerStartRunning?.Invoke();
-        inputManage.Player.Movement.canceled += context => OnPlayerStopRunning?.Invoke();
+        inputManage.Player.Run.performed += context => OnPlayerStartRunning?.Invoke();
+        inputManage.Player.Run.canceled += context => OnPlayerStopRunning?.Invoke();
         inputManage.Player.Interact.performed += context => OnPlayerInteracted?.Invoke();
         inputManage.Player.Switch.performed += context => OnPlayerRequestSwitch?.Invoke();
         inputManage.Player.Look.performed += context => OnCameraMovementPerformed?.Invoke(context.ReadValue<Vector2>());
         inputManage.Player.Look.canceled += context => OnCameraMovementCancelled?.Invoke();
         inputManage.Player.Inventory.performed += context => OnRequestToggleInventory?.Invoke();
         //DEBUG
-        inputManage.Player.DEBUGFPS.performed += context => OnRequestEnterDebugFPS?.Invoke();
-        inputManage.Player.DEBUGFPS.canceled += context => OnRequestLeaveDebugFPS?.Invoke();
-        inputManage.Player.DEBUGSKIPQUEST.performed += context => OnRequestSkipQuests?.Invoke();
-        inputManage.Player.DEBUGADDITEM.performed += context => OnRequestAddRandomItem?.Invoke();
+        inputManage.Player.DEBUG_TOGGLECONSOLE.performed += context => OnRequestToggleConsole?.Invoke();
     }
 
     private void OnEnable()

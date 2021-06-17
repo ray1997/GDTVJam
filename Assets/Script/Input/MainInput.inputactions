@@ -15,9 +15,9 @@
                 },
                 {
                     "name": "Run",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "6f10621d-38d0-4d6a-b876-836d13c0395d",
-                    "expectedControlType": "Analog",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
@@ -31,49 +31,33 @@
                 },
                 {
                     "name": "Interact",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "2c9b220c-d75e-41a1-a185-870ac0ba122b",
-                    "expectedControlType": "Analog",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
                     "name": "Switch",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "fdf40910-ab6a-4412-94f8-6bc18b8a83f8",
-                    "expectedControlType": "Analog",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
                     "name": "Inventory",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "63986a99-f979-4b58-89d4-1f9f0ca37378",
-                    "expectedControlType": "Analog",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "DEBUGFPS",
-                    "type": "PassThrough",
+                    "name": "DEBUG_TOGGLECONSOLE",
+                    "type": "Button",
                     "id": "df0bb51f-97d9-4ca9-b532-c86861d2e642",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "DEBUGSKIPQUEST",
-                    "type": "PassThrough",
-                    "id": "648d2357-b274-48c1-985d-97234fbead50",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "DEBUGADDITEM",
-                    "type": "PassThrough",
-                    "id": "6fe613f4-2bef-4fb4-8583-5ad52818d146",
-                    "expectedControlType": "Analog",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -185,29 +169,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
-                    "action": "DEBUGFPS",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "304713f4-a698-4008-813e-da174b5c1234",
-                    "path": "<Keyboard>/f7",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "DEBUGSKIPQUEST",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5c7fea41-401f-40a9-b636-303f4f05d9cf",
-                    "path": "<Keyboard>/f8",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "DEBUGADDITEM",
+                    "action": "DEBUG_TOGGLECONSOLE",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
