@@ -14,6 +14,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Run",
+                    "type": "Button",
+                    "id": "6f10621d-38d0-4d6a-b876-836d13c0395d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Look",
                     "type": "PassThrough",
                     "id": "c745c2df-82cf-444a-b97d-479f2185a8cb",
@@ -46,25 +54,9 @@
                     "interactions": ""
                 },
                 {
-                    "name": "DEBUGFPS",
+                    "name": "DEBUG_TOGGLECONSOLE",
                     "type": "Button",
                     "id": "df0bb51f-97d9-4ca9-b532-c86861d2e642",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "DEBUGSKIPQUEST",
-                    "type": "Button",
-                    "id": "648d2357-b274-48c1-985d-97234fbead50",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "DEBUGADDITEM",
-                    "type": "Button",
-                    "id": "6fe613f4-2bef-4fb4-8583-5ad52818d146",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -177,29 +169,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
-                    "action": "DEBUGFPS",
+                    "action": "DEBUG_TOGGLECONSOLE",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "304713f4-a698-4008-813e-da174b5c1234",
-                    "path": "<Keyboard>/f7",
-                    "interactions": "",
+                    "id": "66a5d4f0-c20f-47b1-9fcd-745f82da3e4c",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": "PC",
-                    "action": "DEBUGSKIPQUEST",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5c7fea41-401f-40a9-b636-303f4f05d9cf",
-                    "path": "<Keyboard>/f8",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "DEBUGADDITEM",
+                    "action": "Run",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

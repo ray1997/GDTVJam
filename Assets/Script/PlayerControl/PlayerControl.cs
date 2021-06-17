@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -11,11 +12,10 @@ public class PlayerControl : MonoBehaviour
 
 
     //public delegate void RequestDisableControl();
-    public delegate void RequestDisableControl(DisableType disable = DisableType.Everything);
+    public delegate void RequestDisableControl();
 
     public static event RequestDisableControl OnRequestDisableControl;
     public static void ForceTriggerDisabler() => OnRequestDisableControl?.Invoke();
-    public static void ForceTriggerDisabler(DisableType disable) => OnRequestDisableControl?.Invoke(disable);
 
     public delegate void RequestRestoreControl();
     public static event RequestRestoreControl OnRequestRestoreControl;
@@ -65,39 +65,26 @@ public class PlayerControl : MonoBehaviour
         GlobalControl = true;
     }
 
-    private void DisablePlayerControls(DisableType disable = DisableType.Everything)
+    private void DisablePlayerControls()
     {
-        if (!gameObject.activeSelf)
-            return;
-        switch (disable)
-        {
-            case DisableType.Control:
-                controller.enabled = false;
-                animController.enabled = false;
-                break;
-            case DisableType.Visibility:
-                PlayerParts.ForEach(g => g.SetActive(false));
-                break;
-            case DisableType.Input:
-                break;
-            case DisableType.Everything:
-                PlayerInput.OnPlayerMovementPerformed -= OnPlayerMovementPerformed;
-                PlayerInput.OnPlayerMovementCanceled -= OnPlayerMovementCanceled;
-                //Visibility
-                PlayerParts.ForEach(g => g.SetActive(false));
-                GlobalControl = false;
-                break;
-        }
+        //disable both player!
+        PlayerInput.OnPlayerMovementPerformed -= OnPlayerMovementPerformed;
+        PlayerInput.OnPlayerMovementCanceled -= OnPlayerMovementCanceled;
+        PlayerInput.OnPlayerStartRunning -= StartRunning;
+        PlayerInput.OnPlayerStopRunning -= StopRunning;
+        PlayerSwitcher.OnPlayerChanged -= UpdatePlayerInfo;
     }
+
     void Update()
     {
         if (!GlobalControl)
             return;
         if (Current != ControlFor)
             return;
+
         // Set moveAngle to match input directions
         moveAngle = new Vector3(inputDirection.x, 0, inputDirection.y);
-        moveAngle = Camera.main.transform.forward * moveAngle.z + Camera.main.transform.right * moveAngle.x;
+        moveAngle = PreviousCameraTransform.forward * moveAngle.z + PreviousCameraTransform.right * moveAngle.x;
         moveAngle.y = 0f;
 
         // Set y velocity and move for gravity (add y velocity in future to add jumping)
@@ -110,7 +97,7 @@ public class PlayerControl : MonoBehaviour
         // If player is moving, calculate the rotation needed to face that direction, then smoothly rotate using lerp
         if (inputDirection != Vector2.zero)
         {
-            float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+            float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg + PreviousCameraTransform.eulerAngles.y;
             Quaternion rotation = Quaternion.Euler(0f, targetAngle, 0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
         }
@@ -120,18 +107,60 @@ public class PlayerControl : MonoBehaviour
     {
         PlayerInput.OnPlayerMovementPerformed += OnPlayerMovementPerformed;
         PlayerInput.OnPlayerMovementCanceled += OnPlayerMovementCanceled;
+        PlayerInput.OnPlayerStartRunning += StartRunning;
+        PlayerInput.OnPlayerStopRunning += StopRunning;
         PlayerSwitcher.OnPlayerChanged += UpdatePlayerInfo;
-    }
-
-    private void UpdatePlayerInfo(GameObject player, Player current)
-    {
-        Current = current;
     }
 
     private void OnDisable()
     {
         PlayerInput.OnPlayerMovementPerformed -= OnPlayerMovementPerformed;
         PlayerInput.OnPlayerMovementCanceled -= OnPlayerMovementCanceled;
+        PlayerInput.OnPlayerStartRunning -= StartRunning;
+        PlayerInput.OnPlayerStopRunning -= StopRunning;
+        PlayerSwitcher.OnPlayerChanged -= UpdatePlayerInfo;
+    }
+
+    private void UpdatePlayerInfo(GameObject player, Player current)
+    {
+        IsRunning = false;
+        Current = current;
+    }
+
+    bool _isRunning;
+    public bool IsRunning
+    {
+        get => _isRunning;
+        set
+        {
+            if (!Equals(_isRunning, value))
+            {
+                animController.SetBool("run", value);
+                StartCoroutine(RampingSpeed(value ? runningSpeed : walkingSpeed));
+                _isRunning = value;
+            }
+        }
+    }
+
+    public IEnumerator RampingSpeed(float target)
+    {
+        float count = 0;
+        float start = playerSpeed;
+        while (count < 1)
+        {
+            playerSpeed = Mathf.Lerp(start, target, count);
+            count += Time.smoothDeltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+    }
+    private void StartRunning()
+    {
+        IsRunning = true;
+    }
+
+    private void StopRunning()
+    {
+        IsRunning = false;
     }
 
     private void OnPlayerMovementPerformed(Vector2 direction)
@@ -144,33 +173,16 @@ public class PlayerControl : MonoBehaviour
         animController.SetFloat("axis", 1);
     }
 
+    public Transform PreviousCameraTransform;
     private void OnPlayerMovementCanceled()
     {
         if (!GlobalControl)
             return;
         if (Current != ControlFor)
             return;
+        PreviousCameraTransform.position = Camera.main.transform.position;
+        PreviousCameraTransform.rotation = Camera.main.transform.rotation;
         inputDirection = Vector2.zero;
         animController.SetFloat("axis", 0);
     }
-}
-
-/// <summary>
-/// Control disabler type
-/// </summary>
-public enum DisableType
-{
-    /// <summary>
-    /// Disable only control, make player unable to move
-    /// </summary>
-    Control,
-    /// <summary>
-    /// Hide player, but can still move
-    /// </summary>
-    Visibility,
-    /// <summary>
-    /// Do both of the above
-    /// </summary>
-    Everything,
-    Input
 }
