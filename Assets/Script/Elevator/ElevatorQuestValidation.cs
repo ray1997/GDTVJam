@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ElevatorQuestValidation : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class ElevatorQuestValidation : MonoBehaviour
     public InGameItem WantedItem;
     public UpdateType WantedUpdate;
     public Quests UnlockedQuest;
+    public UnityEvent ElevatorUpdate;
     private void ItemUpdate(ElevatorControl sender, ElevatorItemUpdatedArgs args)
     {
         if (args.TriggerItem == WantedItem && args.TriggerStatus == WantedUpdate)
@@ -20,6 +22,7 @@ public class ElevatorQuestValidation : MonoBehaviour
             if (Objectives.Instance.IsQuestUnlock((int)UnlockedQuest))
             {
                 Objectives.Instance.MarkQuestAsFinish(UnlockedQuest);
+                ElevatorUpdate?.Invoke();
                 gameObject.SetActive(false);
             }
         }

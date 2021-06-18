@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1abb1d8010b293046ad1776f2304faab, type: 3}
+  m_Name: Bottle1
+  m_EditorClassIdentifier: 
+  Name: Bottle
+  ItemSepecification: 0
+  ForQuests: a4010000
+  Icon: {fileID: 21300000, guid: d45dcf1de181de04caca9a69fca4f661, type: 3}
+  Model: {fileID: 4567361360849445641, guid: 4d92652add0c4654dad6a74d9ab7e93b, type: 3}
+  Unlock: 
+  AllowSend: 1

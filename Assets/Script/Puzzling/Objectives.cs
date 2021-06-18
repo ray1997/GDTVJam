@@ -160,5 +160,6 @@ public enum Quests
     P1GetACarKey = 412,
     P2FixCar = 389,
     P1GetOut = 228,
-    P2GetOut = 303
+    P2GetOut = 303,
+    P0None = 0
 }
