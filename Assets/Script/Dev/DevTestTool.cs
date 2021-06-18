@@ -11,13 +11,13 @@ public class DevTestTool : MonoBehaviour
     private void OnEnable()
     {
         Application.logMessageReceived += MessageReceived;
-        PlayerInput.OnRequestEnterDebugFPS += OpenDebugConsole;
+        PlayerInput.OnRequestToggleConsole += OpenDebugConsole;
     }
 
     private void OnDisable()
     {
         Application.logMessageReceived -= MessageReceived;
-        PlayerInput.OnRequestEnterDebugFPS -= OpenDebugConsole;
+        PlayerInput.OnRequestToggleConsole -= OpenDebugConsole;
     }
 
     public bool IsShowingConsole;
@@ -26,6 +26,10 @@ public class DevTestTool : MonoBehaviour
     private void OpenDebugConsole()
     {
         IsShowingConsole = !IsShowingConsole;
+        if (IsShowingConsole)
+            PlayerControl.ForceTriggerDisabler();
+        else
+            PlayerControl.ForceTriggerRestorer();
         LogConsole.transform.DOLocalMove(
             IsShowingConsole ? Vector3.zero : new Vector3(0, (Screen.height * 5)), 1);
         TextInput.interactable = IsShowingConsole;

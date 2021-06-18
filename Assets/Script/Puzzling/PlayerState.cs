@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
+    public List<InGameItem> PlayerInventory;
+
     Player InventoryOfPlayer;
+    Player CurrentlyActive;
     public GameObject Flashlight;
     [SerializeField] bool _haveFlashlight;
     public bool HaveFlashlight
@@ -27,10 +30,11 @@ public class PlayerState : MonoBehaviour
     public delegate void RemoveItem(InGameItem info, Player target);
     public static event RemoveItem OnRequestRemovingItem;
 
-    public static void RequestAddItem(InGameItem info) => OnRequestAddingItem?.Invoke(info);
+    public static void RequestAddItem(InGameItem info) => OnRequestAddingItem?.Invoke(info, PlayerSwitcher.Instance.CurrentPlayer);
     public static void RequestAddItem(InGameItem info, Player assigned) => OnRequestAddingItem?.Invoke(info, assigned);
 
     public static void RequestRemoveItem(InGameItem info, Player assigned) => OnRequestRemovingItem?.Invoke(info, assigned);
+    public static void RequestRemoveItem(InGameItem info) => OnRequestRemovingItem?.Invoke(info, PlayerSwitcher.Instance.CurrentPlayer);
 
     private void Awake()
     {
@@ -39,36 +43,69 @@ public class PlayerState : MonoBehaviour
             InventoryOfPlayer = Player.First;
         else
             InventoryOfPlayer = Player.Second;
-        PlayerInventory = new ObservableCollection<InGameItem>();
-        PlayerInventory.CollectionChanged += ItemsUpdated;
-        OnRequestAddingItem += PutOnInventory;
-        OnRequestRemovingItem += TakeFromInventory;
+        PlayerInventory = new List<InGameItem>();
         Flashlight = transform.Find("FlashLight").gameObject;
         Flashlight.SetActive(HaveFlashlight);
     }
 
-    private void TakeFromInventory(InGameItem info, Player target)
+    private void OnEnable()
     {
-        Debug.Log($"Request removing item {info.Name} for player {target} (Current: {InventoryOfPlayer})");
-        if (InventoryOfPlayer != target)
-            return;
-        PlayerInventory.Remove(info);
+        OnRequestAddingItem += PutOnInventory;
+        OnRequestRemovingItem += TakeFromInventory;
+        PlayerSwitcher.OnPlayerChanged += UpdatePlayerChange;
     }
 
-    private void ItemsUpdated(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+    private void OnDisable()
     {
+        OnRequestAddingItem -= PutOnInventory;
+        OnRequestRemovingItem -= TakeFromInventory;
+    }
+
+    private void UpdatePlayerChange(GameObject player, Player current) => CurrentlyActive = current;
+
+    private void TakeFromInventory(InGameItem info, Player target)
+    {
+        if (!IsCorrectPlayerInventory(target))
+        {
+            Debug.LogWarning($"Cancelling attempt to remove {info.Name} from {target}. Wrong player");
+            return;
+        }
+        Debug.Log($"Request removing item {info.Name} from player {target}\r\n" +
+            $"in {InventoryOfPlayer} (Current active player: {CurrentlyActive})");
+        PlayerInventory.Remove(info);
         InventoryScreen.ForceUpdateInventory();
     }
 
     private void PutOnInventory(InGameItem info, Player target)
     {
-        Debug.Log($"Request adding item {info.Name} for player {target} (Current: {InventoryOfPlayer})");
-        if (InventoryOfPlayer != target)
+        if (!IsCorrectPlayerInventory(target))
+        {
+            Debug.LogWarning($"Cancelling attempt to add {info.Name} from {target}. Wrong player");
             return;
+        }
+        Debug.Log($"Request adding item {info.Name} for player {target} (Current: {InventoryOfPlayer})");
+        //Item specification check
         if (info.ItemSepecification == Specific.UnlockFlashlight)
             HaveFlashlight = true;
+        //Actually adding item
         PlayerInventory.Add(info);
+        //Refresh INV
+        InventoryScreen.ForceUpdateInventory();
     }
 
-    public ObservableCollection<InGameItem> PlayerInventory;
+    public bool IsCorrectPlayerInventory(Player target)
+    {
+        if (InventoryOfPlayer != CurrentlyActive)
+        {
+            //Is this right player inventory we're on? NO
+            return false;
+        }
+        if (InventoryOfPlayer != target)
+        {
+            //Is this the inventory of target player? NO
+            return false;
+        }
+        return true;
+    }
+
 }

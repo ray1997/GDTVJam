@@ -25,7 +25,7 @@ public class PlayerSwitcher : MonoBehaviour
         NextSwitchAllow = cachedTime;
     }
 
-    private void DisablePlayerSwitcher(DisableType disable)
+    private void DisablePlayerSwitcher()
     {
         //Disallow character switch
         cachedTime = NextSwitchAllow;
