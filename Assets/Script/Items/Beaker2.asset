@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1abb1d8010b293046ad1776f2304faab, type: 3}
+  m_Name: Beaker2
+  m_EditorClassIdentifier: 
+  Name: Beaker
+  ItemSepecification: 0
+  ForQuests: 73000000
+  Icon: {fileID: 21300000, guid: 06667c957b15a4146ac1c4044e9616e9, type: 3}
+  Model: {fileID: 177589083800372687, guid: 4f80044124f6fee4ab73eb3873d146e5, type: 3}
+  Unlock: 
+  AllowSend: 1
