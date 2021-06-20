@@ -14,7 +14,7 @@ public class ElevatorQuestValidation : MonoBehaviour
     public UpdateType WantedUpdate;
     public Quests UnlockedQuest;
     public UnityEvent ElevatorUpdate;
-    private void ItemUpdate(ElevatorControl sender, ElevatorItemUpdatedArgs args)
+    public virtual void ItemUpdate(ElevatorControl sender, ElevatorItemUpdatedArgs args)
     {
         if (args.TriggerItem == WantedItem && args.TriggerStatus == WantedUpdate)
         {
