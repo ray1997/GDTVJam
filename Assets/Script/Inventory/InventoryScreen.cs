@@ -42,6 +42,9 @@ public class InventoryScreen : MonoBehaviour
         PlayerInput.OnRequestToggleInventory += ToggleInventory;
         OnRequestCombineStart += StartItemCombineMode;
         OnRequestCombineEnd += EndItemCombineMode;
+        OnRequestMixingStart += StartMixItem;
+        OnRequestMixingAddItem += AddMixItem;
+        OnRequestMixingEnd += EndMixItem;
     }
 
     public TMP_Text LogDisplay;
@@ -55,6 +58,9 @@ public class InventoryScreen : MonoBehaviour
         PlayerInput.OnRequestToggleInventory -= ToggleInventory;
         OnRequestCombineStart -= StartItemCombineMode;
         OnRequestCombineEnd -= EndItemCombineMode;
+        OnRequestMixingStart -= StartMixItem;
+        OnRequestMixingAddItem -= AddMixItem;
+        OnRequestMixingEnd -= EndMixItem;
     }
 
     bool _show;
@@ -172,8 +178,9 @@ public class InventoryScreen : MonoBehaviour
         }
     }
 
+    public ItemMode CurrentItemMode;
+    #region Combining mode
     public InGameItem PrimaryCombineItem;
-    public bool CombiningMode;
     
     public delegate void RequestCombineBegin(InGameItem primary);
     public static event RequestCombineBegin OnRequestCombineStart;
@@ -198,12 +205,68 @@ public class InventoryScreen : MonoBehaviour
     public void StartItemCombineMode(InGameItem item)
     {
         PrimaryCombineItem = item;
-        CombiningMode = true;
+        CurrentItemMode = ItemMode.Combine;
     }
 
     public void EndItemCombineMode()
     {
         PrimaryCombineItem = null;
-        CombiningMode = false;        
+        CurrentItemMode = ItemMode.None;
     }
+    #endregion
+
+    #region Mixing mode
+    public List<InGameItem> ItemsPool;
+
+    public delegate void RequestMixingBegin(InGameItem item);
+    public static event RequestMixingBegin OnRequestMixingStart;
+
+    public static void CallRequestMixingItemStart(InGameItem item) => OnRequestMixingStart?.Invoke(item);
+
+    public delegate void AddItemToPool(InGameItem item);
+    public static event AddItemToPool OnRequestMixingAddItem;
+    public static void CallRequestMixingItemAdd(InGameItem item) => OnRequestMixingAddItem?.Invoke(item);
+
+    public delegate void RequestMixingEnd(InGameItem item);
+    public static event RequestMixingEnd OnRequestMixingEnd;
+    public static void CallRequestMixingItemEnd(InGameItem item) => OnRequestMixingEnd?.Invoke(item);
+
+    private void StartMixItem(InGameItem item)
+    {
+        if (ItemsPool is null)
+            ItemsPool = new List<InGameItem>();
+        else
+            ItemsPool.Clear();
+
+        ItemsPool.Add(item);
+        CurrentItemMode = ItemMode.Mix;
+    }
+
+    private void AddMixItem(InGameItem item)
+    {
+        if (ItemsPool.Contains(item))
+            return;
+
+        ItemsPool.Add(item);
+    }
+
+    private void EndMixItem(InGameItem item)
+    {
+        if (ItemsPool.Contains(item)) { }
+        else { ItemsPool.Add(item); }
+
+        CurrentItemMode = ItemMode.None;
+        OnFinalizeMix?.Invoke(ItemsPool);
+    }
+
+    public delegate void FinalizeMix(List<InGameItem> items);
+    public static event FinalizeMix OnFinalizeMix;
+    #endregion
+}
+
+public enum ItemMode
+{
+    None,
+    Combine,
+    Mix
 }

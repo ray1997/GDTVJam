@@ -7,8 +7,6 @@ public class CombineItemQuest : MonoBehaviour
     public bool CanCombine;
     public Quests WaitFor;
     public Quests Finish;
-    //TODO:Add a way to prevent item from combine before quest unlock
-    //TODO:Unlock quest after combine
     public bool KeepPrimaryItemAfterCombine;
     public InGameItem PrimaryRequirement;
     public bool KeepSecondaryItemAfterCombine;

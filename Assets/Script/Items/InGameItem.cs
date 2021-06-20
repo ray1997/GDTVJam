@@ -10,5 +10,8 @@ public class InGameItem : ScriptableObject
     public Sprite Icon;
     public GameObject Model;
     public List<DoorIdentity> Unlock;
+    //Item state
     public bool AllowSend = true;
+    public bool AllowCombine = false;
+    public bool AllowMix = false;
 }

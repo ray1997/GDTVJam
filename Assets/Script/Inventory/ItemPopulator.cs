@@ -11,9 +11,16 @@ public class ItemPopulator : MonoBehaviour
 
     public Image ItemIcon;
     public TMP_Text ItemName;
-    public Button UseButton;
     public GameObject UseButtonMenu;
+    public Button UseButton;
+    public Button MixButton;
+    public Button CombineButton;
+    public Button SendButton;
     public InGameItem ItemInfo;
+
+    public GameObject MixingButtonMenu;
+
+    public ContextMenuSystem ContextMenu;
 
     public void Initialize(InGameItem item)
     {
@@ -25,52 +32,35 @@ public class ItemPopulator : MonoBehaviour
 
     public void OpenSubMenu()
     {
-        if (InventoryScreen.Instance.CombiningMode)
+        if (InventoryScreen.Instance.CurrentItemMode == ItemMode.Combine)
         {
             InventoryScreen.CallRequestCombineItems(ItemInfo);
             return;
         }
-        UseButton.Select();
-        UseButtonMenu.SetActive(true);
-        SendButton.interactable = ItemInfo.AllowSend && CanSend;
+        else if (InventoryScreen.Instance.CurrentItemMode == ItemMode.Mix)
+        {
+            //Open mix menu
+            MixingButtonMenu.SetActive(true);
+            return;
+        }
+        else if (InventoryScreen.Instance.CurrentItemMode == ItemMode.None)
+        {
+            //Open use menu
+            UseButtonMenu.SetActive(true);
+            UseButton.Select();
+            CombineButton.gameObject.SetActive(ItemInfo.AllowCombine);
+            MixButton.gameObject.SetActive(ItemInfo.AllowMix);
+            SendButton.gameObject.SetActive(ItemInfo.AllowSend && CanSend);
+        }
     }
 
     public void TryUseItem()
     {
         Debug.Log($"You try to use {ItemInfo.Name}");
         OnItemAttempUsage?.Invoke(ItemInfo);
-        CloseUseMenu();
+        ContextMenu.ForceClose();
     }
 
-    #region Context menu system (Leave to close menu)
-    public Selectable CurrentSelectionArea;
-    public float DelayCloseTime = 0.25f;
-    public void LeaveArea(Selectable item)
-    {
-        CurrentSelectionArea = null;
-        Invoke(nameof(DelayCheck), DelayCloseTime);
-    }
-
-    public void EnterArea(Selectable item)
-    {
-        CurrentSelectionArea = item;
-    }
-
-    //Use by invoke this from certain delay, if nothing enter area assume player left
-    public void DelayCheck()
-    {
-        if (CurrentSelectionArea is null)
-            CloseUseMenu();
-    }
-
-    public void CloseUseMenu()
-    {
-        UseButtonMenu.SetActive(false);
-    }
-
-    #endregion
-
-    public Button SendButton;
     public bool CanSend;
     public void SendItem()
     {
@@ -82,7 +72,7 @@ public class ItemPopulator : MonoBehaviour
     {
         InventoryScreen.CallRequestCombineItemStart(ItemInfo);
         CombinePrimaryActiveRing.SetActive(true);
-        CloseUseMenu();
+        ContextMenu.ForceClose();
         InventoryScreen.OnRequestCombineEnd += WaitForCombineModeEnd;
     }
 
@@ -95,6 +85,46 @@ public class ItemPopulator : MonoBehaviour
     private void OnDestroy()
     {
         if (CombinePrimaryActiveRing.activeSelf)
+        {
             InventoryScreen.OnRequestCombineEnd -= WaitForCombineModeEnd;
+            InventoryScreen.OnRequestMixingEnd -= WaitForMixModeEnd;
+        }
+    }
+
+    public void MixItem()
+    {
+        //Force close current menu
+        ContextMenu.ForceClose();
+        //Start mix mode
+        InventoryScreen.CallRequestMixingItemStart(ItemInfo);
+        //Show selection ring
+        CombinePrimaryActiveRing.SetActive(true);
+        //Register for when it's gonna end.
+        InventoryScreen.OnRequestMixingEnd += WaitForMixModeEnd;
+    }
+
+    public void AddIngredient()
+    {
+        //Force close context menu
+        ContextMenu.ForceClose();
+        //Add item event
+        InventoryScreen.CallRequestMixingItemAdd(ItemInfo);
+        //Show ring
+        CombinePrimaryActiveRing.SetActive(true);
+        //Wait for its end
+        InventoryScreen.OnRequestMixingEnd += WaitForMixModeEnd;
+    }
+
+    public void FinalizeMix()
+    {
+        //Force close context menu
+        ContextMenu.ForceClose();
+        //Add item event
+        InventoryScreen.CallRequestMixingItemEnd(ItemInfo);
+    }
+
+    private void WaitForMixModeEnd(InGameItem item)
+    {
+        CombinePrimaryActiveRing.SetActive(false);
     }
 }

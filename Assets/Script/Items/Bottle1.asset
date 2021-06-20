@@ -19,3 +19,5 @@ MonoBehaviour:
   Model: {fileID: 4567361360849445641, guid: 4d92652add0c4654dad6a74d9ab7e93b, type: 3}
   Unlock: 
   AllowSend: 1
+  AllowCombine: 0
+  AllowMix: 1
