@@ -8,6 +8,7 @@ public class ItemPopulator : MonoBehaviour
 {
     public delegate void UseItem(InGameItem info);
     public static event UseItem OnItemAttempUsage;
+    public Player Possessor;
 
     public Image ItemIcon;
     public TMP_Text ItemName;
@@ -16,6 +17,7 @@ public class ItemPopulator : MonoBehaviour
     public Button MixButton;
     public Button CombineButton;
     public Button SendButton;
+    public Button GiveButton;
     public InGameItem ItemInfo;
 
     public GameObject MixingButtonMenu;
@@ -51,7 +53,20 @@ public class ItemPopulator : MonoBehaviour
             CombineButton.gameObject.SetActive(ItemInfo.AllowCombine);
             MixButton.gameObject.SetActive(ItemInfo.AllowMix);
             SendButton.gameObject.SetActive(ItemInfo.AllowSend && CanSend);
+            ContextMenu.UseMenuLayout.CalculateLayoutInputVertical();
+            if (Possessor == Player.First)
+                GiveButton.gameObject.SetActive(ApproximityCheck.P2Instance.WithinRange);
+            else if (Possessor == Player.Second)
+                GiveButton.gameObject.SetActive(ApproximityCheck.P1Instance.WithinRange);
+            StartCoroutine(RefreshMenuLayout());
         }
+    }
+
+    IEnumerator RefreshMenuLayout()
+    {
+        ContextMenu.UseMenuLayout.enabled = false;
+        yield return new WaitForEndOfFrame();
+        ContextMenu.UseMenuLayout.enabled = true;
     }
 
     public void TryUseItem()
@@ -127,4 +142,40 @@ public class ItemPopulator : MonoBehaviour
     {
         CombinePrimaryActiveRing.SetActive(false);
     }
+
+    public void GiveItem()
+    {
+        Debug.Log($"Giving item {ItemInfo.Name} from {Possessor} to {OpposePossessor(Possessor)}");
+        var item = ItemInfo;
+        if (Possessor == Player.First && ApproximityCheck.P2Instance.WithinRange)
+        {
+            //Take item from first player and put it on 2nd player inv
+            GameManager.Instance.Player1Inventory.PlayerInventory.Remove(item);
+            GameManager.Instance.Player2Inventory.PlayerInventory.Add(item);
+        }
+        else if (Possessor == Player.Second && ApproximityCheck.P1Instance.WithinRange)
+        {
+            GameManager.Instance.Player2Inventory.PlayerInventory.Remove(item);
+            GameManager.Instance.Player1Inventory.PlayerInventory.Add(item);
+        }
+        InventoryScreen.ForceUpdateInventory();
+        //if (Possessor == Player.First && !ApproximityCheck.P2Instance.WithinRange)
+        //    return;
+        //if (Possessor == Player.Second && !ApproximityCheck.P1Instance.WithinRange)
+        //    return;
+        //InventoryUpdateRequirementArgs remove = new InventoryUpdateRequirementArgs(Possessor,
+        //    ItemInfo,
+        //    UpdateType.ItemRemoved,
+        //    true, false);
+        //InventoryUpdateRequirementArgs add = new InventoryUpdateRequirementArgs(OpposePossessor(Possessor),
+        //    ItemInfo,
+        //    UpdateType.ItemAdded,
+        //    false, false);
+        //PlayerState.ForcefullyManipulateInventory(add);
+        //PlayerState.ForcefullyManipulateInventory(remove);
+        //InventoryScreen.Instance.UpdateInventoryItems();
+    }
+
+    public Player OpposePossessor(Player possessor) =>
+        possessor == Player.First ? Player.Second : Player.First;
 }

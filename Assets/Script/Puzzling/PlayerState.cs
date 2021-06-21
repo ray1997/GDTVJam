@@ -30,6 +30,11 @@ public class PlayerState : MonoBehaviour
     public delegate void RemoveItem(InGameItem info, Player target);
     public static event RemoveItem OnRequestRemovingItem;
 
+    public delegate void ManipulateInventory(InventoryUpdateRequirementArgs args);
+    public static event ManipulateInventory OnRequestManipulation;
+    public static void ForcefullyManipulateInventory(InventoryUpdateRequirementArgs args) =>
+        OnRequestManipulation?.Invoke(args);
+
     public static void RequestAddItem(InGameItem info) => OnRequestAddingItem?.Invoke(info, PlayerSwitcher.Instance.CurrentPlayer);
     public static void RequestAddItem(InGameItem info, Player assigned) => OnRequestAddingItem?.Invoke(info, assigned);
 
@@ -50,9 +55,35 @@ public class PlayerState : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log($"Register event for {name}");
         OnRequestAddingItem += PutOnInventory;
         OnRequestRemovingItem += TakeFromInventory;
+        OnRequestManipulation += ManipulatePlayerInventory;
         PlayerSwitcher.OnPlayerChanged += UpdatePlayerChange;
+    }
+
+    private void ManipulatePlayerInventory(InventoryUpdateRequirementArgs args)
+    {
+        Debug.Log($"Attemp manipulate inventory of {InventoryOfPlayer} on {name}\r\n" +
+            $"Parameters:\r\n" +
+            $"Item name: {args.ItemInfo.Name}\r\n" +
+            $"Update request: {args.ItemUpdateType}\r\n" +
+            $"Request to player: {args.Specified}\r\n" +
+            $"Force?: {args.Forcefully}\r\n" +
+            $"Update inventory?: {args.UpdateInventoryUI}");
+        switch (args.ItemUpdateType)
+        {
+            case UpdateType.ItemAdded:
+                PlayerInventory.Add(args.ItemInfo);
+                Debug.LogWarning($"Add {args.ItemInfo.Name} to {InventoryOfPlayer}'s inventory");
+                break;
+            case UpdateType.ItemRemoved:
+                PlayerInventory.Remove(args.ItemInfo);
+                Debug.LogWarning($"Remove {args.ItemInfo.Name} from {InventoryOfPlayer}'s inventory");
+                break;
+        }
+        if (args.UpdateInventoryUI)
+            InventoryScreen.Instance.UpdateInventoryItems();
     }
 
     private void OnDisable()
@@ -108,4 +139,30 @@ public class PlayerState : MonoBehaviour
         return true;
     }
 
+}
+
+public class InventoryUpdateRequirementArgs : System.EventArgs
+{
+    public Player Specified { get; private set; }
+    public UpdateType ItemUpdateType { get; private set; }
+    public InGameItem ItemInfo { get; private set; }
+    public bool Forcefully { get; private set; }
+    public bool UpdateInventoryUI { get; private set; }
+
+    public InventoryUpdateRequirementArgs(Player player, InGameItem item, UpdateType update, bool force, bool updateUI)
+    {
+        ItemInfo = item;
+        ItemUpdateType = update;
+        Forcefully = force;
+        UpdateInventoryUI = updateUI;
+    }
+
+    public InventoryUpdateRequirementArgs(InGameItem item, UpdateType update)
+    {
+        Specified = PlayerSwitcher.Instance.CurrentPlayer;
+        ItemInfo = item;
+        ItemUpdateType = update;
+        Forcefully = false;
+        UpdateInventoryUI = true;
+    }
 }

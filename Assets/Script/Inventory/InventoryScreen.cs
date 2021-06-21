@@ -131,6 +131,7 @@ public class InventoryScreen : MonoBehaviour
             child.name = item.Name;
             child.SetActive(true);
             ItemPopulator info = child.GetComponent<ItemPopulator>();
+            info.Possessor = Player.First;
             info.CanSend = ElevatorControl.Instance.OverallCanUse
                 && ElevatorControl.Instance.WithinActiveZone
                 && ElevatorControl.Instance.ActivePlayer == ElevatorPlayer.Player1;
@@ -145,6 +146,7 @@ public class InventoryScreen : MonoBehaviour
             child.name = item.Name;
             child.SetActive(true);
             ItemPopulator info = child.GetComponent<ItemPopulator>();
+            info.Possessor = Player.Second;
             info.CanSend = ElevatorControl.Instance.OverallCanUse
                  && ElevatorControl.Instance.WithinActiveZone
                  && ElevatorControl.Instance.ActivePlayer == ElevatorPlayer.Player2;

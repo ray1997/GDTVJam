@@ -33,7 +33,7 @@ public class QuestSkip : MonoBehaviour
             var elevator = ElevatorQuest.FirstOrDefault(q => q.UnlockedQuest == quest);
             if (elevator != null)
             {
-                use.gameObject.SetActive(false);
+                elevator.gameObject.SetActive(false);
             }
             //
             Objectives.Instance.MarkQuestAsFinish(quest);
