@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class ContextMenuSystem : MonoBehaviour
 {
+    public VerticalLayoutGroup UseMenuLayout;
     public GameObject UseMenuRoot;
+
     public GameObject MixMenuRoot;
 
     public Selectable CurrentSelectionArea;
