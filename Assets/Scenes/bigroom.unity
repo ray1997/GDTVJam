@@ -576,7 +576,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-189752
+  m_Name: pb_Mesh-27700
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -68010,7 +68010,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 7986850782258086353}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 2.66
   m_Height: 19.19
   m_Direction: 1
