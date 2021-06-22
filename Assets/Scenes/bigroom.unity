@@ -8960,7 +8960,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 922711790}
   m_HandleRect: {fileID: 922711789}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -10680,7 +10680,7 @@ GameObject:
   - component: {fileID: 711100790}
   - component: {fileID: 711100789}
   m_Layer: 0
-  m_Name: PlayersMonitorGiven (1)
+  m_Name: PlayersMonitorGiven2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
