@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Axe
   ItemSepecification: 0
   ForQuests: 5a0000006e00000002000000
-  Icon: {fileID: 21300000, guid: 7a758174d06b87845bd97dc0eba09868, type: 3}
+  Icon: {fileID: 21300000, guid: 88f50cd8a42a18845a7af55c9cf76567, type: 3}
   Model: {fileID: 5574915998729244471, guid: 3b1f93845faa2d748a24e1f07f148af6, type: 3}
   Unlock: 07000000
   AllowSend: 1
