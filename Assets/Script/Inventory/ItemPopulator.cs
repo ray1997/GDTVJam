@@ -158,6 +158,7 @@ public class ItemPopulator : MonoBehaviour
             GameManager.Instance.Player2Inventory.PlayerInventory.Remove(item);
             GameManager.Instance.Player1Inventory.PlayerInventory.Add(item);
         }
+        PlayerState.UpdateItemTransferStatus(item, Possessor, OpposePossessor(Possessor));
         InventoryScreen.ForceUpdateInventory();
         //if (Possessor == Player.First && !ApproximityCheck.P2Instance.WithinRange)
         //    return;

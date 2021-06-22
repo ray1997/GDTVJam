@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractForItem : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class InteractForItem : MonoBehaviour
         gameObject.SetActive(false);
         if (ForQuest)
             Objectives.Instance.MarkQuestAsFinish((int)FinishedID);
+        InteractedWon?.Invoke();
     }
 
     public InGameItem GivenItem;
@@ -54,6 +56,8 @@ public class InteractForItem : MonoBehaviour
 
     public bool ForQuest;
     public Quests FinishedID;
+
+    public UnityEvent InteractedWon;
 
     private void OnTriggerEnter(Collider other)
     {

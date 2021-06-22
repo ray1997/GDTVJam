@@ -58,4 +58,5 @@ public class InteractToContinue : MonoBehaviour
     }
 
     public UnityEvent PlayerInteract;
+    public void ToggleAllowInteractWin() => AllowInteractWin = true;
 }

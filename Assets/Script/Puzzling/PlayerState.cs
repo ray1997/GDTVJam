@@ -35,6 +35,11 @@ public class PlayerState : MonoBehaviour
     public static void ForcefullyManipulateInventory(InventoryUpdateRequirementArgs args) =>
         OnRequestManipulation?.Invoke(args);
 
+    public delegate void TransferItem(InGameItem info, Player from, Player to);
+    public static event TransferItem OnItemTransfered;
+    public static void UpdateItemTransferStatus(InGameItem item, Player from, Player to) =>
+        OnItemTransfered?.Invoke(item, from, to);
+
     public static void RequestAddItem(InGameItem info) => OnRequestAddingItem?.Invoke(info, PlayerSwitcher.Instance.CurrentPlayer);
     public static void RequestAddItem(InGameItem info, Player assigned) => OnRequestAddingItem?.Invoke(info, assigned);
 
