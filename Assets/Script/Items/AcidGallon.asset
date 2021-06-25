@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1abb1d8010b293046ad1776f2304faab, type: 3}
-  m_Name: Beaker2
+  m_Name: AcidGallon
   m_EditorClassIdentifier: 
-  Name: Beaker
+  Name: Gallon of Acid
   ItemSepecification: 0
   ForQuests: 73000000
-  Icon: {fileID: 21300000, guid: 06667c957b15a4146ac1c4044e9616e9, type: 3}
-  Model: {fileID: 177589083800372687, guid: 4f80044124f6fee4ab73eb3873d146e5, type: 3}
+  Icon: {fileID: 21300000, guid: 2d42b47f69bbd2847bd5be212f104426, type: 3}
+  Model: {fileID: 5675859730273611241, guid: 082d1faff7407b04dbac8ca89df0dd48, type: 3}
   Unlock: 
   AllowSend: 1
   AllowCombine: 0

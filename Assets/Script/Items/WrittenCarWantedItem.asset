@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Tools wishlist
   ItemSepecification: 0
   ForQuests: 11010000c70100004b000000
-  Icon: {fileID: 21300000, guid: a35884980441a134da6a74c861ee418c, type: 3}
+  Icon: {fileID: 21300000, guid: b7025abfa84603048861470271972c48, type: 3}
   Model: {fileID: 7246317240448120181, guid: 3337cd8a962bccb43aac100d9de8864b, type: 3}
   Unlock: 
   AllowSend: 1

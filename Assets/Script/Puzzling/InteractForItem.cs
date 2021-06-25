@@ -11,7 +11,8 @@ public class InteractForItem : MonoBehaviour
         if (NeedQuest)
         {
             ObjectiveInfo.OnObjectiveFinished += QuestFinished;
-            VisualItem.SetActive(false);
+            if (VisualItem != null)
+                VisualItem.SetActive(false);
             GetComponent<BoxCollider>().enabled = false;
         }
     }
@@ -20,7 +21,8 @@ public class InteractForItem : MonoBehaviour
     {
         if (args.FinishedQuest == QuestName)
         {
-            VisualItem.SetActive(true);
+            if (VisualItem != null)
+                VisualItem.SetActive(true);
             GetComponent<BoxCollider>().enabled = true;
         }
     }
@@ -39,7 +41,8 @@ public class InteractForItem : MonoBehaviour
         //Give item if within range
         PlayerState.RequestAddItem(GivenItem, PlayerSwitcher.Instance.CurrentPlayer);
         //Hide item and trigger
-        VisualItem.SetActive(false);
+        if (VisualItem != null)
+            VisualItem.SetActive(false);
         gameObject.SetActive(false);
         if (ForQuest)
             Objectives.Instance.MarkQuestAsFinish((int)FinishedID);
