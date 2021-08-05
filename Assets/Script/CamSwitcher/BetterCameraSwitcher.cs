@@ -19,21 +19,35 @@ public class BetterCameraSwitcher : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void Start()
+    private void OnEnable()
     {
         PlayerSwitcher.OnPlayerChanged += UpdateLocationTo;
+    }
+
+    private void OnDisable()
+    {
+        PlayerSwitcher.OnPlayerChanged -= UpdateLocationTo;
     }
 
     public Player CurrentlyActivePlayer;
     private void UpdateLocationTo(GameObject player, Player current)
     {
+        Debug.Log($"Update active player on {name} to {current}");
         CurrentlyActivePlayer = current;
     }
+
+    public Collider StarterPlayer1Collider;
+    public Collider StarterPlayer2Collider;
 
     Collider _p1, _p2;
     public Collider CurrentlyStayed1
     {
-        get => _p1;
+        get
+        {
+            if (_p1 is null)
+                return StarterPlayer1Collider;
+            return _p1;
+        }
         set
         {
             if (!Equals(_p1, value))
@@ -45,7 +59,12 @@ public class BetterCameraSwitcher : MonoBehaviour
     }
     public Collider CurrentlyStayed2
     {
-        get => _p2;
+        get
+        {
+            if (_p2 is null)
+                return StarterPlayer2Collider;
+            return _p2;
+        }
         set
         {
             if (!Equals(_p2, value))

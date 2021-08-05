@@ -5022,7 +5022,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &279565503
 GameObject:
   m_ObjectHideFlags: 0
@@ -8798,14 +8798,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514625887}
-  m_LocalRotation: {x: 0.06273753, y: -0.041009866, z: 0.0025801237, w: 0.9971838}
-  m_LocalPosition: {x: 5.33, y: 1.35, z: -9.835194}
+  m_LocalRotation: {x: -0.08131757, y: -0.04095464, z: -0.0033442406, w: 0.99584085}
+  m_LocalPosition: {x: 5.35, y: 1.27, z: -10.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 557649292}
   m_Father: {fileID: 1573277216}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 7.2, y: -4.71, z: 0}
+  m_LocalEulerAnglesHint: {x: -9.337, y: -4.71, z: 0}
 --- !u!114 &514625890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8936,7 +8936,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &515263018
 GameObject:
   m_ObjectHideFlags: 0
@@ -10941,7 +10941,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &601766386
 GameObject:
   m_ObjectHideFlags: 3
@@ -11917,7 +11917,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &661432429
 GameObject:
   m_ObjectHideFlags: 0
@@ -12009,12 +12009,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662236500}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 149b6b79648d70b4985073cf75439bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentlyActivePlayer: 0
+  StarterPlayer1Collider: {fileID: 444537164}
+  StarterPlayer2Collider: {fileID: 154387507}
 --- !u!1 &662321472
 GameObject:
   m_ObjectHideFlags: 0
@@ -16196,7 +16198,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &968655454
 GameObject:
   m_ObjectHideFlags: 0
@@ -17652,7 +17654,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!114 &1083724316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19099,7 +19101,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1001 &1134449853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19432,7 +19434,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &1150104642
 GameObject:
   m_ObjectHideFlags: 0
@@ -19689,7 +19691,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &1170325496
 GameObject:
   m_ObjectHideFlags: 0
@@ -25332,7 +25334,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &1253525906
 GameObject:
   m_ObjectHideFlags: 0
@@ -26694,7 +26696,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1001 &1334366970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26998,7 +27000,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!23 &1368201233 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5818758764398848144, guid: 7248bd35f2879e0479ae1e5ef829f030, type: 3}
@@ -27441,7 +27443,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &1383587009
 GameObject:
   m_ObjectHideFlags: 3
@@ -29036,7 +29038,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1001 &1473646607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29259,7 +29261,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1001 &1474499007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31188,13 +31190,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddb047a8a5eeed43ad3dc4b59c34850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConsiderationDistance: 10
   SwitchableCameras: []
   CameraRules:
-  - {fileID: 11400000, guid: d4dbf37b562bfbe4680ffd2da47d09e4, type: 2}
-  - {fileID: 11400000, guid: bbd57cd321f23f246bad264655f9e099, type: 2}
-  - {fileID: 11400000, guid: b2db31d3ba20cd144b9c614933a4d7f7, type: 2}
-  - {fileID: 11400000, guid: 63a2f426f16480b4aa121224ce64302e, type: 2}
-  - {fileID: 11400000, guid: b2687500c28d1694782a64c77f059de9, type: 2}
+  - RoomCollider: {fileID: 1779068879}
+    ListMode: 0
+    CameraList:
+    - {fileID: 694201752}
+    - {fileID: 325239760}
+    ShouldStillUseFloorCheck: 0
+  - RoomCollider: {fileID: 516338488}
+    ListMode: 0
+    CameraList:
+    - {fileID: 514625887}
+    - {fileID: 325239760}
+    ShouldStillUseFloorCheck: 0
+  - RoomCollider: {fileID: 600258976}
+    ListMode: 0
+    CameraList:
+    - {fileID: 719409488}
+    ShouldStillUseFloorCheck: 0
+  - RoomCollider: {fileID: 188410409}
+    ListMode: 0
+    CameraList:
+    - {fileID: 1903628462}
+    ShouldStillUseFloorCheck: 0
+  - RoomCollider: {fileID: 154387507}
+    ListMode: 0
+    CameraList:
+    - {fileID: 2006696011}
+    ShouldStillUseFloorCheck: 0
+  - RoomCollider: {fileID: 631701508}
+    ListMode: 0
+    CameraList:
+    - {fileID: 1961124701}
+    ShouldStillUseFloorCheck: 0
 --- !u!1001 &1576849593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31357,7 +31387,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &1578359583
 GameObject:
   m_ObjectHideFlags: 0
@@ -33094,8 +33124,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679768950}
-  m_LocalRotation: {x: -0.5038191, y: 0.33307013, z: -0.21878953, w: -0.7663954}
-  m_LocalPosition: {x: 19.16179, y: 4.552788, z: -4.9649386}
+  m_LocalRotation: {x: 0.06081846, y: -0.8899964, z: 0.12425305, w: 0.4344752}
+  m_LocalPosition: {x: 17.571167, y: 2.0679047, z: -2.5892103}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -33267,7 +33297,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1001 &1692032964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33474,7 +33504,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &1707469363
 GameObject:
   m_ObjectHideFlags: 0
@@ -40201,7 +40231,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &1814482163
 GameObject:
   m_ObjectHideFlags: 0
@@ -40302,7 +40332,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &1815941016
 GameObject:
   m_ObjectHideFlags: 0
@@ -40955,7 +40985,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1001 &1852212469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47670,7 +47700,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &1963221046
 GameObject:
   m_ObjectHideFlags: 0
@@ -48232,7 +48262,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &1993718555
 GameObject:
   m_ObjectHideFlags: 0
@@ -48447,7 +48477,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 3
 --- !u!1001 &2007689097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50167,7 +50197,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 1
 --- !u!1 &2104357118
 GameObject:
   m_ObjectHideFlags: 0

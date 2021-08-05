@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Rule", menuName = "Ingame/Camera rules", order = 1)]
-public class CameraActivateRules : ScriptableObject
+[System.Serializable()]
+public class CameraActivateRules
 {
+    public Collider RoomCollider;
     public CameraListRuleMode ListMode;
-    public List<string> CameraList;
+    public List<GameObject> CameraList;
 
     /// <summary>
     /// Should rule still let it checking for floor differentiation;
