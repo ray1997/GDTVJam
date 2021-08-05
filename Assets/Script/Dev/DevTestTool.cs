@@ -12,6 +12,13 @@ public class DevTestTool : MonoBehaviour
     {
         Application.logMessageReceived += MessageReceived;
         PlayerInput.OnRequestToggleConsole += OpenDebugConsole;
+        if (Application.isEditor)
+            Invoke(nameof(DelayDoorsUnlock), 2f);
+    }
+
+    private void DelayDoorsUnlock()
+    {
+        DoorManager.DoorsInfo.ForEach(d => d.IsLocked = false);
     }
 
     private void OnDisable()

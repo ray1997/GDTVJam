@@ -30,7 +30,23 @@ public class PlayerControl : MonoBehaviour
 
     private float gravityValue = -9.81f;
 
-    private Vector2 inputDirection = Vector2.zero;
+    Vector2 _input_direction_holder = Vector2.zero;
+    private Vector2 inputDirection
+    {
+        get => _input_direction_holder;
+        set
+        {
+            if (!Equals(_input_direction_holder, value))
+            {
+                horizontalInput = value.x;
+                verticalInput = value.y;
+                //Update holder value
+                _input_direction_holder = value;
+            }
+        }
+    }
+    float horizontalInput, verticalInput;
+    
     private Vector3 moveAngle, playerVelocity = Vector3.zero;
     private CharacterController controller;
     private Animator animController;
@@ -82,25 +98,48 @@ public class PlayerControl : MonoBehaviour
         if (Current != ControlFor)
             return;
 
-        // Set moveAngle to match input directions
-        moveAngle = new Vector3(inputDirection.x, 0, inputDirection.y);
-        moveAngle = PreviousCameraTransform.forward * moveAngle.z + PreviousCameraTransform.right * moveAngle.x;
-        moveAngle.y = 0f;
-
-        // Set y velocity and move for gravity (add y velocity in future to add jumping)
-        playerVelocity.y += gravityValue;
-        controller.Move(playerVelocity * Time.deltaTime);
-
-        // Move character in direction of moveAngle, multiply by deltaTime for time-dependency, along with playerSpeed
-        controller.Move(moveAngle * Time.deltaTime * playerSpeed);
-
-        // If player is moving, calculate the rotation needed to face that direction, then smoothly rotate using lerp
-        if (inputDirection != Vector2.zero)
+        //Slowly rotate player if horizontal axis (X) is greater than 0 
+        if (horizontalInput != 0)
         {
-            float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg + PreviousCameraTransform.eulerAngles.y;
-            Quaternion rotation = Quaternion.Euler(0f, targetAngle, 0f);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+            //Rotate
+            transform.DOLocalRotate(new Vector3(0, horizontalInput * rotationSpeed, 0), 0, RotateMode.LocalAxisAdd);
         }
+
+        if (verticalInput != 0)
+        {
+            moveAngle = Vector3.zero;
+            moveAngle = transform.forward * verticalInput;
+            moveAngle.y = 0;
+
+            //For jumping future!
+            playerVelocity.y += gravityValue;
+            controller.Move(playerVelocity * Time.deltaTime);
+
+            //Check current speed
+            playerSpeed = IsRunning ? runningSpeed : walkingSpeed;
+            //Forward!
+            controller.Move(moveAngle * Time.deltaTime * playerSpeed);
+        }
+
+        //// Set moveAngle to match input directions        
+        //moveAngle = new Vector3(inputDirection.x, 0, 0);
+        ////moveAngle = PreviousCameraTransform.forward * moveAngle.z + PreviousCameraTransform.right * moveAngle.x;
+        ////moveAngle.y = 0f;
+
+        //// Set y velocity and move for gravity (add y velocity in future to add jumping)
+        //playerVelocity.y += gravityValue;
+        //controller.Move(playerVelocity * Time.deltaTime);
+
+        //// Move character in direction of moveAngle, multiply by deltaTime for time-dependency, along with playerSpeed
+        //controller.Move(moveAngle * Time.deltaTime * playerSpeed);
+
+        //// If player is moving, calculate the rotation needed to face that direction, then smoothly rotate using lerp
+        //if (inputDirection != Vector2.zero)
+        //{
+        //    float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg + PreviousCameraTransform.eulerAngles.y;
+        //    Quaternion rotation = Quaternion.Euler(0f, targetAngle, 0f);
+        //    transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+        //}
     }
 
     private void OnEnable()
@@ -163,6 +202,7 @@ public class PlayerControl : MonoBehaviour
         IsRunning = false;
     }
 
+
     private void OnPlayerMovementPerformed(Vector2 direction)
     {
         if (!GlobalControl)
@@ -170,7 +210,8 @@ public class PlayerControl : MonoBehaviour
         if (Current != ControlFor)
             return;
         inputDirection = direction;
-        animController.SetFloat("axis", 1);
+        float verticalAnim = verticalInput < -0 ? verticalInput * -1 : verticalInput;
+        animController.SetFloat("axis", verticalAnim);
     }
 
     public Transform PreviousCameraTransform;
