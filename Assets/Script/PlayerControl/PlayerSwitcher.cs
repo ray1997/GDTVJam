@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerSwitcher : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class PlayerSwitcher : MonoBehaviour
 
     public delegate void PlayerChanged(GameObject player, Player current);
     public static event PlayerChanged OnPlayerChanged;
+    public UnityEvent<Player> ActivePlayerChanged;
 
     [Range(1f, 60f)]
     public float Cooldown = 3;
@@ -73,14 +75,16 @@ public class PlayerSwitcher : MonoBehaviour
             CurrentPlayer = Player.First;
         var p1 = Player1.GetComponent<PlayerControl>();
         p1.playerSpeed = CurrentPlayer == Player.First ? p1.walkingSpeed : 0;
-        p1.rotationSpeed = CurrentPlayer == Player.First ? 8 : 0;
+        p1.rotationSpeed = CurrentPlayer == Player.First ? 1 : 0;
         p1.tag = CurrentPlayer == Player.First ? "Player" : "OtherPlayer";
         var p2 = Player2.GetComponent<PlayerControl>();
         p2.playerSpeed = CurrentPlayer == Player.Second ? p2.walkingSpeed : 0;
-        p2.rotationSpeed = CurrentPlayer == Player.Second ? 8 : 0;
+        p2.rotationSpeed = CurrentPlayer == Player.Second ? 1 : 0;
         p2.tag = CurrentPlayer == Player.Second ? "Player" : "OtherPlayer";
         //Send current active player
         OnPlayerChanged?.Invoke(CurrentPlayer == Player.First ? Player1 : Player2, CurrentPlayer);
+        //Update Unity Event one as well
+        ActivePlayerChanged?.Invoke(CurrentPlayer);
         //Move camera to previous player location
         Camera.main.transform.position =
             CurrentPlayer == Player.First ? LastPlayer1Location.position : LastPlayer2Location.position;
